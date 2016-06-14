@@ -1,29 +1,17 @@
 
 # SEO settings
 title: "Think"
-<<<<<<< HEAD
 title2: "space" # default: ""
 description: "Just another minimalist Jekyll theme that focuses on technical writing."
 keywords: "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url: http://heiswayi.github.io/thinkspace # site url
 baseurl: "/thinkspace" # apply repo name if use it under gh-pages branch
 # baseurl: null # apply null if repo name is something like username.github.io
-=======
-title2: "Space" # default: ""
-description: "Just another minimalist Jekyll theme that focuses on technical writing."
-keywords: "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url: http://heiswayi.github.io/thinkspace.html
-baseurl: "/thinkspace"
-# baseurl: null
->>>>>>> gh-pages
 
 google_analytics: UA-XXXXX-XX
 repo: http://github.com/heiswayi/thinkspace
 disqus_shortname: "heiswayi"
-<<<<<<< HEAD
 twitter_username: "HeiswayiNrird"
-=======
->>>>>>> gh-pages
 comments: true
 
 # Build settings
@@ -53,11 +41,7 @@ author:
   linkedin : http://linkedin.com/in/nrird
 
 # social settings
-<<<<<<< HEAD
 og_locale: "en_US"
-=======
-og_locale: "pt_BR"
->>>>>>> gh-pages
 twitter_card: "summary_large_image"
 twitter_site: "@HeiswayiNrird"
 
