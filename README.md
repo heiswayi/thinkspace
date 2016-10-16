@@ -1,4 +1,4 @@
-# Thinkspace v1
+# Thinkspace v2
 
 Just another minimalist Jekyll theme that focuses on technical writing. Designed for engineers to write their ranting and findings.
 
@@ -8,7 +8,7 @@ Just another minimalist Jekyll theme that focuses on technical writing. Designed
 
 ### Screenshot
 
-![Screenshot](http://i.imgur.com/WHcnbYF.png)
+![Screenshot](http://i.imgur.com/TgaRfrU.png)
 
 ### License
 
