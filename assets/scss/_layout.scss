@@ -127,7 +127,7 @@ hr {
 }
 
 .post-list {
-  background-color: lighten($light-gray-color, 17%);
+
 }
 
 .category-title {
@@ -265,8 +265,8 @@ hr {
 @media (max-width: 600px) {
   .date-label {
     float: left !important;
-    border: 0;
-    margin-left: 0 !important;
+    border: 0 !important;
+    margin-left: -2px !important;
     margin-top: 2px;
     margin-right: 1em;
   }
