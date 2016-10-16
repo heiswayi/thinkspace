@@ -277,6 +277,10 @@ hr {
     background: lighten($light-gray-color, 15%);
   }
 
+  .article-title {
+    border-bottom: none !important;
+  }
+
   .post-link {
     &:hover,
     &:focus,
