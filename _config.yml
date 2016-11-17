@@ -12,7 +12,7 @@ google_analytics: UA-XXXXX-XX
 repo: http://github.com/heiswayi/thinkspace
 disqus_shortname: "heiswayi"
 twitter_username: "HeiswayiNrird"
-comments: true #activate comments if true, otherwise no comments
+comments: true 
 
 # Build settings
 permalink   : /:year/:title/
