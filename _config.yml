@@ -1,21 +1,18 @@
 
 # SEO settings
-title: "Think"
-title2: "space" # default: ""
-description: "Just another minimalist Jekyll theme that focuses on technical writing."
-keywords: "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url: http://heiswayi.github.io/thinkspace # site url
-baseurl: "/thinkspace" # apply repo name if use it under gh-pages branch
+title: "浊流"
+title2: "的博客" # default: ""
+description: "做一些技术笔记、分享和讨论"
+keywords: "java, web, hadoop, spark"
+url: http://mtide.github.io # site url
+baseurl: "/" # apply repo name if use it under gh-pages branch
 # baseurl: null # apply null if repo name is something like username.github.io
 
-google_analytics: UA-XXXXX-XX
-repo: http://github.com/heiswayi/thinkspace
-disqus_shortname: "heiswayi"
-twitter_username: "HeiswayiNrird"
+repo: https://github.com/mtide/mtide.github.io
 comments: true
 
 # Build settings
-permalink   : /:year/:title/
+permalink   : /:categories/:year/:month/:day/:title.html
 markdown    : kramdown
 highlighter : rouge
 
@@ -29,21 +26,16 @@ sass:
 
 # Author settings
 author:
-  name     : "Heiswayi Nrird"
-  job      : "R&D Software Engineer"
-  bio      : "1+1=3 is always TRUE in my world, a balance between binary and reality."
+  name     : "mtide"
+  job      : "程序猿"
+  bio      : "It's just me."
   thumb    : /images/author.jpg
-  email    : hnrird@gmail.com
-  url      : http://heiswayi.github.io
-  github   : http://github.com/heiswayi
-  twitter  : http://twitter.com/HeiswayiNrird
-  facebook : https://www.facebook.com/profile.php?id=1257583160
-  linkedin : http://linkedin.com/in/nrird
+  email    : mtide@qq.com
+  url      : http://mtide.github.io
+  github   : http://github.com/mtide
 
 # social settings
-og_locale: "en_US"
-twitter_card: "summary_large_image"
-twitter_site: "@HeiswayiNrird"
+og_locale: "zh_CN"
 
 gems:
   - bourbon
@@ -53,7 +45,7 @@ gems:
 navbar:
   - slug : about
     title: About
-  - slug : blog
-    title: Blog
+  - slug : post
+    title: POST
 
 exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
