@@ -1,6 +1,6 @@
-# Thinkspace v2
+# Thinkspace v2.0
 
-**Thinkspace** - a minimalist and white clean Jekyll theme designed for engineers to write their ranting and findings. It's best for personal blog or project blog use. Made with [Sass](https://github.com/sass/sass) which automates the compression of the compiled CSS code, and cool Jekyll layout by [Anatol Broder](http://jch.penibelst.de/) for compressing the HTML output code on-the-fly. Use typeface from [Inconsolata](https://fonts.google.com/specimen/Inconsolata) by Google Fonts and [Font Awesome](http://fontawesome.io/). [Disqus](https://disqus.com/) comment supported.
+Thinkspace is a white clean, nerdy look and minimalist Jekyll theme designed for engineers to write their ranting and findings. This theme is best use for personal blog type or project-based blog. Font or typeface used is [Inconsolata](https://fonts.google.com/specimen/Inconsolata) by Google Web Fonts and [Font Awesome](http://fontawesome.io/). [Disqus](https://disqus.com/) comment is supported.
 
 [**Live Demo**](http://heiswayi.github.io/thinkspace/)
 
@@ -11,4 +11,3 @@
 ### License
 
 [MIT](LICENSE.md)
-
