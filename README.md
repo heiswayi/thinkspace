@@ -4,9 +4,9 @@ Thinkspace is just another minimalist Jekyll theme which is best suit for techni
 
 [**Live Demo**](http://heiswayi.github.io/thinkspace/)
 
-### Screenshot?
+### Screenshot
 
-[Just see it live here!](http://heiswayi.github.io/thinkspace/)
+![Thinkspace Screenshot](http://i.imgur.com/IMQDB9e.png)
 
 ### License
 
