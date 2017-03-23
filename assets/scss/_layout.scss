@@ -150,11 +150,11 @@ hr {
   .article-title {
     display: inline-block;
     width: 85%;
-    border-bottom: 1px dashed lighten($light-gray-color, 10%);
+    //border-bottom: 1px dashed lighten($light-gray-color, 10%);
   }
 
   .date-label {
-    border: 1px solid lighten($light-gray-color, 10%);
+    //border: 1px solid lighten($light-gray-color, 10%);
     padding: 0 0.2em;
     margin-left: 1em;
     margin-top: 2px;
@@ -169,6 +169,13 @@ hr {
   display: inline-block;
   letter-spacing: 1px;
   font-size: rem(14);
+  margin-bottom: 1px;
+}
+
+.post-title {
+  margin-top: 0;
+  margin-bottom: 2em;
+  color: $dark-gray-color;
 }
 
 .post-link,
@@ -197,9 +204,9 @@ hr {
 }
 
 .share {
-  border-top: 0.2em solid lighten($light-gray-color, 13%);
+  border-top: 0.2em dashed lighten($light-gray-color, 13%);
   padding-top: $base-spacing;
-  margin-top: $base-spacing;
+  margin-top: $base-spacing * 2;
 
   p {
     margin: 0;

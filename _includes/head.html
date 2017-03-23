@@ -8,7 +8,7 @@
   {% if page.title == "Home" %}
       {% capture page_title %}
         {{ site.title }}{{ site.title2 }} | {{ site.description }}
-        {%if paginator and paginator.page != 1 %} - Página {{ paginator.page }}{% endif %}
+        {%if paginator and paginator.page != 1 %} - {{ paginator.page }}{% endif %}
       {% endcapture %}
   {% else %}
       {% capture page_title %}
@@ -29,7 +29,7 @@
       {% else %}
           {{ site.description }}
       {% endif %}
-      {%if paginator and paginator.page != 1 %} - Página {{ paginator.page }} {% endif %}
+      {%if paginator and paginator.page != 1 %} - {{ paginator.page }} {% endif %}
       {%if page.slug == 'category' %} Categoria: {{ page.title }}{% endif %}
       {%if page.slug == 'tag' %} Tag: {{ page.title }}{% endif %}
   {% endcapture %}

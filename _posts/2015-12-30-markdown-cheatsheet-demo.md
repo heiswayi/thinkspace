@@ -6,8 +6,6 @@ description: "Markdown Cheatsheet Demo..."
 keywords: "markdown, typography components, dummy content"
 ---
 
-> This is Markdown Cheatsheet Demo for **Thinkspace**, this Jekyll theme. Please check the raw content of this file for the markdown usage.
-
 ## Typography Elements in One
 
 Let's start with a informative paragraph. **This text is bolded.** But not this one! _How about italic text?_ Cool right? Ok, let's **_combine_** them together. Yeah, that's right! I have code to highlight, so `ThisIsMyCode()`. What a nice! Good people will hyperlink away, so [here we go](#) or [http://www.example.com](http://www.example.com).
@@ -58,8 +56,23 @@ Let's say you have text that you want to refer with a footnote, you can do that 
 ## Code Blocks
 
 ```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
+var modularpattern = (function() {
+    // your module code goes here
+    var sum = 0 ;
+
+    return {
+        add:function() {
+            sum = sum + 1;
+            return sum;
+        },
+        reset:function() {
+            return sum = 0;    
+        }  
+    }   
+}());
+alert(modularpattern.add());    // alerts: 1
+alert(modularpattern.add());    // alerts: 2
+alert(modularpattern.reset());  // alerts: 0
 ```
 
 ```python
