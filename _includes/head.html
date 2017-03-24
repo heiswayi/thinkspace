@@ -12,7 +12,7 @@
       {% endcapture %}
   {% else %}
       {% capture page_title %}
-          {%if page.slug == 'category' %}Categoria: {% endif %}
+          {%if page.slug == 'category' %}Category: {% endif %}
           {%if page.slug == 'tag' %}Tag: {% endif %} {{ page.title }} | {{ site.title }}{{ site.title2}}
       {% endcapture %}
   {% endif %}
@@ -30,7 +30,7 @@
           {{ site.description }}
       {% endif %}
       {%if paginator and paginator.page != 1 %} - {{ paginator.page }} {% endif %}
-      {%if page.slug == 'category' %} Categoria: {{ page.title }}{% endif %}
+      {%if page.slug == 'category' %} Category: {{ page.title }}{% endif %}
       {%if page.slug == 'tag' %} Tag: {{ page.title }}{% endif %}
   {% endcapture %}
 
