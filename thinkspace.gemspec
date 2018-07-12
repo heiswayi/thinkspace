@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
 	spec.name          = "thinkspace"
-	spec.version       = "3.0.0"
+	spec.version       = "2.5.0"
 	spec.authors       = ["Heiswayi Nrird"]
 	spec.email         = ["heiswayi@nrird.xyz"]
 
