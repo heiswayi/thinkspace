@@ -7,13 +7,13 @@
   {% assign page_title = '' %}
   {% if page.title == "Home" %}
       {% capture page_title %}
-        {{ site.title }}{{ site.title2 }} | {{ site.description }}
+        {{ site.title_left }}{{ site.title_right }} | {{ site.description }}
         {%if paginator and paginator.page != 1 %} - {{ paginator.page }}{% endif %}
       {% endcapture %}
   {% else %}
       {% capture page_title %}
           {%if page.slug == 'category' %}Category: {% endif %}
-          {%if page.slug == 'tag' %}Tag: {% endif %} {{ page.title }} | {{ site.title }}{{ site.title2}}
+          {%if page.slug == 'tag' %}Tag: {% endif %} {{ page.title }} | {{ site.title_left }}{{ site.title_right }}
       {% endcapture %}
   {% endif %}
   {% capture page_title %}
@@ -69,11 +69,11 @@
   <meta property="og:image" content="{{ page_image }}">
   <meta property="og:description" content="{{ page_description }}">
   <meta property="og:site_name" content="{{ site.author.name }}">
-  <meta property="og:locale" content="{{ site.og_locale }}">
+  <meta property="og:locale" content="en_US">
 
   <!-- Social: Twitter -->
-  <meta name="twitter:card" content="{{ site.twitter_card }}">
-  <meta name="twitter:site" content="{{ site.twitter_site }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="{{ site.twitter_username }}">
   <meta name="twitter:title" content="{{ page_title }}">
   <meta name="twitter:description" content="{{ page_description }}">
   <meta name="twitter:image:src" content="{{ page_image }}">
@@ -82,6 +82,10 @@
   <meta itemprop="name" content="{{ page_title }}">
   <meta itemprop="description" content="{{ page_description }}">
   <meta itemprop="image" content="{{ page_image }}">
+
+  <!-- Canonical link tag -->
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title_left }}{{ site.title_right }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 
   <!-- rel prev and next -->
   {% if paginator.previous_page %}
@@ -92,22 +96,4 @@
   {% endif %}
 
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="{{ "/assets/css/font-awesome.min.css" | prepend: site.baseurl }}">
-
-  <!-- Canonical link tag -->
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}{{ site.title2 }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-
-  <script type="text/javascript">
-  var disqus_shortname = '{{ site.disqus_shortname }}';
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ site.google_analytics }}']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-  </script>
 </head>

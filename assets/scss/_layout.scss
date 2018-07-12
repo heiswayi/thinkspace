@@ -126,10 +126,6 @@ hr {
   }
 }
 
-.post-list {
-
-}
-
 .category-title {
   margin: 1em 0 0.5em 0;
 
@@ -144,7 +140,6 @@ hr {
 
   a {
     color: $action-color;
-    font-weight: bold;
   }
 
   .article-title {
@@ -174,7 +169,7 @@ hr {
 
 .post-title {
   margin-top: 0;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   color: $dark-gray-color;
 }
 
@@ -209,7 +204,7 @@ hr {
   margin-top: $base-spacing * 2;
 
   p {
-    margin: 0;
+    margin: 0 5em;
     font-size: rem(14);
     color: $medium-gray-color;
   }

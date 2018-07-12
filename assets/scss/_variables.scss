@@ -1,5 +1,6 @@
 // Typography
-$base-font-family: consolas, monaco, courier, "courier new", fixed-width;
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono:400,700');
+$base-font-family: 'Overpass Mono', monospace;
 $heading-font-family: $base-font-family;
 
 // Font Sizes

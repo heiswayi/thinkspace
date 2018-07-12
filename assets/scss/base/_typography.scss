@@ -76,19 +76,22 @@ picture {
 }
 
 blockquote {
-  padding: 0 0 0 $base-spacing;
+  padding: $base-spacing 0 $base-spacing $base-spacing;
   margin: $base-spacing 0;
   color: $dark-gray-color;
   line-height: 1.8;
   border-left: $small-spacing solid $light-gray-color;
-  background-color: lighten($light-gray-color, 15%)
+  background-color: lighten($light-gray-color, 15%);
+  p {
+    margin: 0;
+  }
 }
 
 code {
   background: none;
   border-radius: 0;
   border: none;
-  font-family: monospace;
+  font-family: "SFMono-Regular",Menlo,Consolas,"Inconsolata",monospace;
   font-size: 1em;
   margin: 0;
   padding: 0 5px;
@@ -97,7 +100,7 @@ code {
 
 pre {
   -webkit-overflow-scrolling: touch;
-  font-family: monospace;
+  font-family: "SFMono-Regular",Menlo,Consolas,"Inconsolata",monospace;
   font-size: 1em;
   margin: 0;
   padding: 5px 10px !important;
