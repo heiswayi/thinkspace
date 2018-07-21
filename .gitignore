@@ -1,6 +1,7 @@
 _site/
 .sass-cache/
 .bundle/
+Gemfile.lock
 
 # Windows image file caches
 Thumbs.db
