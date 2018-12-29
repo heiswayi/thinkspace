@@ -1,17 +1,17 @@
 # Site settings
-title_left    : "Think"
-title_right   : "space" # default: ""
+title_left    : "CS"
+title_right   : "paraphernalia" # default: ""
 description   : "Minimalist Jekyll theme for technical writing blog."
-keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url           : https://heiswayi.github.io/thinkspace # site url
+keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace, cs, computer science, computing science, software development, software, duckduckgo, coding, programming, mathematics, maths, university, LaTeX, TeX, Knuth, Functional Programming, python, haskell, java"
+url           : https://joe-a-d@github.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-XXXXX-XX
 twitter_username  : ""
-comments_enabled  : false # if enabled (set to true), please provide your disqus_username
-disqus_shortname  : ""
-postshare_enabled : false
+comments_enabled  : true # if enabled (set to true), please provide your disqus_username
+disqus_shortname  : "joe_a_d"
+postshare_enabled : true
 
 # Build settings
 permalink   : /:year/:title/
@@ -28,7 +28,7 @@ sass:
 
 # Author settings
 author:
-  name     : "John Doe"
+  name     : "João Almeida-Domingues"
 
 plugins:
   - jekyll-sitemap
