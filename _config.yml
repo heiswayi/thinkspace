@@ -20,6 +20,8 @@ highlighter : rouge
 
 source      : ./
 destination : ./_site
+theme: jekyll-theme-thinkspace
+
 
 # Sass configuration
 sass:
