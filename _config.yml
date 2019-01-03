@@ -3,14 +3,14 @@ title_left    : "Butch"
 title_right   : "tests" # default: ""
 description   : "A tiny spec on the internet to share my ideas, what I'm currently learning."
 keywords      : "testing, software, development, engineering, software testing, test automation, automation, learning, leading, tester, birminghamm, alabama, leadership, manager"
-url           : https://bmayhew.github.io/ # site url
+url           : https://bmayhew.github.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-XXXXX-XX
-twitter_username  : ""
-comments_enabled  : false # if enabled (set to true), please provide your disqus_username
-disqus_shortname  : ""
+twitter_username  : "butchmayhew"
+comments_enabled  : true # if enabled (set to true), please provide your disqus_username
+disqus_shortname  : "butch_mayhew"
 postshare_enabled : false
 
 # Build settings
