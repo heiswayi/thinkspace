@@ -1,9 +1,9 @@
 # Site settings
-title_left    : "Think"
-title_right   : "space" # default: ""
-description   : "Minimalist Jekyll theme for technical writing blog."
-keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url           : https://heiswayi.github.io/thinkspace # site url
+title_left    : "Butch"
+title_right   : "tests" # default: ""
+description   : "A tiny spec on the internet to share my ideas, what I'm currently learning."
+keywords      : "testing, software, development, engineering, software testing, test automation, automation, learning, leading, tester, birminghamm, alabama, leadership, manager"
+url           : https://bmayhew.github.io/ # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
@@ -30,7 +30,7 @@ sass:
 
 # Author settings
 author:
-  name     : "John Doe"
+  name     : "Butch Mayhew"
 
 plugins:
   - jekyll-sitemap

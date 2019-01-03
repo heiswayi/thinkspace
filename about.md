@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Introduce yourself here... so people will know who you are and what you do.. blah..blah..blah..
+Hi, I'm Butch Mayhew a Test Engineer Manager at Daxko who loves finding more efficient ways to complete tasks. Over the past few years I've been using selenium and using automation in testing. I've guided my team in building automation frameworks that are still in use by different teams across my company. WWhile I'm not busy automating the next boring task, you can find me at the disc golf course during the day or saving the princess with my kids on my RetroPie at night.
