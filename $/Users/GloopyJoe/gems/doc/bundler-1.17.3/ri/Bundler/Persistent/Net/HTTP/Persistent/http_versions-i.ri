@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"http_versions:ETI"=Bundler::Persistent::Net::HTTP::Persistent#http_versions;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"JMaps host:port to an HTTP version.  This allows us to enable version ;TI"specific features.;T:
+@fileI"Flib/bundler/vendor/net-http-persistent/lib/net/http/persistent.rb;T:0@omit_headings_from_table_of_contents_below0F@I"/Bundler::Persistent::Net::HTTP::Persistent;TcRDoc::NormalClass0

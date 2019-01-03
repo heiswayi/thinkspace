@@ -42,6 +42,7 @@ h6 {
 
 p {
   margin: 0 0 $small-spacing;
+  text-align: justify;
 
   &.lead {
     font-size: rem(22);
@@ -129,7 +130,7 @@ dl {
     margin-top: 0;
     margin-left: 1.2em;
     margin-bottom: 1rem;
-    list-style-type: square;
+    list-style-type: none;
     list-style-position: outside;
     list-style-image: none;
 }

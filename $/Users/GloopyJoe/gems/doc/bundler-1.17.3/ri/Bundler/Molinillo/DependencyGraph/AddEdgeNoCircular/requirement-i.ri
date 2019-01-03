@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"requirement:ETI"GBundler::Molinillo::DependencyGraph::AddEdgeNoCircular#requirement;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I">@return [Object] the requirement that the edge represents;T:
+@fileI"Xlib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/add_edge_no_circular.rb;T:0@omit_headings_from_table_of_contents_below0F@I";Bundler::Molinillo::DependencyGraph::AddEdgeNoCircular;TcRDoc::NormalClass0

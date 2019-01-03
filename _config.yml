@@ -1,7 +1,7 @@
 # Site settings
 title_left    : "CS"
 title_right   : "paraphernalia" # default: ""
-description   : "Minimalist Jekyll theme for technical writing blog."
+description   : "João Almeida-Domingues"
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace, cs, computer science, computing science, software development, software, duckduckgo, coding, programming, mathematics, maths, university, LaTeX, TeX, Knuth, Functional Programming, python, haskell, java"
 url           : https://joe-a-d.github.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
@@ -10,7 +10,7 @@ cover         : "" # image uri like logo/cover image for site seo
 google_analytics  : UA-XXXXX-XX
 twitter_username  : ""
 comments_enabled  : true # if enabled (set to true), please provide your disqus_username
-disqus_shortname  : "joe_a_d"
+disqus_shortname  : "joe-a-d"
 postshare_enabled : true
 
 # Build settings
@@ -43,5 +43,3 @@ navbar:
     title: Blog
 
 exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "script"]
-
-#theme: jekyll-theme-minimal

@@ -1,0 +1,21 @@
+@import "setup";
+
+.four-values-a {
+  padding: _compact-shorthand(10px 20px 30px 40px);
+}
+
+.four-values-b {
+  padding: _compact-shorthand(5px 10px 5px 20px);
+}
+
+.two-values {
+  padding: _compact-shorthand(50px 100px 50px 100px);
+}
+
+.one-value {
+  padding: _compact-shorthand(10px 10px 10px 10px);
+}
+
+.null-value {
+  padding: _compact-shorthand(10px null 20px);
+}

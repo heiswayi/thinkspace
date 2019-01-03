@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"vertices:ETI"1Bundler::Molinillo::DependencyGraph#vertices;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"M@return [{String => Vertex}] the vertices of the dependency graph, keyed;To:RDoc::Markup::Verbatim;	[I"by {Vertex#name};T:@format0:
+@fileI"Clib/bundler/vendor/molinillo/lib/molinillo/dependency_graph.rb;T:0@omit_headings_from_table_of_contents_below0F@I"(Bundler::Molinillo::DependencyGraph;TcRDoc::NormalClass0

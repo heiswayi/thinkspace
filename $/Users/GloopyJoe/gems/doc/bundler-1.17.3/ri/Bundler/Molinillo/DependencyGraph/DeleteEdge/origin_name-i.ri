@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"origin_name:ETI"@Bundler::Molinillo::DependencyGraph::DeleteEdge#origin_name;TI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"8@return [String] the name of the origin of the edge;T:
+@fileI"Olib/bundler/vendor/molinillo/lib/molinillo/dependency_graph/delete_edge.rb;T:0@omit_headings_from_table_of_contents_below0F@I"4Bundler::Molinillo::DependencyGraph::DeleteEdge;TcRDoc::NormalClass0

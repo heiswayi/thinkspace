@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "thoughtbot",
+    "url": "http://thoughtbot.com"
+  },
+  "bugs": {
+    "url": "https://github.com/thoughtbot/bourbon/issues"
+  },
+  "description": "A lightweight Sass tool set.",
+  "eyeglass": {
+    "needs": "*",
+    "exports": "eyeglass-exports.js"
+  },
+  "homepage": "https://www.bourbon.io/",
+  "keywords": [
+    "css",
+    "eyeglass-module",
+    "mixins",
+    "sass",
+    "scss"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "style": "core/_bourbon.scss",
+  "name": "bourbon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thoughtbot/bourbon.git"
+  },
+  "scripts": {
+    "test": "bundle exec rake"
+  },
+  "version": "5.1.0"
+}

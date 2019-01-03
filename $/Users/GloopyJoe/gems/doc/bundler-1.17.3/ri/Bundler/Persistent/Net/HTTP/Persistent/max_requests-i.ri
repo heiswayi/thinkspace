@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"max_requests:ETI"<Bundler::Persistent::Net::HTTP::Persistent#max_requests;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"PMaximum number of requests on a connection before it is considered expired ;TI"and automatically closed.;T:
+@fileI"Flib/bundler/vendor/net-http-persistent/lib/net/http/persistent.rb;T:0@omit_headings_from_table_of_contents_below0F@I"/Bundler::Persistent::Net::HTTP::Persistent;TcRDoc::NormalClass0

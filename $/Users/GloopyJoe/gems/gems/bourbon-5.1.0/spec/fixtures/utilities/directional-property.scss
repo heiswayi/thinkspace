@@ -1,0 +1,17 @@
+@import "setup";
+
+.border-all {
+  @include _directional-property(border, width, 2px 5px 8px 12px);
+}
+
+.border-top {
+  @include _directional-property(border, top, 10px);
+}
+
+.border-color {
+  @include _directional-property(border, color, #fff #000);
+}
+
+.margin-null {
+  @include _directional-property(margin, null, 20px null 10px);
+}

@@ -1,0 +1,9 @@
+@import "setup";
+
+.triangle--up {
+  @include triangle("up", 2rem, 1rem, #b25c9c);
+}
+
+.triangle--right {
+  @include triangle("right", 5px, 12px, #aaa);
+}

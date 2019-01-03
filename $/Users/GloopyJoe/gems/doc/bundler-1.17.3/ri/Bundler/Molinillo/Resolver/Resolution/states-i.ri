@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"states:ETI"4Bundler::Molinillo::Resolver::Resolution#states;TI"RW;T:privateo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"L@return [Array<ResolutionState>] the stack of states for the resolution;T:
+@fileI"=lib/bundler/vendor/molinillo/lib/molinillo/resolution.rb;T:0@omit_headings_from_table_of_contents_below0F@I"-Bundler::Molinillo::Resolver::Resolution;TcRDoc::NormalClass0

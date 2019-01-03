@@ -1,0 +1,92 @@
+current directory: /Users/GloopyJoe/Desktop/P/WebPage/joe-a-d.github.io/$/Users/GloopyJoe/gems/gems/nokogiri-1.9.1/ext/nokogiri
+/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby -I /Library/Ruby/Site/2.3.0 -r ./siteconf20190102-28987-1was8j3.rb extconf.rb --use-system-libraries
+checking if the C compiler accepts ... yes
+checking if the C compiler accepts -Wno-error=unused-command-line-argument-hard-error-in-future... no
+Building nokogiri using system libraries.
+checking for xmlParseDoc() in libxml/parser.h... yes
+checking for xsltParseStylesheetDoc() in libxslt/xslt.h... yes
+checking for exsltFuncRegister() in libexslt/exslt.h... yes
+checking for xmlHasFeature()... yes
+checking for xmlFirstElementChild()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetParserStructuredErrors()... yes
+checking for xmlRelaxNGSetValidStructuredErrors()... yes
+checking for xmlSchemaSetValidStructuredErrors()... yes
+checking for xmlSchemaSetParserStructuredErrors()... yes
+creating Makefile
+
+current directory: /Users/GloopyJoe/Desktop/P/WebPage/joe-a-d.github.io/$/Users/GloopyJoe/gems/gems/nokogiri-1.9.1/ext/nokogiri
+make "DESTDIR=" clean
+
+current directory: /Users/GloopyJoe/Desktop/P/WebPage/joe-a-d.github.io/$/Users/GloopyJoe/gems/gems/nokogiri-1.9.1/ext/nokogiri
+make "DESTDIR="
+compiling html_document.c
+compiling html_element_description.c
+compiling html_entity_lookup.c
+compiling html_sax_parser_context.c
+compiling html_sax_push_parser.c
+compiling nokogiri.c
+compiling xml_attr.c
+compiling xml_attribute_decl.c
+compiling xml_cdata.c
+compiling xml_comment.c
+compiling xml_document.c
+compiling xml_document_fragment.c
+compiling xml_dtd.c
+xml_dtd.c:47:47: warning: incompatible pointer types passing 'void (void *, void *, const xmlChar *)' (aka 'void (void *, void *, const unsigned char *)') to parameter of type 'xmlHashScanner' (aka 'void (*)(void *, void *, unsigned char *)') [-Wincompatible-pointer-types]
+  xmlHashScan((xmlHashTablePtr)dtd->entities, element_copier, (void *)hash);
+                                              ^~~~~~~~~~~~~~
+/usr/include/libxml2/libxml/hash.h:210:22: note: passing argument to parameter 'f' here
+                                         xmlHashScanner f,
+                                                        ^
+xml_dtd.c:69:48: warning: incompatible pointer types passing 'void (void *, void *, const xmlChar *)' (aka 'void (void *, void *, const unsigned char *)') to parameter of type 'xmlHashScanner' (aka 'void (*)(void *, void *, unsigned char *)') [-Wincompatible-pointer-types]
+  xmlHashScan((xmlHashTablePtr)dtd->notations, notation_copier, (void *)hash);
+                                               ^~~~~~~~~~~~~~~
+/usr/include/libxml2/libxml/hash.h:210:22: note: passing argument to parameter 'f' here
+                                         xmlHashScanner f,
+                                                        ^
+xml_dtd.c:91:49: warning: incompatible pointer types passing 'void (void *, void *, const xmlChar *)' (aka 'void (void *, void *, const unsigned char *)') to parameter of type 'xmlHashScanner' (aka 'void (*)(void *, void *, unsigned char *)') [-Wincompatible-pointer-types]
+  xmlHashScan((xmlHashTablePtr)dtd->attributes, element_copier, (void *)hash);
+                                                ^~~~~~~~~~~~~~
+/usr/include/libxml2/libxml/hash.h:210:22: note: passing argument to parameter 'f' here
+                                         xmlHashScanner f,
+                                                        ^
+xml_dtd.c:113:47: warning: incompatible pointer types passing 'void (void *, void *, const xmlChar *)' (aka 'void (void *, void *, const unsigned char *)') to parameter of type 'xmlHashScanner' (aka 'void (*)(void *, void *, unsigned char *)') [-Wincompatible-pointer-types]
+  xmlHashScan((xmlHashTablePtr)dtd->elements, element_copier, (void *)hash);
+                                              ^~~~~~~~~~~~~~
+/usr/include/libxml2/libxml/hash.h:210:22: note: passing argument to parameter 'f' here
+                                         xmlHashScanner f,
+                                                        ^
+4 warnings generated.
+compiling xml_element_content.c
+compiling xml_element_decl.c
+compiling xml_encoding_handler.c
+compiling xml_entity_decl.c
+compiling xml_entity_reference.c
+compiling xml_io.c
+compiling xml_libxml2_hacks.c
+compiling xml_namespace.c
+compiling xml_node.c
+xml_node.c:308:15: warning: passing 'const xmlChar *' (aka 'const unsigned char *') to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+      xmlFree(reparentee->ns->prefix);
+              ^~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+compiling xml_node_set.c
+compiling xml_processing_instruction.c
+compiling xml_reader.c
+compiling xml_relax_ng.c
+compiling xml_sax_parser.c
+compiling xml_sax_parser_context.c
+compiling xml_sax_push_parser.c
+compiling xml_schema.c
+compiling xml_syntax_error.c
+compiling xml_text.c
+compiling xml_xpath_context.c
+compiling xslt_stylesheet.c
+linking shared-object nokogiri/nokogiri.bundle
+Cleaning files only used during build.
+rm -rf /Users/GloopyJoe/Desktop/P/WebPage/joe-a-d.github.io/$/Users/GloopyJoe/gems/gems/nokogiri-1.9.1/ports/archives
+
+current directory: /Users/GloopyJoe/Desktop/P/WebPage/joe-a-d.github.io/$/Users/GloopyJoe/gems/gems/nokogiri-1.9.1/ext/nokogiri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20190102-28987-ifg226/nokogiri
