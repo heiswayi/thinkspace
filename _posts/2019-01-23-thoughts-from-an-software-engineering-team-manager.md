@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Thoughts From a Software Engineering Team Manager"
-description: "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+description: "Often I ask myself this question. Am I a good manager, how do I stack rank against other managers in my organization?"
 comments: true
 keywords: "software engineering, technology leadership, boss, leadership, managment, servant leadership"
 ---
