@@ -13,7 +13,7 @@ comments_enabled  : true # if enabled (set to true), please provide your disqus_
 disqus_shortname  : "butchtests"
 postshare_enabled : false
 twitter_username  : butchmayhew
-github_username   : BMayhew
+github_username   : bmayhew
 linkedin_username : butchmayhew
 
 
@@ -24,7 +24,7 @@ highlighter : rouge
 
 source      : ./
 destination : ./_site
-theme: jekyll-theme-thinkspace
+#theme: jekyll-theme-thinkspace
 
 
 # Sass configuration
