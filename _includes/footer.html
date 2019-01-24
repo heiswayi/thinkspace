@@ -1,26 +1,21 @@
 <footer class="site-footer">
-  {% if site.twitter_username %}
-  <li>
-    <a href="https://twitter.com/{{ site.twitter_username }}">
-      <i class="fa fa-twitter"></i> Twitter
-    </a>
-  </li>
-  {% endif %}
-  {% if site.github_username %}
-  <li>
-    <a href="https://github.com/{{ site.github_username }}">
-      <i class="fa fa-github"></i> GitHub
-    </a>
-  </li>
-  {% endif %}
-  {% if site.linkedin_username %}
-  <li>
-    <a href="https://linkedin.com/in/{{ site.linkedin_username }}">
-      <i class="fa fa-linkedin"></i> LinkedIn
-    </a>
-  </li>
-  {% endif %}
- 
+  <div class="block">
+    {% if site.twitter_username %}
+      <a href="https://twitter.com/{{ site.twitter_username }}">
+        <i class="fab fa-twitter"></i>
+      </a>
+    {% endif %}
+    {% if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}">
+        <i class="fa fa-github"></i>
+      </a>
+    {% endif %}
+    {% if site.linkedin_username %}
+      <a href="https://linkedin.com/in/{{ site.linkedin_username }}">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    {% endif %}
+  </div>
   <div class="container">
     <small class="block">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }} &middot; &lt;/&gt; Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://github.com/heiswayi/thinkspace">Thinkspace theme</a></small>
   </div>

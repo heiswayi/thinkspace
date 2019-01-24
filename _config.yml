@@ -13,7 +13,7 @@ comments_enabled  : true # if enabled (set to true), please provide your disqus_
 disqus_shortname  : "butchtests"
 postshare_enabled : false
 twitter_username  : butchmayhew
-github_username   : bmyhew
+github_username   : BMayhew
 linkedin_username : butchmayhew
 
 
