@@ -7,7 +7,7 @@ keywords: "software engineering, technology leadership, boss, leadership, managm
 ---
 
 # What does it mean to be a great manager?
-Often I ask myself this question. Am I a good manager, how do I stack rack against other managers in my organization, in my state, in my country? What are ways I can grow and be a better manager? This mindset has helped drive me to read, learn, and question my believes about what it is to be a good manager. Often I will come across twitter or blog posts like this one.
+Often I ask myself this question. Am I a good manager, how do I stack rank against other managers in my organization, in my state, in my country? What are ways I can grow and be a better manager? This mindset has helped drive me to read, learn, and question my beliefs about what it is to be a good manager. Often I will come across twitter or blog posts like this one.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">What people DON’T want:<br>  ⒳ A boss<br>  ⒳ A manager<br><br>What people DO want:<br>  ✓ A mentor<br>  ✓ A coach<br>  ✓ A teacher<br>  ✓ A listener<br>  ✓ A supporter<br>  ✓ A motivator<br>  ✓ A confidant<br>  ✓ An accountability partner<br>  ✓ An advocate<br>  ✓ An advisor<br>  ✓ A leader<br>  ✓ A friend</p>&mdash; Vlad Magdalin (@callmevlad) <a href="https://twitter.com/callmevlad/status/1087705263774154754?ref_src=twsrc%5Etfw">January 22, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
