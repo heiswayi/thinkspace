@@ -3,7 +3,7 @@ title_left    : "a"
 title_right   : "volok" # default: ""
 description   : "Minimalist Jekyll theme for technical writing blog."
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url           : http://avolok.github.io # site url
+url           : https://avolok.github.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
