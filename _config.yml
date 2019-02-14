@@ -1,7 +1,7 @@
 # Site settings
 title_left    : "alexandr "
 title_right   : "volok" # default: ""
-description   : "Minimalist Jekyll theme for technical writing blog."
+description   : "blog"
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url           : https://avolok.github.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
