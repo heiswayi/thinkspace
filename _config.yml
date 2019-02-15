@@ -2,13 +2,13 @@
 title_left    : "alexandr "
 title_right   : "volok" # default: ""
 description   : "blog"
-keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
+keywords      : "alexandr volok blog sql server specialist dba"
 url           : https://avolok.github.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-XXXXX-XX
-twitter_username  : ""
+twitter_username  : "@alexvolok"
 comments_enabled  : false # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : ""
 postshare_enabled : false
@@ -38,7 +38,7 @@ plugins:
 # navbar pages
 navbar:
   - slug : about
-    title: About
+    title: about
   - slug : blog
     title: Blog
 
