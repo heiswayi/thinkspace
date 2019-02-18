@@ -1,4 +1,5 @@
 ---
+published: true
 layout: post
 title: "Markdown Cheatsheet Demo"
 comments: true
