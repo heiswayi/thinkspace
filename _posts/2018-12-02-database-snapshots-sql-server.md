@@ -7,14 +7,48 @@ keywords: SQL Server Database Snapshots
 published: true
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+**SQL Server Database Snapshots** is a useful feature that can be used for quick reverts of the database to the state it was in when a given database snapshot was created to the state at, but also for reporting on data and schema comparison between a source database and a snapshot.
 
-### Where does it come from?
+Database snapshots are available since SQL Server 2005 however only in Enterprise edition. Since release of SQL Server 2016 SP1 Microsoft made a generous step and unlocked plenty of such enterprise grade features. Since that database snapshots become ready to use in all editions, including Express. 
+Warning
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+> Database snapshots are dependent on the source database. Therefore, using database snapshots for reverting a database is not a substitute for your backup and restore strategy. Performing all your scheduled backups remains essential. If you must restore the source database to the point in time at which you created a database snapshot, implement a backup policy that enables you to do that.
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+This feature has a clear syntax:
 
-### Why do we use it?
+```sql
+CREATE DATABASE [AdventureWorks2016_snapshot] 
+ON (NAME = [AdventureWorks2016_Data], FILENAME ='H:\SQL_Data\Data\AdventureWorks2016_Data.mdf.snapshot')
+AS SNAPSHOT OF [AdventureWorks2016];
+```
 
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+However, SSMS has no wizard or GUI and generation of multiple snapshots require some tedious work.
+
+Because of this `[dbo].[uspCreateSnapshot]` has been created. 
+
+Stored procedure has following parameters:
+
+| Parameter               | Type    | Default Value | Description      |
+| ----------------------- |:--------| -------------:| ---------------- |
+| @SourceDBSearchPattern  | sysname | 'all'         | Determines a list of databases to process, it uses LIKE pattern seach. When value set to All then all user databases selected                 | 
+| @SnashotSuffix          | sysname | 'snapshot'    | Snapshot name suffix, the full snapshot name will have a value: databasename_suffixname                 |
+| @DropIfExists           | bit     | 1             | Remove old snapshot on the same source database if  snapshot name is also the same                 |
+| @Debug                  | bit     | 1             |  Prints output as SQL Script, but does not execute it                |
+
+
+
+
+## Examples
+
+### A.	First example
+
+This example do something
+
+`<Code>`
+
+### B.	Second example
+This example also doing something
+
+`<Code>`
+
+The source code can be retrieved from github.
