@@ -1,15 +1,15 @@
 ---
 layout: post
 title: How To Simplify Database Snapshots Creation in SQL Server
-description: Ideas for a new blog post
-comments: true
+description: How To Simplify Database Snapshots Creation in SQL Server
+comments: false
 keywords: SQL Server Database Snapshots
 published: true
 ---
 
 **Database Snapshots** is a powerful feature that can be used for quick reverts of the database to the state as it was in when a given database snapshot was created, but also for reporting on data and schema comparison between a source database and a snapshot.
 
-Snapshots were shipped in SQL Server 2005 however used to be available only in Enterprise edition. In release SQL Server 2016 SP1 Microsoft made a generous step and unlocked plenty of such enterprise grade features. Since that database snapshots become ready to use in all editions, including Express.  
+This feature was shipped in SQL Server 2005 however used to be available only in Enterprise edition. In release SQL Server 2016 SP1 Microsoft made a generous step and unlocked plenty of such enterprise grade features. Since that database snapshots become ready to use in all editions, including Express.  
 
 #### Warning:
 
@@ -57,6 +57,7 @@ If snapshot with such name already exists the procedure will results to a messag
 -- Snapshot [AdventureWorks2016_Snapshot] already created on database [AdventureWorks2016], nothing more to do
 ```
 
+
 ### B.	Creating snapshots on multiple databases that selected by a search pattern 
 This example also doing something
 
@@ -87,9 +88,9 @@ The output:
 -- Processing database: [AdventureWorks2016]
 
 -- Executing SQL:
-CREATE DATABASE [AdventureWorks2016_Snapshot] ON
- (NAME = [AdventureWorks2016_Data], FILENAME ='H:\SQL_Data\Data\AdventureWorks2016_Data.mdf.Snapshot')
- AS SNAPSHOT OF [AdventureWorks2016];	
+CREATE DATABASE [AdventureWorks2016_Snapshot] ON 
+(NAME = [AdventureWorks2016_Data], FILENAME ='H:\SQL_Data\Data\AdventureWorks2016_Data.mdf.Snapshot')
+AS SNAPSHOT OF [AdventureWorks2016];	
 ```
 
 
