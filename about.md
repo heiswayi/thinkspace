@@ -4,4 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Introduce yourself here... so people will know who you are and what you do.. blah..blah..blah..
+Baiano | Pedreiro de Software na @ClaroBrasil | Organizador do @trainingcentr | Atualmente focado em #serverless, #aws, #js e #java.
+
+PS: Rótulos me dão medo... então um dia me descrevo...
+
+- [**LinkedIn**](https://www.linkedin.com/in/mateus-malaquias-692532b5/)
+- [**Twitter**](https://twitter.com/mmalaquiasdev)
