@@ -65,4 +65,4 @@ Como ganhamos de bônus o NPM quando instalamos o Node.js e caso você tenha ins
 npm i npm -g
 ```
 
-Pronto, agora é só correr pra um abraço, caso você queria entrar em contato comigo você pode me encontrar no [Twitter](https://twitter.com/malaquiasdev).
+Pronto, agora é só correr pra um abraço.
