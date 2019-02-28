@@ -10,3 +10,5 @@ PS: **Rótulos me dão medo... então um dia me descrevo...**
 
 - [**LinkedIn**](https://www.linkedin.com/in/mateus-malaquias-692532b5/)
 - [**Twitter**](https://twitter.com/mmalaquiasdev)
+- [**Github**](https://github.com/malaquiasdev)
+- [**Telegram**](https://t.me/malaquiasdev)
