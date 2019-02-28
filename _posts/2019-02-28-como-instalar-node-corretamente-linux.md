@@ -1,5 +1,3 @@
-# Como instalar Node.js no Linux corretamente
-
 Em distribuições Debian Based é muito comum utilizar o comando **apt install -nome do pacote-** e com o Node isso pode lhe 
 trazer muitos problemas. Entretanto tenho certeza que os mais novos no linux vão preferir utilizar o comando 
 **apt install -nome do pacote-** do que fazer a instalação do pacote binário e isso vai quebrar tudo, porque até o 
@@ -30,6 +28,12 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | b
 O número da versão que está em negrito pode mudar com o tempo, então recomendo você acessar a [página do projeto no GitHub](https://github.com/creationix/nvm) e procurar pela nova versão.
 
 Não tenha medo, o que está sendo feito aqui é o download de um script e a execução do mesmo, tudo vai ser instalado em um diretório oculto na pasta do seu usuário **não é necessário utilizar o comando com sudo nesse caso**.
+
+Depois de rodar o bash precisa **reabrir o terminal ou rodar source** para processar as alterações:
+
+```sh
+~/.profile
+```
 
 Agora execute:
 
