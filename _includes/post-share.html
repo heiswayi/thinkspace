@@ -1,8 +1,7 @@
 {% if site.postshare_enabled %}
 <aside class="share">
 
-  <p>If you liked this article and think others should read it, please share it on <a href="http://twitter.com/share?text={{page.title}}&amp;url={{ page.url | prepend: site.baseurl | prepend: site.url }}&amp;via={{ site.twitter_username }}"
-  onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a> or <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;">Facebook</a>.</p>
-
+  <p>Se você gostou deste artigo, por favor compartilhe no <a href="http://twitter.com/share?text={{page.title}}&amp;url={{ page.url | prepend: site.baseurl | prepend: site.url }}&amp;via={{ site.twitter_username }}"
+  onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a> ou no <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'facebook-share', 'width=550,height=235');return false;">Facebook</a>.</p>
 </aside>
 {% endif %}
