@@ -8,10 +8,10 @@ baseurl       : "" # apply repo name like "/myproject" if used under gh-pages br
 cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-XXXXX-XX
-twitter_username  : ""
+twitter_username  : "malaquiasdev"
 comments_enabled  : false # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : ""
-postshare_enabled : false
+postshare_enabled : true
 
 # Build settings
 permalink   : /:year/:title/
