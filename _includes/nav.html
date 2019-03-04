@@ -1,7 +1,20 @@
 
-<nav class="nav">
+<nav class="nav" role="navigation">
   <div class="container">
-    <h1 class="logo"><a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title_left }}<span>{{ site.title_right }}</span></a></h1>
+    <h1 class="logo">
+      <a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+        {{ site.title_left }}<b>{{ site.title_right }}</b>
+      </a>
+    </h1>
+
+    <input id="menu-hamburguer" type="checkbox">
+
+    <label for="menu-hamburguer">
+        <div class="menu">
+            <span class="hamburguer"></span>
+        </div>
+    </label>
+
     <ul class="navbar">
       <li><a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">Sobre mim</a></li>
       <li><a href="{{ "https://github.com/malaquiasdev?tab=repositories" }}" target="_blank>Projetos</a></li>
