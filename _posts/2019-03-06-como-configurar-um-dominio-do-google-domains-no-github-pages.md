@@ -38,7 +38,7 @@ Vamos fazer da maneira mais simples e delegar essa responsabilidade para o Githu
 ![Pagina inicial do meu repositorio sinalizando onde esta a sessao settings](https://malaquias.dev/images/posts/D0F09D70-C483-4DB2-9453-CACE41E87F37.jpeg)
 
 
-Feito isso, desça até sessão do Github Pages e adicione um custom domain que é o dominio comprado e configurado por você e salve.
+Feito isso, desça até sessão do Github Pages e adicione um custom domain que é o domínio comprado e configurado por você e salve.
 
 ### Aproveite para ativar o HTTPS
 
