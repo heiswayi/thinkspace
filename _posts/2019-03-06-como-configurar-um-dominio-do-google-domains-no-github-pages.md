@@ -33,9 +33,21 @@ Adicionados os quatro IPs agora podemos adicionar um novo recurso do tipo CNAME 
 
 Existem duas maneiras de se configurar um CNAME, podemos cirar o arquivo na mão ou ir nas configurações do repositório e deixar que o Github faça isso por nós.
 
-Vamos fazer da maneira mais simples e delegar essa responsabilidade para o Github, então vá até a pagina settings do seu repositório/
+Vamos fazer da maneira mais simples e delegar essa responsabilidade para o Github, então vá até a pagina settings do seu repositório.
 
 ![Pagina inicial do meu repositorio sinalizando onde esta a sessao settings](https://malaquias.dev/images/posts/D0F09D70-C483-4DB2-9453-CACE41E87F37.jpeg)
 
 
+Feito isso, desça até sessão do Github Pages e adicione um custom domain que é o dominio comprado e configurado por você e salve.
 
+### Aproveite para ativar o HTTPS
+
+HTTS é um recurso muito importante de se ter hoje em dia para que os navegadores reconheçam aquela requisição como segura. O massa é que o Github Pages nos oferta isso de graça, basta que a gente marque a opção **Enforce HTTPS**, ela pode não esta habilitada logo de cara então espere alguns minutes e tente novamente se for o caso.
+
+![Sessao do Github Pages](https://malaquias.dev/images/posts/E5C7FA75-90AC-4ECA-A942-0A683D815371.jpeg)
+
+Por ultimo não esqueça de alterar a URL do seu site no arquivo de configurações do Jeklly para que essas configurações funcionem.
+
+## Conclusão
+
+Essas configurações podem levar até um dia para serem validadas, mas uma vez que forem efitivadas tudo vai funcionar lindamente S2.
