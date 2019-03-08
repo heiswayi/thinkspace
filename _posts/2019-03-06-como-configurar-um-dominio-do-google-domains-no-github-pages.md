@@ -46,7 +46,7 @@ HTTS é um recurso muito importante de se ter hoje em dia para que os navegadore
 
 ![Sessao do Github Pages](https://malaquias.dev/images/posts/E5C7FA75-90AC-4ECA-A942-0A683D815371.jpeg)
 
-Por ultimo não esqueça de alterar a URL do seu site no arquivo de configurações do Jeklly para que essas configurações funcionem.
+Por último não esqueça de alterar a URL do seu site no arquivo de configurações do Jeklly para que essas configurações funcionem.
 
 ## Conclusão
 
