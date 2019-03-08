@@ -50,4 +50,4 @@ Por último não esqueça de alterar a URL do seu site no arquivo de configuraç
 
 ## Conclusão
 
-Essas configurações podem levar até um dia para serem validadas, mas uma vez que forem efitivadas tudo vai funcionar lindamente S2.
+Essas configurações podem levar até um dia para serem validadas, mas uma vez que forem efetivadas tudo vai funcionar lindamente S2.
