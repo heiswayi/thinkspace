@@ -33,5 +33,9 @@ Adicionados os quatro IPs agora podemos adicionar um novo recurso do tipo CNAME 
 
 Existem duas maneiras de se configurar um CNAME, podemos cirar o arquivo na mão ou ir nas configurações do repositório e deixar que o Github faça isso por nós.
 
-Vamos fazer da maneira mais simples e delegar essa responsabilidade para o Github, então vá até a pagina settings do seu repositório 
+Vamos fazer da maneira mais simples e delegar essa responsabilidade para o Github, então vá até a pagina settings do seu repositório/
+
+![Pagina inicial do meu repositorio sinalizando onde esta a sessao settings](https://malaquias.dev/images/posts/D0F09D70-C483-4DB2-9453-CACE41E87F37.jpeg)
+
+
 
