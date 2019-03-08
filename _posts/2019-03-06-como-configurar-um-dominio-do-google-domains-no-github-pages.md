@@ -14,4 +14,18 @@ Aqui vou supor que você já possui um repositório criado, está usando o [Gith
 
 Vá ate o seu painel no [Google Domains](https://domains.google.com/m/registrar/?hl=en) e clique em **MANAGE**, clique em **DNS** e depois vá direto para a sessão **Custom resource records**.
 
+![DNS na parte de Custom resource records](malaquiasdev.github.io/images/posts/91D15578-26B7-4541-839E-0609AFF81D82.jpeg)
+
 Agora vamos começar a brincar...
+
+Atualmente você precisa adicionar quatro itens do tipo A (adreess)
+
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+
+Caso esse artigo tenha ficado datado recomendo que você acesse a pagina **[Setting up an apex domain do Github](https://help.github.com/en/articles/setting-up-an-apex-domain#configuring-a-records-with-your-dns-provider)** para verificar os valores de DNS.
+
+Adicionados os quatro IPs agora podemos adicionar um novo recurso do tipo CNAME e o seu valor vai apontar para a URL que o Github Pages te forneceu quando você configurou o seu repositório, no meu caso o foi malaquaisdev.github.io
+
