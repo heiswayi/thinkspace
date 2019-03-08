@@ -14,7 +14,7 @@ Aqui vou supor que você já possui um repositório criado, está usando o [Gith
 
 Vá ate o seu painel no [Google Domains](https://domains.google.com/m/registrar/?hl=en) e clique em **MANAGE**, clique em **DNS** e depois vá direto para a sessão **Custom resource records**.
 
-![DNS na parte de Custom resource records](malaquiasdev.github.io/images/posts/91D15578-26B7-4541-839E-0609AFF81D82.jpeg)
+![DNS na parte de Custom resource records](https://malaquias.dev/images/posts/91D15578-26B7-4541-839E-0609AFF81D82.jpeg)
 
 Agora vamos começar a brincar...
 
