@@ -12,6 +12,6 @@ Aqui vou supor que você já possui um repositório criado, está usando o [Gith
 
 ![Google Domains painel](https://malaquias.dev/images/posts/182A76B9-279F-4921-98A3-0BD8B7A5DCDF.jpeg)
 
-Vá ate o seu painel no (Google Domains)[https://domains.google.com/m/registrar/?hl=en] e clique em **MANAGE**, clique em **DNS** e depois vá direto para a sessão **Custom resource records**.
+Vá ate o seu painel no [Google Domains](https://domains.google.com/m/registrar/?hl=en) e clique em **MANAGE**, clique em **DNS** e depois vá direto para a sessão **Custom resource records**.
 
 Agora vamos começar a brincar...
