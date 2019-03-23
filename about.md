@@ -3,5 +3,5 @@ layout: page
 title: About
 permalink: /about/
 ---
+My name is Hugo Liao, I'm programing with go on acme.
 
-Introduce yourself here... so people will know who you are and what you do.. blah..blah..blah..
