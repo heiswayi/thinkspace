@@ -1,9 +1,9 @@
 # Site settings
 title_left    : "Wons"
 title_right   : "Holic" # default: ""
-description   : "Minimalist Jekyll theme for technical writing blog."
-keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url           : https://heiswayi.github.io/thinkspace # site url
+description   : "Wons blog."
+keywords      : "Jekyll, theme, free, download, R, blog, web, thinkspace"
+url           : https://raspos.github.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
