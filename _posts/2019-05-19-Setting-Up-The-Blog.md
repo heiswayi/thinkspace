@@ -31,4 +31,4 @@ use, which makes your work even easier. A post update is just a `git push` away.
 Assuming you have a github account, fork the Theme repo to your account, and change the branch from master to gh-pages. Create a branch if it does not already exist. Thats it. Your 
 blog/website will be up and running. Use a git client to update any changes you make, and those will be updated on your site in a few seconds. I found a step by step [video](https://www.youtube.com/watch?v=U0idtvxVo9I) that shows you the whole process.
 
-######Cheers!
+###### Cheers!
