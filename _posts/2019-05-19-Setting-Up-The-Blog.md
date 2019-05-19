@@ -20,15 +20,15 @@ allows you to set up your blog in a `WYSIWYG` (What you see is what you get) env
 by upgrading your account.
 
 ### Why Github Pages?
-Github Pages provides free hosting for your github projects. It's very easy to set up if you know your way around the git environment. It also provides a free github subdomain, 
-which is another expense saved. If you already have a domain name, you can easily link that too.
+[Github Pages](https://pages.github.com/) provides free hosting for your github projects. It's very easy to set up if you know your way around the git environment. It also provides a free github subdomain, 
+which is another expense saved. If you already have a domain name, you can easily link that too. It's also pretty well documented, so if you run into any problems, you can easily google them.
 
 ### Why Jekyll?
-Jekyll is a static site generator which allows you to generate and set up a website around your content _very_ easily. I used Jekyll Themes, which has pre built themes for you to
+Jekyll is a static site generator which allows you to generate and set up a website around your content _very_ easily. I used [Jekyll Themes](http://jekyllthemes.org/), which has pre built themes for you to
 use, which makes your work even easier. A post update is just a `git push` away.
 
 ### Putting it online
 Assuming you have a github account, fork the Theme repo to your account, and change the branch from master to gh-pages. Create a branch if it does not already exist. Thats it. Your 
-blog/website will be up and running. Use a git client to update any changes you make, and those will be updated on your site in a few seconds. I found a step by step [video](https://www.youtube.com/watch?v=U0idtvxVo9I) that shows you the whole process.
+blog/website will be up and running. Use a git client to update any changes you make, and those will be updated on your site in a few seconds. I also found a step by step [video](https://www.youtube.com/watch?v=U0idtvxVo9I) that shows you the whole process.
 
 ###### Cheers!
