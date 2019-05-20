@@ -18,7 +18,7 @@ I'll jump directly to an example, and we can figure out stuff on the way. You ca
 I've always been fascinated by graphs, and what better way to test a visulisation library than to try rendering a high dimensional graph on the fly? To start,
 we need a data set first. Thankfully, there's no shortage of graph based datasets on the web. But before we move on to the big league, let's check our syntax with a smaller graph.
 ##### Graph.csv
-![Graph.csv](_posts/graph_csv.jpg)
+![Graph.csv](graph_csv.png)
 
 ##### CSS
 The CSS to define a node and a link:
