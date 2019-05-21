@@ -17,7 +17,10 @@ I'll start with one of the popular ones, `D3.js`. According to the [website](htt
 I'll jump directly to an example, and we can figure out stuff on the way. You can refer to the documentation in case you have any doubts. 
 I've always been fascinated by graphs, and what better way to test a visulisation library than to try rendering a high dimensional graph on the fly? To start,
 we need a data set first. Thankfully, there's no shortage of graph based datasets on the web. But before we move on to the big league, let's check our syntax with a smaller graph.
-##### Graph.csv
+
+##### Our Data -> Graph.csv
+
+Here A1,A2,A3,A5 are the nodes, and links are to be formed between Source and the corresponding Target.
 
 | Source        | Target           |
 | ------------- |:----------------:|
@@ -97,6 +100,10 @@ Finally we'll create the links and nodes for our graph, and start the force layo
         .links(links)
         .on("tick", tick)
         .start();
+```
+D3 requires a `Tick` Event handler to be put in place which is invoked at every iteration to update the node position array.
+
+```javascript
 
         function tick() {
         link.attr("x1", function(d) { return d.source.x; })
@@ -115,7 +122,7 @@ Finally we'll create the links and nodes for our graph, and start the force layo
 ```
 And we're done! I'll link to a visualisation of this code as soon as I put this on a sharable space, probably cloudfront with a AWS lambda 
 instace, bur that's a decision for another post.
-This post was inspired by this [post](https://medium.com/ninjaconcept/interactive-dynamic-force-directed-graphs-with-d3-da720c6d7811)
+This post was inspired by this [post](https://medium.com/ninjaconcept/interactive-dynamic-force-directed-graphs-with-d3-da720c6d7811).
 
 
 
