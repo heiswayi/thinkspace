@@ -18,7 +18,14 @@ I'll jump directly to an example, and we can figure out stuff on the way. You ca
 I've always been fascinated by graphs, and what better way to test a visulisation library than to try rendering a high dimensional graph on the fly? To start,
 we need a data set first. Thankfully, there's no shortage of graph based datasets on the web. But before we move on to the big league, let's check our syntax with a smaller graph.
 ##### Graph.csv
-![Graph.csv](https://github.com/sakshamio/thinkspace/blob/gh-pages/_posts/graph_csv.png)
+
+| Source        | Target           |
+| ------------- |:----------------:|
+| A1	        | A2               |
+| A1	        | A3               |
+| A1	        | A4               |
+| A2	        | A3               |
+| A2	        | A5               |
 
 ##### CSS
 The CSS to define a node and a link:
@@ -33,6 +40,7 @@ The CSS to define a node and a link:
 </style>
 ```
 ###### JS
+Describing a workspace: 
 ```javascript
 <script>
         var width = 960,
@@ -41,10 +49,18 @@ The CSS to define a node and a link:
         var svg = d3.select("body").append("svg")
         .attr("width", width)
         .attr("height", height);
+```
+We'll try experimenting with the [force](https://github.com/d3/d3-force) layout. The force layour provides a physics engine API which you can 
+integrate into your visualisations.
+
+```javascript
 
         var force = d3.layout.force()
         .size([width, height]);
+```
+Now, we'll import our graph.csv data and link it to the web page's DOM Model.
 
+```javascript
         d3.csv("graph.csv", function(error, links) {
         if (error) throw error;
 
@@ -58,7 +74,9 @@ The CSS to define a node and a link:
 
         // Extract the array of nodes from the map by name.
         var nodes = d3.values(nodesByName);
-
+```
+Finally we'll create the links and nodes for our graph, and start the force layout to give a more natural feel to our interactive graph.
+```javascript
         // Create the link lines.
         var link = svg.selectAll(".link")
         .data(links)
@@ -95,7 +113,9 @@ The CSS to define a node and a link:
         });
     </script>
 ```
-
+And we're done! I'll link to a visualisation of this code as soon as I put this on a sharable space, probably cloudfront with a AWS lambda 
+instace, bur that's a decision for another post.
+This post was inspired by this [post](https://medium.com/ninjaconcept/interactive-dynamic-force-directed-graphs-with-d3-da720c6d7811)
 
 
 
