@@ -4,7 +4,7 @@ title_right   : "Sturm" # default: ""
 description   : "Online CV for academic work and other things."
 keywords      : "academic, research, illustrations, writing, journalism, personal"
 url           : https://stefaniesturm.github.io # site url
-baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
+baseurl       : "portfolio" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-XXXXX-XX
