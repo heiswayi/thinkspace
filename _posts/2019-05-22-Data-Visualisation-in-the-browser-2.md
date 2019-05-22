@@ -84,7 +84,7 @@ section.data{
 ```
 Finally defining the design for the bars in the graph. 
 
-```CSS
+```
 div.bar-wrap{
   width: 100%;
   display: block; margin: 0 0 20px 0;
@@ -94,7 +94,9 @@ div.bar-wrap{
     font-size: 0.8em; color: #8a8a8a; text-transform: uppercase;
     margin: 0 0 2px 0; display: block;
   }
-  
+  ```
+  The bar division by alloting different colors to the four bars.
+  ```
   div.bar{
     height: 40px; width: 0; position: relative;
     
