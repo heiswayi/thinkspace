@@ -201,9 +201,9 @@ Now that we have the bars in place, the final step is to render the change measu
    
 });
 ```
-That's it! Our graph is ready. This code is hosted on codepen, do that you can fork the visualisation, and play around with it.
+That's it! Our graph is ready. This code is hosted on codepen, so that you can fork the visualisation, and play around with it.
 <div class="video-container">
-<iframe height="265" style="width: 100%;" scrolling="no" title="Animated Bar Graph with randomize function" src="//codepen.io/sakshamzs/embed/XwVgjx/?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="325" style="width: 100%;" scrolling="no" title="Animated Bar Graph with randomize function" src="//codepen.io/sakshamzs/embed/XwVgjx/?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/sakshamzs/pen/XwVgjx/'>Animated Bar Graph with randomize function</a> by Saksham Gupta
   (<a href='https://codepen.io/sakshamzs'>@sakshamzs</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe></div>
