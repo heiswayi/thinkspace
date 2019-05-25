@@ -9,6 +9,7 @@ Before I start this post, a quick introduction to Correlation for those of you w
 
 **Correlation** :
  >  A correlation is a single number that describes the degree of relationship between two variables.
+ 
 Source : https://socialresearchmethods.net/kb/statcorr.php
 
 We start with proposing a hypothesis. For example, a relation between height and weight. My hypothesis is, If a person is taller, he'll most probably be heavier. Now, we want to test this hypothesis. How do we verify that one variable has a positive, negative, or zero relationship with the other? We check the correlation between the two. A `positive correlation` implies that an increase in variable x, means an increase in variable y. The taller you are, the greater your weight will be. 
@@ -27,20 +28,20 @@ If you've got an intution from the above examples, you'll realise that correlati
 
 ### How to calculate Correlation?
 The formula, where x and y are the two variables for which we want to calculate correlation.
-![Formula](/render.png)
+![Formula](https://github.com/sakshamio/thinkspace/blob/gh-pages/_posts/render.png)
 
 Let's do the math! Not really. We'll let excel do it for us.
-![Calculations](/Calculations.png)
+![Calculations](https://github.com/sakshamio/thinkspace/blob/gh-pages/_posts/Calculations.png)
 
 Now that we have all the valus we need for the formula, let's plug these in and try to figure out the result. 
 On calculating, we get a correlation value of `0.930`. This is a **very** strong positive correlation. Let's try plotting these out, for a more intutive understanding.
-![graph](/graph.png)
+![graph](https://github.com/sakshamio/thinkspace/blob/gh-pages/_posts/graph.png)
 
 What do you see in this graph? There's almost a positive linear relationship between our two variables. This supports our hypotheses that there's a positive relationship between the height and weight of an individual.
 
 But we're not done yet. While there's at least some relation between the height and the weight of an individual, there's a pretty good chance that the correlation you have was a matter of chance. Are these values actually related, or is it `spurious correlation` at play? This happens when two variables show common trends and have a strong correlation, but are not actually related. For example, there's a pretty strong correlation (0.66) between the **Number of people who drowned by falling into a pool** and **the number of films Nicolas cage has appeared in**. Does that mean that one event causes the other? No (Maybe ;). It means that two unrelated variables(events) may have high correlation, but may not be dependent on each other, or there's a third variable that we're not taking into account. 
 This may be seem obvious from the Nicolas cage example, but this is a very common mistake that data scientists do while engineering their features for their mathematical models.
-![Spurious Correlations](/correlation.png)
+![Spurious Correlations](https://github.com/sakshamio/thinkspace/blob/gh-pages/_posts/correlation.png)
 So how do we figure out if a correlation is spurious or not?
 
 #### Reichenbach's Common Cause principle
