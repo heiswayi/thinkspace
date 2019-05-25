@@ -34,7 +34,7 @@ The formula, where x and y are the two variables for which we want to calculate 
 ![Formula](assets/images/render.png)
 
 Let's do the math! Not really. We'll let excel do it for us.
-![Calculations](assets/images/Calculations.png)
+![Calculations](https://github.com/sakshamio/Blog-Images/blob/master/Calculations.png)
 
 Now that we have all the valus we need for the formula, let's plug these in and try to figure out the result. 
 On calculating, we get a correlation value of `0.930`. This is a **very** strong positive correlation. Let's try plotting these out, for a more intutive understanding.
