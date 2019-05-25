@@ -31,20 +31,21 @@ If you've got an intution from the above examples, you'll realise that correlati
 
 #### How to calculate Correlation?
 The formula, where x and y are the two variables for which we want to calculate correlation.
-![Formula](\assets\images\render.png)
+<div>![Formula](assets/images/render.png)</div>
 
 Let's do the math! Not really. We'll let excel do it for us.
-![Calculations](\assets\images\Calculations.png)
+
+![Calculations](assets/images/Calculations.png)
 
 Now that we have all the valus we need for the formula, let's plug these in and try to figure out the result. 
 On calculating, we get a correlation value of `0.930`. This is a **very** strong positive correlation. Let's try plotting these out, for a more intutive understanding.
-![graph](\assets\images\graph.png)
+![graph](assets/images/graph.png)
 
 What do you see in this graph? There's almost a positive linear relationship between our two variables. This supports our hypotheses that there's a positive relationship between the height and weight of an individual.
 
 But we're not done yet. While there's at least some relation between the height and the weight of an individual, there's a pretty good chance that the correlation you have was a matter of chance. Are these values actually related, or is it `spurious correlation` at play? This happens when two variables show common trends and have a strong correlation, but are not actually related. For example, there's a pretty strong correlation (0.66) between the **Number of people who drowned by falling into a pool** and **the number of films Nicolas cage has appeared in**. Does that mean that one event causes the other? No (Maybe ;). It means that two unrelated variables(events) may have high correlation, but may not be dependent on each other, or there's a third variable that we're not taking into account. 
 This may be seem obvious from the Nicolas cage example, but this is a very common mistake that data scientists do while engineering their features for their mathematical models.
-![correlation.png](\assets\images\correlation.png)
+![correlation.png](assets/images/correlation.png)
 So how do we figure out if a correlation is spurious or not?
 
 #### Reichenbach's Common Cause principle
