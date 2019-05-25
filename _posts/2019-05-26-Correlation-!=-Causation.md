@@ -29,7 +29,7 @@ Let's take an example dataset, so we can get a better idea about how to go about
 #### Why do we need correlation?
 If you've got an intution from the above examples, you'll realise that correlation plays a very important role in predictive as well as verification applications. if there's a positive or negative correlation between variables, we can use this to model and predict future or intermediate values. We also use it to confirm the hypotheses we have built, and confirm our assumtions.
 
-### How to calculate Correlation?
+#### How to calculate Correlation?
 The formula, where x and y are the two variables for which we want to calculate correlation.
 ![Formula](thinkspace/blob/gh-pages/assets/images/render.png)
 
@@ -57,14 +57,14 @@ explained as the product of a common cause.”
 
 Simply put, Reichenbach's principle states that : 
 
-if two physical variables Y and Z are found to be statistically dependent, then there should be a causal explanation of this fact, either:
+if two physical variables Y and Z are found to be statistically dependent, then **there should be a causal explanation** of this fact, either:
 1. Y is a cause of Z;
 2. Z is a cause of Y ;
 3. There is no causal link between Y and Z, but there is a common cause, X, influencing Y and Z;
 4. Y is a cause of Z and there is a common cause, X,influencing Y and Z; or
 5. Z is a cause of Y and there is a common cause, X, inuencing Y and Z.
 
-For example, if a correlation is found between Dog ownership and Video game sales, it implies that :
+For example, if a correlation is found between **Dog ownership** and **Video game sales**, it implies that :
 1. Dog Ownership Leads to Video game sales
 2. Video game sales lead to dog ownership
 3. There is no casual link between a person having a dog and buying a game, but there's a third factor - wether or not the person having a dog has a sibling, that impacts video games sales.
