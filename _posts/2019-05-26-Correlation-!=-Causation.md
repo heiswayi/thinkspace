@@ -42,7 +42,7 @@ What do you see in this graph? There's almost a positive linear relationship bet
 But we're not done yet. While there's at least some relation between the height and the weight of an individual, there's a pretty good chance that the correlation you have was a matter of chance. Are these values actually related, or is it `spurious correlation` at play? This happens when two variables show common trends and have a strong correlation, but are not actually related. For example, there's a pretty strong correlation (0.66) between the **Number of people who drowned by falling into a pool** and **the number of films Nicolas cage has appeared in**. Does that mean that one event causes the other? No (Maybe ;). It means that two unrelated variables(events) may have high correlation, but may not be dependent on each other, or there's a third variable that we're not taking into account. 
 This may be seem obvious from the Nicolas cage example, but this is a very common mistake that data scientists do while engineering their features for their mathematical models.
 
-![correlation.png](/assets/images/correlation.png)
+![correlation.png](thinkspace/blob/gh-pages/assets/images/correlation.png)
 So how do we figure out if a correlation is spurious or not?
 
 #### Reichenbach's Common Cause principle
