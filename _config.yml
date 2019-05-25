@@ -1,7 +1,7 @@
 # Site settings
 title_left    : "Think"
 title_right   : "space" # default: ""
-description   : "Minimalist Jekyll theme for technical writing blog."
+description   : "I do computer stuff"
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url           : https://sakshamio.github.io/ # site url
 baseurl       : "/thinkspace" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
@@ -11,7 +11,7 @@ google_analytics  : UA-XXXXX-XX
 twitter_username  : ""
 comments_enabled  : false # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : ""
-postshare_enabled : false
+postshare_enabled : true
 
 # Build settings
 permalink   : /:year/:title/
