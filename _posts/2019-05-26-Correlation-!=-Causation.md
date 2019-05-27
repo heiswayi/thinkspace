@@ -31,7 +31,7 @@ If you've got an intution from the above examples, you'll realise that correlati
 #### How to calculate Correlation?
 The formula, where x and y are the two variables for which we want to calculate correlation.
 <div class="divider"></div>
-![Formula](https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/render.png)
+<center>![Formula](https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/render.png)</center>
 
 Let's do the math! Not really. We'll let excel do it for us.
 <div class="divider"></div>
