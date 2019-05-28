@@ -26,5 +26,3 @@ cache: bundler # caching bundler gem packages will speed up build
 before_install:
   - gem update --system
   - gem install bundler -v '< 2'
-install:
-  - gem install html-proofer
