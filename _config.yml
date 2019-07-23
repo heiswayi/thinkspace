@@ -1,7 +1,7 @@
 # Site settings
-title_left    : "Think"
-title_right   : "space" # default: ""
-description   : "Minimalist Jekyll theme for technical writing blog."
+title_left    : "Ayushman"
+title_right   : "Devraj" # default: ""
+description   : "A Personal Homepage"
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url           : https://heiswayi.github.io/thinkspace # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
@@ -28,7 +28,7 @@ sass:
 
 # Author settings
 author:
-  name     : "John Doe"
+  name     : "Ayushman Devraj"
 
 plugins:
   - jekyll-sitemap
