@@ -13,6 +13,8 @@ comments_enabled  : true # if enabled (set to true), please provide your disqus_
 disqus_shortname  : "riyadhrazzaq"
 postshare_enabled : true
 
+disqus:
+  shortname: riyadhrazzaq
 # Build settings
 permalink   : /:year/:title/
 markdown    : kramdown
