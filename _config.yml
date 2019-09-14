@@ -1,16 +1,16 @@
 # Site settings
-title_left    : "Think"
+title_left    : "Riyadh Razzaq"
 title_right   : "space" # default: ""
-description   : "Minimalist Jekyll theme for technical writing blog."
+description   : "Data Science Blog"
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url           : https://riyadhrazzaq.github.io/words # site url
+url           : https://riyadhrazzaq.github.io/ # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-XXXXX-XX
 twitter_username  : ""
-comments_enabled  : false # if enabled (set to true), please provide your disqus_username
-disqus_shortname  : ""
+comments_enabled  : true # if enabled (set to true), please provide your disqus_username
+disqus_shortname  : "riyadhrazzaq"
 postshare_enabled : false
 
 # Build settings
