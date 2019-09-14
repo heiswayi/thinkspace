@@ -13,8 +13,6 @@ comments_enabled  : true # if enabled (set to true), please provide your disqus_
 disqus_shortname  : "riyadhrazzaq"
 postshare_enabled : true
 
-disqus:
-  shortname: riyadhrazzaq
 # Build settings
 permalink   : /:year/:title/
 markdown    : kramdown
@@ -43,6 +41,5 @@ navbar:
     title: About
   - slug : blog
     title: Blog
-    
-export JEKYLL_ENV=production
+
 exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md", "script"]
