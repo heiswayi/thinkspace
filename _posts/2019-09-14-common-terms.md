@@ -4,6 +4,7 @@ title: "Common terms in Statistics"
 description: ""
 comments: true
 keywords: "ISLR, statistics"
+mathjax: true
 ---
 
 Here's a sample data array,
