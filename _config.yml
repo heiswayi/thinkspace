@@ -7,8 +7,8 @@ url           : https://riyadhrazzaq.github.io/ # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
-google_analytics  : UA-XXXXX-XX
-twitter_username  : ""
+google_analytics  : UA-148157325-1
+twitter_username  : "riyadhrazzaq"
 comments_enabled  : true # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : "riyadhrazzaq"
 postshare_enabled : true
