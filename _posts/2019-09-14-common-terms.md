@@ -36,12 +36,9 @@ Square root of variance. Explains if a number is normal or not, it can be big or
 ## P-value
 P value is used in [hypothesis](https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/hypothesis-testing/) testing to help support or reject the null hypothesis. P value is expressed in decimal. But if expressed in percentage, it is easier to understand. For example, a p value of 0.0254 is 2.54%. It means there's a 2.54% chance that the result is random, which is really small. A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, so we can null hypothesis. A large p-value indicates strong against for the null hypothesis.
 
-## \\(R^{2}\\)-statistic
-$R^2$ represents the accuracy of the model. It is the proportion of variance and is independent of $\bar{y}$.
-$$
-R^2 = (TSS - RSS)/TSS = 1- RSS/TSS
-$$
-TSS is the variance in Y before the fit, and RSS is variance after the fit. So TSS-RSS measures the amount of variability in the response that is explained by performing the regression.
+## $R^{2}$ -statistic
+$R^2$ represents the accuracy of the model. It is the proportion of variance and is independent of $\bar{y}$
+$$R^2 = (TSS - RSS)/TSS = 1- RSS/TSS$$ TSS is the variance in Y before the fit, and RSS is variance after the fit. So TSS-RSS measures the amount of variability in the response that is explained by performing the regression.\
 If R^2 statistic is close to 1, the variability in the response is explained by the model, else it isn't explained and the model is wrong.
 ## F-statistic
 
