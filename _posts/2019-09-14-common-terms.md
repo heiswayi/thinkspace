@@ -32,17 +32,19 @@ For x, Q3 = 13
 ## Variance
 It explains how far the data is spread out from their mean. Calculated as the average of the squared difference from the mean. For x, do \\((2-11)^{2}+ (6-11)^{2} + .... + (23-11)^{2}\\) and finally divide the sum by 11. Result is, 247.90
 ## Standard Deviation (SD)
-Square root of variance. Explains if a number is normal or not, it can be big or small compared to the other items of the dataset.
+Square root of variance. Explains if a number is normal or not, it can be big or small compared to the other items of the dataset. It tells us how tightly the data is clustered around the mean (the average). A small SD indicates that your data is tightly clustered. A large SD tells you that your data is more spread apart.
 
 ## P-value
-P value is used in [hypothesis](https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/hypothesis-testing/) testing to help support or reject the null hypothesis. P value is expressed in decimal. But if expressed in percentage, it is easier to understand. For example, a p value of 0.0254 is 2.54%. It means there's a 2.54% chance that the result is random, which is really small. A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, so we can null hypothesis. A large p-value indicates strong against for the null hypothesis.
+P value is used in [hypothesis](https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/hypothesis-testing/) testing to help support or reject the null hypothesis. P value is expressed in decimal. But if expressed in percentage, it is easier to understand. For example, a p value of 0.0254 is 2.54%. It means there's a 2.54% chance that the result is random, which is really small. A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, so we reject can null hypothesis. A large p-value indicates strong against for the null hypothesis. So, in a sense, p-value tells us how random our result is.
+## F-statistic
+F-statistic tells us how 
 
 ## \\(R^{2}\\) -statistic
 $R^2$ represents the accuracy of the model. It is the proportion of variance and is independent of \\(\bar{y}\\)
 \\[R^2 = (TSS - RSS)/TSS = 1- RSS/TSS\\] TSS is the variance in Y before the fit, and RSS is variance after the fit. So TSS-RSS measures the amount of variability in the response that is explained by performing the regression.
 
 If R^2 statistic is close to 1, the variability in the response is explained by the model, else it isn't explained and the model is wrong.
-## F-statistic
+
 
 Visit the followings for more knowledge:
 - https://www.statisticshowto.datasciencecentral.com
