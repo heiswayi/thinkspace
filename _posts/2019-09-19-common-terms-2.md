@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Common terms in Statistics ii"
+title: "Common terms in Statistics II"
 description: "Degrees of Freedom, F-statistic, P-value, R^2 statistic"
 comments: true
 keywords: "ISLR, statistics"
@@ -33,7 +33,8 @@ F-value is large when SSB is larger than SSW, meaning the variability between th
 
 A single F-value is harder to interpret. Multiple random samples of the same size will produce multiple F-statistic.
 
-- https://blog.minitab.com/blog/adventures-in-statistics-2/understanding-analysis-of-variance-anova-and-the-f-test explains well.
+- [https://blog.minitab.com/blog/adventures-in-statistics-2/understanding-analysis-of-variance-anova-and-the-f-test](https://blog.minitab.com/blog/adventures-in-statistics-2/understanding-analysis-of-variance-anova-and-the-f-test)
+- [https://www.khanacademy.org/math/statistics-probability/analysis-of-variance-anova-library#analysis-of-variance-anova](https://www.khanacademy.org/math/statistics-probability/analysis-of-variance-anova-library#analysis-of-variance-anova)
 
 
 ## P-value

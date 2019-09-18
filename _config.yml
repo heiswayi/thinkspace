@@ -1,8 +1,8 @@
 # Site settings
 title_left    : "R"
 title_right   : "R" # default: ""
-description   : "Data Science Blog"
-keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
+description   : "Just Another Data Science Blog"
+keywords      : "Jekyll, theme, free, download, SEO, blog, machinelearning, minimalist, data"
 url           : https://riyadhrazzaq.github.io/ # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
@@ -28,7 +28,7 @@ sass:
 
 # Author settings
 author:
-  name     : "Riyadh Razzaq"
+  name     : "Md Abdur Razzaq Riyadh"
 
 plugins:
   - jekyll-sitemap
