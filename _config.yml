@@ -1,6 +1,6 @@
 # Site settings
-title_left    : "Riyadh"
-title_right   : "Razzaq" # default: ""
+title_left    : "R"
+title_right   : "R" # default: ""
 description   : "Data Science Blog"
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url           : https://riyadhrazzaq.github.io/ # site url

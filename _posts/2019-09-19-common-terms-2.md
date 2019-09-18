@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Common terms in Statistics"
-description: ""
+title: "Common terms in Statistics ii"
+description: "Degrees of Freedom, F-statistic, P-value, R^2 statistic"
 comments: true
 keywords: "ISLR, statistics"
 mathjax: true
@@ -21,17 +21,17 @@ Number of independent variables in data.
 ## F-statistic
 F-statistic is the ration of two quantities that are expected to be roughly equal under null hypothesis which makes F-statistic approximately 1. Now the numerator is the sum of square between the groups(SSB) and the denumerator is the sum of square within the groups (SSW). Notice that, these two are variances and calculated as-
 
-**SSW:** Sum of \((eachObservation - localMean)^2\). In x, eachObservation are 2,6,8 and so on. localmean is mean of each group. For group 1, localMean = (2+56+4) / 3 = 20.33. Here DF is n-1 = 2
+**SSW:** Sum of \\((eachObservation - localMean)^2\\). In x, eachObservation are 2,6,8 and so on. localmean is mean of each group. For group 1, localMean = (2+56+4) / 3 = 20.33. Here DF is n-1 = 2
 
-**SSB:** Sum of \((localMean - globalMean)^2\). In x, globalMean is mean of all observation. globalMean= (2+6+8+56+13+8+4+6+23)/9 = 14. DF = m*(n-1) = 3*2 = 6
+**SSB:** Sum of \\((localMean - globalMean)^2\\). In x, globalMean is mean of all observation. globalMean= (2+6+8+56+13+8+4+6+23)/9 = 14. DF = m*(n-1) = 3*2 = 6
 
 Now,
-\[
+\\[
 F= \frac{\frac{SSB}{m*(n-1)}}{\frac{SSW}{n-1}}
-\]
+\\]
 F-value is large when SSB is larger than SSW, meaning the variability between the groups is larger. If that is the case, null hypothesis can be rejected.
 
-A single F-value is harder to interpret. Multiple random samples of the same size will produce multiple F-statistic. 
+A single F-value is harder to interpret. Multiple random samples of the same size will produce multiple F-statistic.
 
 - https://blog.minitab.com/blog/adventures-in-statistics-2/understanding-analysis-of-variance-anova-and-the-f-test explains well.
 
