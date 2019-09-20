@@ -10,7 +10,7 @@ cover         : "" # image uri like logo/cover image for site seo
 google_analytics  : UA-148157325-1
 twitter_username  : "riyadhrazzaq"
 comments_enabled  : true # if enabled (set to true), please provide your disqus_username
-disqus_shortname  : "riyadhrazzaq"
+disqus_shortname  : "riyadhrazzaq-github-io"
 postshare_enabled : true
 
 # Build settings
