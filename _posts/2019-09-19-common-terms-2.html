@@ -1,0 +1,45 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js">
+<link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/texmath.css">
+<link rel="stylesheet" href="https://gitcdn.xyz/repo/goessner/mdmath/master/css/vscode-texmath.css">
+
+</head><body class="markdown-body">
+
+<p data-line="9" class="code-line">Here's a sample data matrix,</p>
+<pre><code data-line="10" class="code-line"><code><div>x = 2, 6, 8,
+    56, 13, 8,
+    4, 6, 23    
+Sample groups, m = 3, number of observation in each group, n = 3.
+Groups are column wise, i.e (2,56,4) is group 1 and so on.
+</div></code></code></pre>
+<h2 id="degrees-of-freedom-2" data-line="17" class="code-line">Degrees of Freedom</h2>
+<p data-line="18" class="code-line">Number of independent variables in data.</p>
+<h2 id="f-statistic-2" data-line="20" class="code-line">F-statistic</h2>
+<p data-line="21" class="code-line">F-statistic is the ration of two quantities that are expected to be roughly equal under null hypothesis which makes F-statistic approximately 1. Now the numerator is the sum of square between the groups(SSB) and the denumerator is the sum of square within the groups (SSW). Notice that, these two are variances and calculated as-</p>
+<p data-line="23" class="code-line"><strong>SSW:</strong> Sum of \((eachObservation - localMean)^2\). In x, eachObservation are 2,6,8 and so on. localmean is mean of each group. For group 1, localMean = (2+56+4) / 3 = 20.33. Here DF is n-1 = 2</p>
+<p data-line="25" class="code-line"><strong>SSB:</strong> Sum of \((localMean - globalMean)^2\). In x, globalMean is mean of all observation. globalMean= (2+6+8+56+13+8+4+6+23)/9 = 14. DF = m*(n-1) = 3*2 = 6</p>
+<p data-line="27" class="code-line">Now,
+$$
+F= \frac{\frac{SSB}{m*(n-1)}}{\frac{SSW}{n-1}}
+$$
+F-value is large when SSB is larger than SSW, meaning the variability between the groups is larger. If that is the case, null hypothesis can be rejected.</p>
+<p data-line="33" class="code-line">A single F-value is harder to interpret. Multiple random samples of the same size will produce multiple F-statistic.</p>
+<ul>
+<li data-line="35" class="code-line"><a href="https://blog.minitab.com/blog/adventures-in-statistics-2/understanding-analysis-of-variance-anova-and-the-f-test">https://blog.minitab.com/blog/adventures-in-statistics-2/understanding-analysis-of-variance-anova-and-the-f-test</a></li>
+<li data-line="36" class="code-line"><a href="https://www.khanacademy.org/math/statistics-probability/analysis-of-variance-anova-library#analysis-of-variance-anova">https://www.khanacademy.org/math/statistics-probability/analysis-of-variance-anova-library#analysis-of-variance-anova</a></li>
+</ul>
+<h2 id="p-value-2" data-line="39" class="code-line">P-value</h2>
+<p data-line="40" class="code-line">P value is used in <a href="https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/hypothesis-testing/">hypothesis</a> testing to help support or reject the null hypothesis. P value is expressed in decimal. But if expressed in percentage, it is easier to understand. For example, a p value of 0.0254 is 2.54%. It means there's a 2.54% chance that the result is random, which is really small. A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, so we reject can null hypothesis. A large p-value indicates strong against for the null hypothesis. So, in a sense, p-value tells us how random our result is.</p>
+<h2 id="r2--statistic-2" data-line="43" class="code-line">\(R^{2}\) -statistic</h2>
+<p data-line="44" class="code-line"><eq><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">R^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></eq> represents the accuracy of the model. It is the proportion of variance and is independent of \(\bar{y}\)
+\[R^2 = (TSS - RSS)/TSS = 1- RSS/TSS\] TSS is the variance in Y before the fit, and RSS is variance after the fit. So TSS-RSS measures the amount of variability in the response that is explained by performing the regression.</p>
+<p data-line="47" class="code-line">If \(R^2\) statistic is close to 1, the variability in the response is explained by the model, else it isn't explained and the model is wrong.</p>
+<hr>
+<p data-line="52" class="code-line">Visit the followings for more knowledge:</p>
+<ul>
+<li data-line="53" class="code-line"><a href="https://www.statisticshowto.datasciencecentral.com/">https://www.statisticshowto.datasciencecentral.com</a></li>
+</ul>
+
+</body></html>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Common terms in Statistics"
-description: "Quartile, Standard Deviation,"
+description: "Quartile, Standard Deviation"
 comments: true
 keywords: "ISLR, statistics"
 mathjax: true
