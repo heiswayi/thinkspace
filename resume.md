@@ -15,12 +15,12 @@ A data science enthusiast, looking for a job or an internship.
 * Head of ICT, Dhaka College Science Club
 
 # Projects
-### Hyperdrive [*Unity, C#* ]
+### Hyperdrive [*Unity, C#*]
 A multi-platform infinite runner game. The player controls a spaceship to avoid asteroids. 
 ### Ticket Plex [*Java*]
 A ticketing system for movie theatre using Java SWING.
 ### TempNote [*Java, Android*]
-An android note app includes implemented CRUD operations. 
+An android note app that includes CRUD operations. 
 ### Mic [*HTML, CSS, JavaScript, Bootstrap, PHP*]
 A social media marketing agency's portfolio website. The site has a server to allow client registration, login. 
 
@@ -32,14 +32,14 @@ A social media marketing agency's portfolio website. The site has a server to al
   *Tools: Python, Jupyter Notebook, TensorFlow*
 
 # Languages
-Python\\
-R\\
-C++\\
-Javascript
+* Python
+* R
+* C++
+* Javascript
 
 # Skill
-Data Visualization\\
-Data Analysis
+* Data Visualization
+* Data Analysis
 # Awards and Extra-Curricular Activities
 * Dean Award - Spring, 2018
   
