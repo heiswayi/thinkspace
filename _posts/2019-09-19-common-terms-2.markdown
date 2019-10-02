@@ -23,9 +23,12 @@ F-statistic is the ration of two quantities that are expected to be roughly equa
 
 **SSW:** Sum of $eachObservation - localMean)^2$. In x, eachObservation are 2,6,8 and so on. localmean is mean of each group. For group 1, localMean = (2+56+4) / 3 = 20.33. Here DF is n-1 = 2
 
-**SSB:** Sum of \\((localMean - globalMean)^2\\). In x, globalMean is mean of all observation. globalMean= (2+6+8+56+13+8+4+6+23)/9 = 14. DF = m*(n-1) = 3*2 = 6
+**SSB:** Sum of $(localMean - globalMean)^2$. In x, globalMean is mean of all observation. globalMean= (2+6+8+56+13+8+4+6+23)/9 = 14. DF = m*(n-1) = 3*2 = 6
 
-Now, $$F= \frac{\frac{SSB}{m*(n-1)}}{\frac{SSW}{n-1}}$$
+Now, 
+$$
+F= \frac{\frac{SSB}{m*(n-1)}}{\frac{SSW}{n-1}}
+$$
 F-value is large when SSB is larger than SSW, meaning the variability between the groups is larger. If that is the case, null hypothesis can be rejected.
 
 A single F-value is harder to interpret. Multiple random samples of the same size will produce multiple F-statistic.
@@ -39,10 +42,13 @@ P value is used in [hypothesis](https://www.statisticshowto.datasciencecentral.c
 
 
 ## $R^{2}$ -statistic
-$R^2$ represents the accuracy of the model. It is the proportion of variance and is independent of \\(\bar{y}\\)
-\\[R^2 = (TSS - RSS)/TSS = 1- RSS/TSS\\] TSS is the variance in Y before the fit, and RSS is variance after the fit. So TSS-RSS measures the amount of variability in the response that is explained by performing the regression.
+$R^2$ represents the accuracy of the model. It is the proportion of variance and is independent of $\bar{y}$
+$$
+R^2 = (TSS - RSS)/TSS = 1- RSS/TSS
+$$
+TSS is the variance in Y before the fit, and RSS is variance after the fit. So TSS-RSS measures the amount of variability in the response that is explained by performing the regression.
 
-If \\(R^2\\) statistic is close to 1, the variability in the response is explained by the model, else it isn't explained and the model is wrong.
+If $R^2$ statistic is close to 1, the variability in the response is explained by the model, else it isn't explained and the model is wrong.
 
 
 
