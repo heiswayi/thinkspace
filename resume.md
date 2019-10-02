@@ -2,7 +2,7 @@
 title: "Md Abdur Razzaq Riyadh"
 permalink: /resume/
 ---
-Contact: riyadh.razzaq@gmail.com
+Contact: riyadh.razzaq@protonmail.com
 # Summary
 A data science enthusiast, looking for a job or an internship.
 # Education 
