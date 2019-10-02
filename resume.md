@@ -1,8 +1,6 @@
 ---
 permalink: /resume/
 ---
-
-## Md Abdur Razzaq Riyadh
 A data science enthusiast, looking for a job or an internship.
 # Education 
 ##  University of Asia Pacific
