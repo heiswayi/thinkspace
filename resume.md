@@ -21,19 +21,19 @@ A data science enthusiast, looking for a job or an internship.
 * 2018 - Web App. *Tools: HTML, CSS, JavaScript, Bootstrap*
 
 # Competitions
-* 2016-2018: Problem solving on UVA online judge, SPOJ.\
+* 2016-2018: Problem solving on UVA online judge, SPOJ.\\
   *Language: C++*
-* 2020 - Present: Kaggle competitions\
+* 2020 - Present: Kaggle competitions\\
   *Tools: Python, Jupyter Notebook, TensorFlow*
 
 # Languages
-Python\
-R\
-C++\
+Python\\
+R\\
+C++\\
 Javascript
 
 # Skill
-Data Visualization\
+Data Visualization\\
 Data Analysis
 # Awards and Extra-Curricular Activities
 * Dean Award - Spring, 2018
