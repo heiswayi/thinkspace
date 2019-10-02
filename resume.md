@@ -1,6 +1,9 @@
 ---
 permalink: /resume/
 ---
+## Md Abdur Razzaq Riyadh
+Contact: riyadh.razzaq@gmail.com
+# Summary
 A data science enthusiast, looking for a job or an internship.
 # Education 
 ##  University of Asia Pacific
@@ -9,6 +12,7 @@ A data science enthusiast, looking for a job or an internship.
 * CGPA 3.70 out of 4.00
 * Undergraduate Coursework: Algorithms, Data Structures, Operating System, Machine Learning
 * Final year thesis title: Automatic Tag Suggestion System using Deep Learning
+
 ## Dhaka College
 *2013 - 2015*
 * GPA 5.00 out of 5.00
