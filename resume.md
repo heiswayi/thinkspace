@@ -39,9 +39,11 @@ A social media marketing agency's portfolio website. The site has a server to al
 * C++
 * Javascript
 
+# Awards and Extra-Curricular Activities
+* Dean Award - Spring, 2018
+
 # Skill
 * Data Visualization
-* Data Analysis\\
-# -Awards and Extra-Curricular Activities
-* Dean Award - Spring, 2018
+* Data Analysis
+
   
