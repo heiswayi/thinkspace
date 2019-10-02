@@ -15,11 +15,18 @@ A data science enthusiast, looking for a job or an internship.
 * Head of ICT, Dhaka College Science Club
 
 # Projects
-* 2017 - Movie Ticketing System. *Language: Java*
-* 2018 - Web App. *Tools: HTML, CSS, JavaScript, Bootstrap*
+### Hyperdrive [*Unity, C#* ]
+A multi-platform infinite runner game. The player controls a spaceship to avoid asteroids. 
+### Ticket Plex [*Java*]
+A ticketing system for movie theatre using Java SWING.
+### TempNote [*Java, Android*]
+An android note app includes implemented CRUD operations. 
+### Mic [*HTML, CSS, JavaScript, Bootstrap, PHP*]
+A social media marketing agency's portfolio website. The site has a server to allow client registration, login. 
+
 
 # Competitions
-* 2016-2018: Problem solving on UVA online judge, SPOJ.\\
+* 2017 - 2018: Problem solving on UVA online judge, SPOJ.\\
   *Language: C++*
 * 2020 - Present: Kaggle competitions\\
   *Tools: Python, Jupyter Notebook, TensorFlow*
