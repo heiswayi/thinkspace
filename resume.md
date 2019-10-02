@@ -4,7 +4,7 @@ permalink: /resume/
 
 ## Md Abdur Razzaq Riyadh
 A data science enthusiast, looking for a job or an internship.
-# Education
+# Education 
 ##  University of Asia Pacific
 *2016 - 2020*
 * B.Sc in Computer Science and Engineering
@@ -25,6 +25,7 @@ A data science enthusiast, looking for a job or an internship.
   *Language: C++*
 * 2020 - Present: Kaggle competitions\
   *Tools: Python, Jupyter Notebook, TensorFlow*
+
 # Languages
 Python\
 R\
