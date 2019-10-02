@@ -1,7 +1,7 @@
 ---
+title: "Md Abdur Razzaq Riyadh"
 permalink: /resume/
 ---
-## Md Abdur Razzaq Riyadh
 Contact: riyadh.razzaq@gmail.com
 # Summary
 A data science enthusiast, looking for a job or an internship.
@@ -27,8 +27,6 @@ A ticketing system for movie theatre using Java SWING.
 An android note app that includes CRUD operations. 
 ### Mic [*HTML, CSS, JavaScript, Bootstrap, PHP*]
 A social media marketing agency's portfolio website. The site has a server to allow client registration, login. 
-
-
 # Competitions
 * 2017 - 2018: Problem solving on UVA online judge, SPOJ.\\
   *Language: C++*
@@ -43,7 +41,7 @@ A social media marketing agency's portfolio website. The site has a server to al
 
 # Skill
 * Data Visualization
-* Data Analysis
+* Data Analysis\\
 # Awards and Extra-Curricular Activities
 * Dean Award - Spring, 2018
   

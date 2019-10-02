@@ -26,7 +26,7 @@ F-statistic is the ration of two quantities that are expected to be roughly equa
 **SSB:** Sum of $(localMean - globalMean)^2$. In x, globalMean is mean of all observation. globalMean= (2+6+8+56+13+8+4+6+23)/9 = 14. DF = m*(n-1) = 3*2 = 6
 
 Now, 
-$$
+\\[
 F= \frac{\frac{SSB}{m*(n-1)}}{\frac{SSW}{n-1}}
 $$
 F-value is large when SSB is larger than SSW, meaning the variability between the groups is larger. If that is the case, null hypothesis can be rejected.
