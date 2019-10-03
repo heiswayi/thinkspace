@@ -139,7 +139,7 @@ hr {
   display: block;
 
   a {
-    color: $action-color;
+    color: $light-gray-color;
   }
 
   .article-title {
@@ -170,7 +170,7 @@ hr {
 .post-title {
   margin-top: 0;
   margin-bottom: 1em;
-  color: $dark-gray-color;
+  color: $white-color;
 }
 
 .post-link,
@@ -231,7 +231,7 @@ hr {
   small {
     display: block;
     font-size: rem(12);
-    color: darken($medium-gray-color, 10%);
+    color: darken($black-color, 10%);
   }
 
   .block {
