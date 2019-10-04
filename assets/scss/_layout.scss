@@ -65,8 +65,7 @@ hr {
   &:hover,
   &:focus,
   &:active {
-    background-color:$green-color;
-    color: black;
+    border-bottom: solid $green-color;
   }
 }
 
