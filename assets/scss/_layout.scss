@@ -128,9 +128,7 @@ hr {
     @extend .link;
   }
 }
-.lead{
-  border: dashed;
-}
+
 .category-title {
   margin: 1em 0 0.5em 0;
 
@@ -216,7 +214,7 @@ hr {
 }
 
 .disqus {
-  background-color: lighten($light-gray-color, 16%);
+  background-color: #222;
   padding: $base-spacing 0;
 
   hr {
@@ -226,7 +224,7 @@ hr {
 
 .site-footer {
   @extend .clearfix;
-
+  color: $white-color;
   padding: $base-spacing 0;
 
   a {
