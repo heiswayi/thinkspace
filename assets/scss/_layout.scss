@@ -39,7 +39,6 @@ hr {
 }
 
 .container {
-  background: #222;
   padding: $base-spacing;
   margin-left: auto;
   margin-right: auto;
@@ -214,7 +213,7 @@ hr {
 }
 
 .disqus {
-  background-color: #222;
+  background-color: $dark-gray-color;
   padding: $base-spacing 0;
 
   hr {
@@ -224,7 +223,6 @@ hr {
 
 .site-footer {
   @extend .clearfix;
-  color: $white-color;
   padding: $base-spacing 0;
 
   a {
@@ -239,6 +237,7 @@ hr {
 
   .block {
     display: block;
+    color: $light-gray-color;
   }
 }
 
