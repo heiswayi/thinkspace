@@ -39,6 +39,8 @@ hr {
 }
 
 .container {
+  background: #222;
+  border: dashed;
   padding: $base-spacing;
   margin-left: auto;
   margin-right: auto;
@@ -55,7 +57,7 @@ hr {
 }
 
 .link {
-  color: $yellow-color;
+  color: $green-color;
   padding-bottom: .05em;
   border-bottom: 2px solid transparent;
 
@@ -64,12 +66,12 @@ hr {
   &:hover,
   &:focus,
   &:active {
-    border-bottom: 2px solid $yellow-color;
+    background-color:$green-color;
+    color: black;
   }
 }
 
 .site-header {
-  border-bottom: 1px solid lighten($light-gray-color, 5%);
   margin-bottom: $small-spacing;
   min-height: 80px;
 }
@@ -101,6 +103,9 @@ hr {
 
   span {
     font-weight: 700;
+  }
+  a{
+    color: $white-color;
   }
 }
 
