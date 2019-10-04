@@ -40,7 +40,6 @@ hr {
 
 .container {
   background: #222;
-  border: dashed;
   padding: $base-spacing;
   margin-left: auto;
   margin-right: auto;
@@ -130,7 +129,9 @@ hr {
     @extend .link;
   }
 }
-
+.lead{
+  border: dashed;
+}
 .category-title {
   margin: 1em 0 0.5em 0;
 
