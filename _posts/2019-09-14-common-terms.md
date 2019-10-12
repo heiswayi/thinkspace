@@ -1,11 +1,18 @@
 ---
 layout: post
-title: "Common terms in Statistics"
+title: "Common terms in Statistics I"
 description: "Quartile, Standard Deviation"
 comments: true
 keywords: "ISLR, statistics"
 mathjax: true
 ---
+### Content
+- [Mean](##Mean)
+- [Mode](##Mode)
+- [Median](##Median)
+- [Quartiles](##Quartile)
+- [Variance](##Variance)
+- [Standard Deviation](##Standard-Deviation-(SD))
 
 Here is our sample data,
 x = [2, 6, 8, 1, 56, 13, 8, -5, 4, 6, 23].\\ Length, n = 11.
