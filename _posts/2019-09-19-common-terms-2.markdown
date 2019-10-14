@@ -53,7 +53,8 @@ $$
 TSS is the variance in Y before the fit, and RSS is variance after the fit. So TSS-RSS measures the amount of variability in the response that is explained by performing the regression.
 
 If $$R^2$$ statistic is close to 1, the variability in the response is explained by the model, else it isn't explained and the model is wrong.
-
+## Covariance Matrix
+A matrix of variables where each variables is correlated with another and their correlation is represented in this matrix. a positive value implies if one increases, the other will increase too. If the value is negative, if one increases, another will decrease. 
 
 
 ---
