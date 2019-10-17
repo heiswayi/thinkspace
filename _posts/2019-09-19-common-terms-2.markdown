@@ -7,6 +7,16 @@ keywords: "ISLR, statistics"
 mathjax: true
 ---
 
+![...](/assets/images/statGraphs.jpg)
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
 Here's a sample data matrix,
 ```
 x = 2, 6, 8,
