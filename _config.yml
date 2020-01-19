@@ -1,6 +1,6 @@
 # Site settings
-title_left    : "R"
-title_right   : "R" # default: ""
+title_left    : "R."
+title_right   : "R." # default: ""
 description   : "Just Another Data Science Blog"
 keywords      : "blog, machine-learning, data-science, data"
 url           : https://riyadhrazzaq.github.io/ # site url
