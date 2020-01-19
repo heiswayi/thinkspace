@@ -30,4 +30,4 @@ Memory requirements in the learning process is a problem.
 ### What questions are you left with? What questions would you like to raise in an open discussion of the work (reviewinteresting and controversial points, above)? What do you find difficult to understand? List as many as you can
 LSTM model in detail.
 
-**NOTE:** This are my personal point of view, uploading them here to keep up the writing habit for every paper that I read.
+**NOTE:** These are my personal point of view, uploading them here to keep up the writing habit for every paper that I read.
