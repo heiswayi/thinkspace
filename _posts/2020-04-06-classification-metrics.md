@@ -4,7 +4,7 @@ comments: true
 ---
 
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Binary-Classification" data-toc-modified-id="Binary-Classification-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Binary Classification</a></span></li><li><span><a href="#Multiclass-Classification" data-toc-modified-id="Multiclass-Classification-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Multiclass Classification</a></span></li><li><span><a href="#3-Multilabel-Multiclass" data-toc-modified-id="3-Multilabel-Multiclass-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>3 Multilabel Multiclass</a></span><ul class="toc-item"><li><span><a href="#3.1-Example-based-Metrics" data-toc-modified-id="3.1-Example-based-Metrics-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>3.1 Example based Metrics</a></span></li><li><span><a href="#3.2-Label-based-Metrics" data-toc-modified-id="3.2-Label-based-Metrics-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>3.2 Label based Metrics</a></span></li></ul></li><li><span><a href="#References" data-toc-modified-id="References-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>References</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#binary-classification" data-toc-modified-id="Binary-Classification-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Binary Classification</a></span></li><li><span><a href="#multiclass-classification" data-toc-modified-id="Multiclass-Classification-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Multiclass Classification</a></span></li><li><span><a href="#3-multilabel-multiclass" data-toc-modified-id="3-Multilabel-Multiclass-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Multilabel Multiclass Classification</a></span><ul class="toc-item"><li><span><a href="#3.1-example-based-metrics" data-toc-modified-id="3.1-Example-based-Metrics-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Example based Metrics</a></span></li><li><span><a href="#3.2-label-based-metrics" data-toc-modified-id="3.2-Label-based-Metrics-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Label based Metrics</a></span></li></ul></li><li><span><a href="#references" data-toc-modified-id="References-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>References</a></span></li></ul></div>
 
 
 Notes
@@ -342,7 +342,7 @@ print(">>> f1 score weighted \n Custom: %f, sklearn: %f"%(f1(ytrue,yhat,'weighte
      Custom: 0.401267, sklearn: 0.401267
 
 
-# 3 Multilabel Multiclass
+# 3 Multilabel Multiclass Classification
 
 ## 3.1 Example based Metrics
 **Metrics**
