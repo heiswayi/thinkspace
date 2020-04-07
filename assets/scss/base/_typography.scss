@@ -95,7 +95,7 @@ code {
   font-size: 1em;
   margin: 0;
   padding: 0 5px;
-  background-color: lighten($light-gray-color, 13%);
+  background-color: #373737;
 }
 
 pre {
@@ -107,7 +107,10 @@ pre {
   overflow: auto;
   max-height: 60em;
   white-space: pre;
-  border: 1px solid $light-gray-color;
+  border-left: 9px solid darkgray;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
 
   code {
     line-height: 1.75em;
