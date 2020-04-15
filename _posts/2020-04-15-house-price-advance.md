@@ -1,0 +1,2308 @@
+---
+title: "House Price Prediction using Decision Tree"
+comments: True
+---
+
+<h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#loading-data" data-toc-modified-id="Loading-Data-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Loading Data</a></span><ul class="toc-item"><li><span><a href="#declare-tasks-for-linear-regression" data-toc-modified-id="Declare-tasks-for-linear-regression-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Declare tasks for linear regression</a></span></li></ul></li><li><span><a href="#Preprocessing" data-toc-modified-id="Preprocessing-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Preprocessing</a></span><ul class="toc-item"><li><span><a href="#Null-Value" data-toc-modified-id="Null-Value-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Null Value</a></span></li><li><span><a href="#Categorical-Values" data-toc-modified-id="Categorical-Values-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Categorical Values</a></span></li></ul></li><li><span><a href="#Decision-Tree" data-toc-modified-id="Decision-Tree-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Decision Tree</a></span><ul class="toc-item"><li><span><a href="#Evaluation-Measure" data-toc-modified-id="Evaluation-Measure-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Evaluation Measure</a></span></li></ul></li><li><span><a href="#Submission-File" data-toc-modified-id="Submission-File-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Submission File</a></span></li></ul></div>
+
+
+```python
+import math
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+import matplotlib.pyplot as plt
+from sklearn.impute import SimpleImputer
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+import seaborn as sns
+
+
+pd.set_option('display.max_columns',None)
+```
+
+# Loading Data
+*source: https://www.kaggle.com/c/house-prices-advanced-regression-techniques*
+
+
+```python
+DATA = '/home/strange/shob/pywork/data/house-price-advanced-regression-KAGGLE/'
+```
+
+
+```python
+nTrain = pd.read_csv(f"{DATA}train.csv")
+nTest = pd.read_csv(f"{DATA}test.csv")
+```
+
+
+```python
+nTrain
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>MSSubClass</th>
+      <th>MSZoning</th>
+      <th>LotFrontage</th>
+      <th>LotArea</th>
+      <th>Street</th>
+      <th>Alley</th>
+      <th>LotShape</th>
+      <th>LandContour</th>
+      <th>Utilities</th>
+      <th>LotConfig</th>
+      <th>LandSlope</th>
+      <th>Neighborhood</th>
+      <th>Condition1</th>
+      <th>Condition2</th>
+      <th>BldgType</th>
+      <th>HouseStyle</th>
+      <th>OverallQual</th>
+      <th>OverallCond</th>
+      <th>YearBuilt</th>
+      <th>YearRemodAdd</th>
+      <th>RoofStyle</th>
+      <th>RoofMatl</th>
+      <th>Exterior1st</th>
+      <th>Exterior2nd</th>
+      <th>MasVnrType</th>
+      <th>MasVnrArea</th>
+      <th>ExterQual</th>
+      <th>ExterCond</th>
+      <th>Foundation</th>
+      <th>BsmtQual</th>
+      <th>BsmtCond</th>
+      <th>BsmtExposure</th>
+      <th>BsmtFinType1</th>
+      <th>BsmtFinSF1</th>
+      <th>BsmtFinType2</th>
+      <th>BsmtFinSF2</th>
+      <th>BsmtUnfSF</th>
+      <th>TotalBsmtSF</th>
+      <th>Heating</th>
+      <th>HeatingQC</th>
+      <th>CentralAir</th>
+      <th>Electrical</th>
+      <th>1stFlrSF</th>
+      <th>2ndFlrSF</th>
+      <th>LowQualFinSF</th>
+      <th>GrLivArea</th>
+      <th>BsmtFullBath</th>
+      <th>BsmtHalfBath</th>
+      <th>FullBath</th>
+      <th>HalfBath</th>
+      <th>BedroomAbvGr</th>
+      <th>KitchenAbvGr</th>
+      <th>KitchenQual</th>
+      <th>TotRmsAbvGrd</th>
+      <th>Functional</th>
+      <th>Fireplaces</th>
+      <th>FireplaceQu</th>
+      <th>GarageType</th>
+      <th>GarageYrBlt</th>
+      <th>GarageFinish</th>
+      <th>GarageCars</th>
+      <th>GarageArea</th>
+      <th>GarageQual</th>
+      <th>GarageCond</th>
+      <th>PavedDrive</th>
+      <th>WoodDeckSF</th>
+      <th>OpenPorchSF</th>
+      <th>EnclosedPorch</th>
+      <th>3SsnPorch</th>
+      <th>ScreenPorch</th>
+      <th>PoolArea</th>
+      <th>PoolQC</th>
+      <th>Fence</th>
+      <th>MiscFeature</th>
+      <th>MiscVal</th>
+      <th>MoSold</th>
+      <th>YrSold</th>
+      <th>SaleType</th>
+      <th>SaleCondition</th>
+      <th>SalePrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>60</td>
+      <td>RL</td>
+      <td>65.0</td>
+      <td>8450</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>Reg</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Inside</td>
+      <td>Gtl</td>
+      <td>CollgCr</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>7</td>
+      <td>5</td>
+      <td>2003</td>
+      <td>2003</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>VinylSd</td>
+      <td>VinylSd</td>
+      <td>BrkFace</td>
+      <td>196.0</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>PConc</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>No</td>
+      <td>GLQ</td>
+      <td>706</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>150</td>
+      <td>856</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>856</td>
+      <td>854</td>
+      <td>0</td>
+      <td>1710</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>Gd</td>
+      <td>8</td>
+      <td>Typ</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Attchd</td>
+      <td>2003.0</td>
+      <td>RFn</td>
+      <td>2</td>
+      <td>548</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>0</td>
+      <td>61</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2008</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>208500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>20</td>
+      <td>RL</td>
+      <td>80.0</td>
+      <td>9600</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>Reg</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>FR2</td>
+      <td>Gtl</td>
+      <td>Veenker</td>
+      <td>Feedr</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>1Story</td>
+      <td>6</td>
+      <td>8</td>
+      <td>1976</td>
+      <td>1976</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>MetalSd</td>
+      <td>MetalSd</td>
+      <td>None</td>
+      <td>0.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>CBlock</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>Gd</td>
+      <td>ALQ</td>
+      <td>978</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>284</td>
+      <td>1262</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>1262</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1262</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>TA</td>
+      <td>6</td>
+      <td>Typ</td>
+      <td>1</td>
+      <td>TA</td>
+      <td>Attchd</td>
+      <td>1976.0</td>
+      <td>RFn</td>
+      <td>2</td>
+      <td>460</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>298</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>5</td>
+      <td>2007</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>181500</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>60</td>
+      <td>RL</td>
+      <td>68.0</td>
+      <td>11250</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>IR1</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Inside</td>
+      <td>Gtl</td>
+      <td>CollgCr</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>7</td>
+      <td>5</td>
+      <td>2001</td>
+      <td>2002</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>VinylSd</td>
+      <td>VinylSd</td>
+      <td>BrkFace</td>
+      <td>162.0</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>PConc</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>Mn</td>
+      <td>GLQ</td>
+      <td>486</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>434</td>
+      <td>920</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>920</td>
+      <td>866</td>
+      <td>0</td>
+      <td>1786</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>Gd</td>
+      <td>6</td>
+      <td>Typ</td>
+      <td>1</td>
+      <td>TA</td>
+      <td>Attchd</td>
+      <td>2001.0</td>
+      <td>RFn</td>
+      <td>2</td>
+      <td>608</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>0</td>
+      <td>42</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>9</td>
+      <td>2008</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>223500</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>70</td>
+      <td>RL</td>
+      <td>60.0</td>
+      <td>9550</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>IR1</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Corner</td>
+      <td>Gtl</td>
+      <td>Crawfor</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>7</td>
+      <td>5</td>
+      <td>1915</td>
+      <td>1970</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>Wd Sdng</td>
+      <td>Wd Shng</td>
+      <td>None</td>
+      <td>0.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>BrkTil</td>
+      <td>TA</td>
+      <td>Gd</td>
+      <td>No</td>
+      <td>ALQ</td>
+      <td>216</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>540</td>
+      <td>756</td>
+      <td>GasA</td>
+      <td>Gd</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>961</td>
+      <td>756</td>
+      <td>0</td>
+      <td>1717</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>Gd</td>
+      <td>7</td>
+      <td>Typ</td>
+      <td>1</td>
+      <td>Gd</td>
+      <td>Detchd</td>
+      <td>1998.0</td>
+      <td>Unf</td>
+      <td>3</td>
+      <td>642</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>0</td>
+      <td>35</td>
+      <td>272</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2006</td>
+      <td>WD</td>
+      <td>Abnorml</td>
+      <td>140000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>60</td>
+      <td>RL</td>
+      <td>84.0</td>
+      <td>14260</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>IR1</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>FR2</td>
+      <td>Gtl</td>
+      <td>NoRidge</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>8</td>
+      <td>5</td>
+      <td>2000</td>
+      <td>2000</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>VinylSd</td>
+      <td>VinylSd</td>
+      <td>BrkFace</td>
+      <td>350.0</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>PConc</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>Av</td>
+      <td>GLQ</td>
+      <td>655</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>490</td>
+      <td>1145</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>1145</td>
+      <td>1053</td>
+      <td>0</td>
+      <td>2198</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Gd</td>
+      <td>9</td>
+      <td>Typ</td>
+      <td>1</td>
+      <td>TA</td>
+      <td>Attchd</td>
+      <td>2000.0</td>
+      <td>RFn</td>
+      <td>3</td>
+      <td>836</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>192</td>
+      <td>84</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>12</td>
+      <td>2008</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>250000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1455</th>
+      <td>1456</td>
+      <td>60</td>
+      <td>RL</td>
+      <td>62.0</td>
+      <td>7917</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>Reg</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Inside</td>
+      <td>Gtl</td>
+      <td>Gilbert</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>6</td>
+      <td>5</td>
+      <td>1999</td>
+      <td>2000</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>VinylSd</td>
+      <td>VinylSd</td>
+      <td>None</td>
+      <td>0.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>PConc</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>No</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>953</td>
+      <td>953</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>953</td>
+      <td>694</td>
+      <td>0</td>
+      <td>1647</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>TA</td>
+      <td>7</td>
+      <td>Typ</td>
+      <td>1</td>
+      <td>TA</td>
+      <td>Attchd</td>
+      <td>1999.0</td>
+      <td>RFn</td>
+      <td>2</td>
+      <td>460</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>0</td>
+      <td>40</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>8</td>
+      <td>2007</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>175000</td>
+    </tr>
+    <tr>
+      <th>1456</th>
+      <td>1457</td>
+      <td>20</td>
+      <td>RL</td>
+      <td>85.0</td>
+      <td>13175</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>Reg</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Inside</td>
+      <td>Gtl</td>
+      <td>NWAmes</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>1Story</td>
+      <td>6</td>
+      <td>6</td>
+      <td>1978</td>
+      <td>1988</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>Plywood</td>
+      <td>Plywood</td>
+      <td>Stone</td>
+      <td>119.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>CBlock</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>No</td>
+      <td>ALQ</td>
+      <td>790</td>
+      <td>Rec</td>
+      <td>163</td>
+      <td>589</td>
+      <td>1542</td>
+      <td>GasA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>2073</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2073</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>TA</td>
+      <td>7</td>
+      <td>Min1</td>
+      <td>2</td>
+      <td>TA</td>
+      <td>Attchd</td>
+      <td>1978.0</td>
+      <td>Unf</td>
+      <td>2</td>
+      <td>500</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>349</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>MnPrv</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2010</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>210000</td>
+    </tr>
+    <tr>
+      <th>1457</th>
+      <td>1458</td>
+      <td>70</td>
+      <td>RL</td>
+      <td>66.0</td>
+      <td>9042</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>Reg</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Inside</td>
+      <td>Gtl</td>
+      <td>Crawfor</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>7</td>
+      <td>9</td>
+      <td>1941</td>
+      <td>2006</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>CemntBd</td>
+      <td>CmentBd</td>
+      <td>None</td>
+      <td>0.0</td>
+      <td>Ex</td>
+      <td>Gd</td>
+      <td>Stone</td>
+      <td>TA</td>
+      <td>Gd</td>
+      <td>No</td>
+      <td>GLQ</td>
+      <td>275</td>
+      <td>Unf</td>
+      <td>0</td>
+      <td>877</td>
+      <td>1152</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>1188</td>
+      <td>1152</td>
+      <td>0</td>
+      <td>2340</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Gd</td>
+      <td>9</td>
+      <td>Typ</td>
+      <td>2</td>
+      <td>Gd</td>
+      <td>Attchd</td>
+      <td>1941.0</td>
+      <td>RFn</td>
+      <td>1</td>
+      <td>252</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>0</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>GdPrv</td>
+      <td>Shed</td>
+      <td>2500</td>
+      <td>5</td>
+      <td>2010</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>266500</td>
+    </tr>
+    <tr>
+      <th>1458</th>
+      <td>1459</td>
+      <td>20</td>
+      <td>RL</td>
+      <td>68.0</td>
+      <td>9717</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>Reg</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Inside</td>
+      <td>Gtl</td>
+      <td>NAmes</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>1Story</td>
+      <td>5</td>
+      <td>6</td>
+      <td>1950</td>
+      <td>1996</td>
+      <td>Hip</td>
+      <td>CompShg</td>
+      <td>MetalSd</td>
+      <td>MetalSd</td>
+      <td>None</td>
+      <td>0.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>CBlock</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Mn</td>
+      <td>GLQ</td>
+      <td>49</td>
+      <td>Rec</td>
+      <td>1029</td>
+      <td>0</td>
+      <td>1078</td>
+      <td>GasA</td>
+      <td>Gd</td>
+      <td>Y</td>
+      <td>FuseA</td>
+      <td>1078</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1078</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Gd</td>
+      <td>5</td>
+      <td>Typ</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Attchd</td>
+      <td>1950.0</td>
+      <td>Unf</td>
+      <td>1</td>
+      <td>240</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>366</td>
+      <td>0</td>
+      <td>112</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>4</td>
+      <td>2010</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>142125</td>
+    </tr>
+    <tr>
+      <th>1459</th>
+      <td>1460</td>
+      <td>20</td>
+      <td>RL</td>
+      <td>75.0</td>
+      <td>9937</td>
+      <td>Pave</td>
+      <td>NaN</td>
+      <td>Reg</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Inside</td>
+      <td>Gtl</td>
+      <td>Edwards</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>1Story</td>
+      <td>5</td>
+      <td>6</td>
+      <td>1965</td>
+      <td>1965</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>HdBoard</td>
+      <td>HdBoard</td>
+      <td>None</td>
+      <td>0.0</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>CBlock</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>No</td>
+      <td>BLQ</td>
+      <td>830</td>
+      <td>LwQ</td>
+      <td>290</td>
+      <td>136</td>
+      <td>1256</td>
+      <td>GasA</td>
+      <td>Gd</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>1256</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1256</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>1</td>
+      <td>TA</td>
+      <td>6</td>
+      <td>Typ</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>Attchd</td>
+      <td>1965.0</td>
+      <td>Fin</td>
+      <td>1</td>
+      <td>276</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>736</td>
+      <td>68</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>6</td>
+      <td>2008</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>147500</td>
+    </tr>
+  </tbody>
+</table>
+<p>1460 rows × 81 columns</p>
+</div>
+
+
+
+## Declare tasks for linear regression
+1. Generate correlation matrix.
+2. Select correlated features only
+
+# Preprocessing
+
+## Null Value
+Impute null values. If nominal, replace with most common. If continuous, replace with mean.
+
+
+```python
+def imputer(df):
+    for col in df.columns:
+        if df[col].dtype=='O': # categorical
+            imp_most = SimpleImputer(strategy='most_frequent')
+            temp = df[col].values.reshape(-1,1)
+            imp_most.fit(temp)
+            X = df[col].values.reshape(-1,1)
+            X = imp_most.transform(X)
+            df[col] = X
+        else:
+            imp_mean = SimpleImputer(strategy='mean')
+            temp = df[col].values.reshape(-1,1)
+            imp_mean.fit(temp)
+            X = df[col].values.reshape(-1,1)
+            X = imp_mean.transform(X)
+            df[col] = X
+
+    return df
+```
+
+
+```python
+nTrain = imputer(nTrain)
+nTrain.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>MSSubClass</th>
+      <th>MSZoning</th>
+      <th>LotFrontage</th>
+      <th>LotArea</th>
+      <th>Street</th>
+      <th>Alley</th>
+      <th>LotShape</th>
+      <th>LandContour</th>
+      <th>Utilities</th>
+      <th>LotConfig</th>
+      <th>LandSlope</th>
+      <th>Neighborhood</th>
+      <th>Condition1</th>
+      <th>Condition2</th>
+      <th>BldgType</th>
+      <th>HouseStyle</th>
+      <th>OverallQual</th>
+      <th>OverallCond</th>
+      <th>YearBuilt</th>
+      <th>YearRemodAdd</th>
+      <th>RoofStyle</th>
+      <th>RoofMatl</th>
+      <th>Exterior1st</th>
+      <th>Exterior2nd</th>
+      <th>MasVnrType</th>
+      <th>MasVnrArea</th>
+      <th>ExterQual</th>
+      <th>ExterCond</th>
+      <th>Foundation</th>
+      <th>BsmtQual</th>
+      <th>BsmtCond</th>
+      <th>BsmtExposure</th>
+      <th>BsmtFinType1</th>
+      <th>BsmtFinSF1</th>
+      <th>BsmtFinType2</th>
+      <th>BsmtFinSF2</th>
+      <th>BsmtUnfSF</th>
+      <th>TotalBsmtSF</th>
+      <th>Heating</th>
+      <th>HeatingQC</th>
+      <th>CentralAir</th>
+      <th>Electrical</th>
+      <th>1stFlrSF</th>
+      <th>2ndFlrSF</th>
+      <th>LowQualFinSF</th>
+      <th>GrLivArea</th>
+      <th>BsmtFullBath</th>
+      <th>BsmtHalfBath</th>
+      <th>FullBath</th>
+      <th>HalfBath</th>
+      <th>BedroomAbvGr</th>
+      <th>KitchenAbvGr</th>
+      <th>KitchenQual</th>
+      <th>TotRmsAbvGrd</th>
+      <th>Functional</th>
+      <th>Fireplaces</th>
+      <th>FireplaceQu</th>
+      <th>GarageType</th>
+      <th>GarageYrBlt</th>
+      <th>GarageFinish</th>
+      <th>GarageCars</th>
+      <th>GarageArea</th>
+      <th>GarageQual</th>
+      <th>GarageCond</th>
+      <th>PavedDrive</th>
+      <th>WoodDeckSF</th>
+      <th>OpenPorchSF</th>
+      <th>EnclosedPorch</th>
+      <th>3SsnPorch</th>
+      <th>ScreenPorch</th>
+      <th>PoolArea</th>
+      <th>PoolQC</th>
+      <th>Fence</th>
+      <th>MiscFeature</th>
+      <th>MiscVal</th>
+      <th>MoSold</th>
+      <th>YrSold</th>
+      <th>SaleType</th>
+      <th>SaleCondition</th>
+      <th>SalePrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>60.0</td>
+      <td>RL</td>
+      <td>65.0</td>
+      <td>8450.0</td>
+      <td>Pave</td>
+      <td>Grvl</td>
+      <td>Reg</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Inside</td>
+      <td>Gtl</td>
+      <td>CollgCr</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>2003.0</td>
+      <td>2003.0</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>VinylSd</td>
+      <td>VinylSd</td>
+      <td>BrkFace</td>
+      <td>196.0</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>PConc</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>No</td>
+      <td>GLQ</td>
+      <td>706.0</td>
+      <td>Unf</td>
+      <td>0.0</td>
+      <td>150.0</td>
+      <td>856.0</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>856.0</td>
+      <td>854.0</td>
+      <td>0.0</td>
+      <td>1710.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>Gd</td>
+      <td>8.0</td>
+      <td>Typ</td>
+      <td>0.0</td>
+      <td>Gd</td>
+      <td>Attchd</td>
+      <td>2003.0</td>
+      <td>RFn</td>
+      <td>2.0</td>
+      <td>548.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>0.0</td>
+      <td>61.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Gd</td>
+      <td>MnPrv</td>
+      <td>Shed</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2008.0</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>208500.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>20.0</td>
+      <td>RL</td>
+      <td>80.0</td>
+      <td>9600.0</td>
+      <td>Pave</td>
+      <td>Grvl</td>
+      <td>Reg</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>FR2</td>
+      <td>Gtl</td>
+      <td>Veenker</td>
+      <td>Feedr</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>1Story</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>1976.0</td>
+      <td>1976.0</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>MetalSd</td>
+      <td>MetalSd</td>
+      <td>None</td>
+      <td>0.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>CBlock</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>Gd</td>
+      <td>ALQ</td>
+      <td>978.0</td>
+      <td>Unf</td>
+      <td>0.0</td>
+      <td>284.0</td>
+      <td>1262.0</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>1262.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1262.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>TA</td>
+      <td>6.0</td>
+      <td>Typ</td>
+      <td>1.0</td>
+      <td>TA</td>
+      <td>Attchd</td>
+      <td>1976.0</td>
+      <td>RFn</td>
+      <td>2.0</td>
+      <td>460.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>298.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Gd</td>
+      <td>MnPrv</td>
+      <td>Shed</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>2007.0</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>181500.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>60.0</td>
+      <td>RL</td>
+      <td>68.0</td>
+      <td>11250.0</td>
+      <td>Pave</td>
+      <td>Grvl</td>
+      <td>IR1</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Inside</td>
+      <td>Gtl</td>
+      <td>CollgCr</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>2001.0</td>
+      <td>2002.0</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>VinylSd</td>
+      <td>VinylSd</td>
+      <td>BrkFace</td>
+      <td>162.0</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>PConc</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>Mn</td>
+      <td>GLQ</td>
+      <td>486.0</td>
+      <td>Unf</td>
+      <td>0.0</td>
+      <td>434.0</td>
+      <td>920.0</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>920.0</td>
+      <td>866.0</td>
+      <td>0.0</td>
+      <td>1786.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>Gd</td>
+      <td>6.0</td>
+      <td>Typ</td>
+      <td>1.0</td>
+      <td>TA</td>
+      <td>Attchd</td>
+      <td>2001.0</td>
+      <td>RFn</td>
+      <td>2.0</td>
+      <td>608.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>0.0</td>
+      <td>42.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Gd</td>
+      <td>MnPrv</td>
+      <td>Shed</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>2008.0</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>223500.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.0</td>
+      <td>70.0</td>
+      <td>RL</td>
+      <td>60.0</td>
+      <td>9550.0</td>
+      <td>Pave</td>
+      <td>Grvl</td>
+      <td>IR1</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>Corner</td>
+      <td>Gtl</td>
+      <td>Crawfor</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>1915.0</td>
+      <td>1970.0</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>Wd Sdng</td>
+      <td>Wd Shng</td>
+      <td>None</td>
+      <td>0.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>BrkTil</td>
+      <td>TA</td>
+      <td>Gd</td>
+      <td>No</td>
+      <td>ALQ</td>
+      <td>216.0</td>
+      <td>Unf</td>
+      <td>0.0</td>
+      <td>540.0</td>
+      <td>756.0</td>
+      <td>GasA</td>
+      <td>Gd</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>961.0</td>
+      <td>756.0</td>
+      <td>0.0</td>
+      <td>1717.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>Gd</td>
+      <td>7.0</td>
+      <td>Typ</td>
+      <td>1.0</td>
+      <td>Gd</td>
+      <td>Detchd</td>
+      <td>1998.0</td>
+      <td>Unf</td>
+      <td>3.0</td>
+      <td>642.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>0.0</td>
+      <td>35.0</td>
+      <td>272.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Gd</td>
+      <td>MnPrv</td>
+      <td>Shed</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2006.0</td>
+      <td>WD</td>
+      <td>Abnorml</td>
+      <td>140000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>60.0</td>
+      <td>RL</td>
+      <td>84.0</td>
+      <td>14260.0</td>
+      <td>Pave</td>
+      <td>Grvl</td>
+      <td>IR1</td>
+      <td>Lvl</td>
+      <td>AllPub</td>
+      <td>FR2</td>
+      <td>Gtl</td>
+      <td>NoRidge</td>
+      <td>Norm</td>
+      <td>Norm</td>
+      <td>1Fam</td>
+      <td>2Story</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>2000.0</td>
+      <td>2000.0</td>
+      <td>Gable</td>
+      <td>CompShg</td>
+      <td>VinylSd</td>
+      <td>VinylSd</td>
+      <td>BrkFace</td>
+      <td>350.0</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>PConc</td>
+      <td>Gd</td>
+      <td>TA</td>
+      <td>Av</td>
+      <td>GLQ</td>
+      <td>655.0</td>
+      <td>Unf</td>
+      <td>0.0</td>
+      <td>490.0</td>
+      <td>1145.0</td>
+      <td>GasA</td>
+      <td>Ex</td>
+      <td>Y</td>
+      <td>SBrkr</td>
+      <td>1145.0</td>
+      <td>1053.0</td>
+      <td>0.0</td>
+      <td>2198.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>Gd</td>
+      <td>9.0</td>
+      <td>Typ</td>
+      <td>1.0</td>
+      <td>TA</td>
+      <td>Attchd</td>
+      <td>2000.0</td>
+      <td>RFn</td>
+      <td>3.0</td>
+      <td>836.0</td>
+      <td>TA</td>
+      <td>TA</td>
+      <td>Y</td>
+      <td>192.0</td>
+      <td>84.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Gd</td>
+      <td>MnPrv</td>
+      <td>Shed</td>
+      <td>0.0</td>
+      <td>12.0</td>
+      <td>2008.0</td>
+      <td>WD</td>
+      <td>Normal</td>
+      <td>250000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+## Categorical Values
+Label encoding using sklearn
+
+
+```python
+le = LabelEncoder()
+def labelEncode(df):
+    """
+    params: dataframe
+    returns: dataframe. classes, label encoder classes in a dict with column names as keys
+    """
+    classes = {}
+    for col in df.columns:
+        if df[col].dtype == 'O':
+            le.fit(df[col])
+            df[col] = le.transform(df[col])
+            classes[col] = le.classes_
+    return df,classes
+```
+
+
+```python
+nTrain,labelClasses = labelEncode(nTrain)
+nTrain.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>MSSubClass</th>
+      <th>MSZoning</th>
+      <th>LotFrontage</th>
+      <th>LotArea</th>
+      <th>Street</th>
+      <th>Alley</th>
+      <th>LotShape</th>
+      <th>LandContour</th>
+      <th>Utilities</th>
+      <th>LotConfig</th>
+      <th>LandSlope</th>
+      <th>Neighborhood</th>
+      <th>Condition1</th>
+      <th>Condition2</th>
+      <th>BldgType</th>
+      <th>HouseStyle</th>
+      <th>OverallQual</th>
+      <th>OverallCond</th>
+      <th>YearBuilt</th>
+      <th>YearRemodAdd</th>
+      <th>RoofStyle</th>
+      <th>RoofMatl</th>
+      <th>Exterior1st</th>
+      <th>Exterior2nd</th>
+      <th>MasVnrType</th>
+      <th>MasVnrArea</th>
+      <th>ExterQual</th>
+      <th>ExterCond</th>
+      <th>Foundation</th>
+      <th>BsmtQual</th>
+      <th>BsmtCond</th>
+      <th>BsmtExposure</th>
+      <th>BsmtFinType1</th>
+      <th>BsmtFinSF1</th>
+      <th>BsmtFinType2</th>
+      <th>BsmtFinSF2</th>
+      <th>BsmtUnfSF</th>
+      <th>TotalBsmtSF</th>
+      <th>Heating</th>
+      <th>HeatingQC</th>
+      <th>CentralAir</th>
+      <th>Electrical</th>
+      <th>1stFlrSF</th>
+      <th>2ndFlrSF</th>
+      <th>LowQualFinSF</th>
+      <th>GrLivArea</th>
+      <th>BsmtFullBath</th>
+      <th>BsmtHalfBath</th>
+      <th>FullBath</th>
+      <th>HalfBath</th>
+      <th>BedroomAbvGr</th>
+      <th>KitchenAbvGr</th>
+      <th>KitchenQual</th>
+      <th>TotRmsAbvGrd</th>
+      <th>Functional</th>
+      <th>Fireplaces</th>
+      <th>FireplaceQu</th>
+      <th>GarageType</th>
+      <th>GarageYrBlt</th>
+      <th>GarageFinish</th>
+      <th>GarageCars</th>
+      <th>GarageArea</th>
+      <th>GarageQual</th>
+      <th>GarageCond</th>
+      <th>PavedDrive</th>
+      <th>WoodDeckSF</th>
+      <th>OpenPorchSF</th>
+      <th>EnclosedPorch</th>
+      <th>3SsnPorch</th>
+      <th>ScreenPorch</th>
+      <th>PoolArea</th>
+      <th>PoolQC</th>
+      <th>Fence</th>
+      <th>MiscFeature</th>
+      <th>MiscVal</th>
+      <th>MoSold</th>
+      <th>YrSold</th>
+      <th>SaleType</th>
+      <th>SaleCondition</th>
+      <th>SalePrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>60.0</td>
+      <td>3</td>
+      <td>65.0</td>
+      <td>8450.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>5</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>2003.0</td>
+      <td>2003.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>12</td>
+      <td>13</td>
+      <td>1</td>
+      <td>196.0</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2</td>
+      <td>706.0</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>150.0</td>
+      <td>856.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>856.0</td>
+      <td>854.0</td>
+      <td>0.0</td>
+      <td>1710.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>8.0</td>
+      <td>6</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2003.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>548.0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>61.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2008.0</td>
+      <td>8</td>
+      <td>4</td>
+      <td>208500.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>20.0</td>
+      <td>3</td>
+      <td>80.0</td>
+      <td>9600.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>24</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>1976.0</td>
+      <td>1976.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>8</td>
+      <td>8</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0</td>
+      <td>978.0</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>284.0</td>
+      <td>1262.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1262.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1262.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>3</td>
+      <td>6.0</td>
+      <td>6</td>
+      <td>1.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1976.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>460.0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>298.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>5.0</td>
+      <td>2007.0</td>
+      <td>8</td>
+      <td>4</td>
+      <td>181500.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>60.0</td>
+      <td>3</td>
+      <td>68.0</td>
+      <td>11250.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>5</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>5</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>2001.0</td>
+      <td>2002.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>12</td>
+      <td>13</td>
+      <td>1</td>
+      <td>162.0</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2</td>
+      <td>2</td>
+      <td>486.0</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>434.0</td>
+      <td>920.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>920.0</td>
+      <td>866.0</td>
+      <td>0.0</td>
+      <td>1786.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>6.0</td>
+      <td>6</td>
+      <td>1.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2001.0</td>
+      <td>1</td>
+      <td>2.0</td>
+      <td>608.0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>42.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>9.0</td>
+      <td>2008.0</td>
+      <td>8</td>
+      <td>4</td>
+      <td>223500.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.0</td>
+      <td>70.0</td>
+      <td>3</td>
+      <td>60.0</td>
+      <td>9550.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>5</td>
+      <td>7.0</td>
+      <td>5.0</td>
+      <td>1915.0</td>
+      <td>1970.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>13</td>
+      <td>15</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>216.0</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>540.0</td>
+      <td>756.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>4</td>
+      <td>961.0</td>
+      <td>756.0</td>
+      <td>0.0</td>
+      <td>1717.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>7.0</td>
+      <td>6</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>5</td>
+      <td>1998.0</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>642.0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>35.0</td>
+      <td>272.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>2006.0</td>
+      <td>8</td>
+      <td>0</td>
+      <td>140000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>60.0</td>
+      <td>3</td>
+      <td>84.0</td>
+      <td>14260.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>15</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>5</td>
+      <td>8.0</td>
+      <td>5.0</td>
+      <td>2000.0</td>
+      <td>2000.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>12</td>
+      <td>13</td>
+      <td>1</td>
+      <td>350.0</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0</td>
+      <td>2</td>
+      <td>655.0</td>
+      <td>5</td>
+      <td>0.0</td>
+      <td>490.0</td>
+      <td>1145.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1145.0</td>
+      <td>1053.0</td>
+      <td>0.0</td>
+      <td>2198.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>2</td>
+      <td>9.0</td>
+      <td>6</td>
+      <td>1.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2000.0</td>
+      <td>1</td>
+      <td>3.0</td>
+      <td>836.0</td>
+      <td>4</td>
+      <td>4</td>
+      <td>2</td>
+      <td>192.0</td>
+      <td>84.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>12.0</td>
+      <td>2008.0</td>
+      <td>8</td>
+      <td>4</td>
+      <td>250000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+nTest = imputer(nTest)
+nTest,_ = labelEncode(nTest)
+```
+
+
+```python
+def rounded(corr,thresh):
+    for i in range(corr.shape[0]):
+        for j in range(corr.shape[1]):
+            corr.iloc[i,j] = corr.iloc[i,j] if corr.iloc[i,j]>=thresh or corr.iloc[i,j]<=-thresh else np.round(corr.iloc[i,j])
+    return corr
+```
+
+
+```python
+corr = nTrain.corr()
+# corr = rounded(corr,0.7)
+fig, ax = plt.subplots(1,1,figsize=(20,15),dpi=100)
+ax = sns.heatmap(corr,vmin = -1,vmax = 1,center=0)
+```
+
+
+![png](assets/images/house-price-advance-corr.png)
+
+
+
+```python
+# select features
+
+cols = ['YearRemodAdd','SaleCondition','PoolArea','LotShape','OverallQual','ExterQual','BsmtQual', \
+       'TotalBsmtSF','HeatingQC','1stFlrSF','FullBath','GrLivArea','KitchenQual','GarageCars']
+X = nTrain[cols]
+y = nTrain['SalePrice']
+testX = nTest[cols]
+```
+
+
+```python
+print(X.shape,y.shape)
+```
+
+    (1460, 14) (1460,)
+
+
+
+```python
+trainX,valX,trainy,valy = train_test_split(X,y,test_size=0.4)
+print(trainX.shape,trainy.shape,'\n',valX.shape,valy.shape)
+```
+
+    (876, 14) (876,) 
+     (584, 14) (584,)
+
+
+# Decision Tree
+
+
+```python
+model = DecisionTreeRegressor(criterion='mae',min_samples_split=5,min_samples_leaf=3,splitter='random',random_state=21)
+model.fit(trainX,trainy)
+print(model.score(valX,valy))
+print(model.score(trainX,trainy))
+```
+
+    0.7570689587588585
+    0.8667456856696635
+
+
+## Evaluation Measure
+*Log Root Mean Squared Error* is used in the competitions.
+
+
+```python
+def log_rmse(ytrue,ypred):
+    sum = 0.0
+    for i in range(len(ytrue)):
+        sum += pow((math.log2(ypred[i])-math.log2(ytrue.iloc[i])),2)
+    return math.sqrt(abs(sum/float(len(ytrue))))
+```
+
+
+```python
+yhat = model.predict(valX)
+print(log_rmse(valy,yhat))
+```
+
+    0.288336505443978
+
+
+# Submission File
+Running the fitted model on Test Set to generate house prices and submit to Kaggle
+
+
+```python
+yhat = model.predict(testX)
+```
+
+
+```python
+sub_file = pd.DataFrame({'Id':test.Id,'SalePrice':yhat})
+sub_file.to_csv(f'{DATA}submission.csv',index=False)
+```
