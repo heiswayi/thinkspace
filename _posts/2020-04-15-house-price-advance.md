@@ -3,7 +3,7 @@ title: "House Prices Prediction with Decision Tree"
 comments: True
 ---
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Loading-Data" data-toc-modified-id="Loading-Data-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Loading Data</a></span><ul class="toc-item"><li><span><a href="#Declare-tasks-for-linear-regression" data-toc-modified-id="Declare-tasks-for-linear-regression-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Declare tasks for linear regression</a></span></li></ul></li><li><span><a href="#Preprocessing" data-toc-modified-id="Preprocessing-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Preprocessing</a></span><ul class="toc-item"><li><span><a href="#Null-Value" data-toc-modified-id="Null-Value-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Null Value</a></span></li><li><span><a href="#Categorical-Values" data-toc-modified-id="Categorical-Values-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Categorical Values</a></span></li></ul></li><li><span><a href="#Decision-Tree" data-toc-modified-id="Decision-Tree-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Decision Tree</a></span><ul class="toc-item"><li><span><a href="#Evaluation-Measure" data-toc-modified-id="Evaluation-Measure-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Evaluation Measure</a></span></li></ul></li><li><span><a href="#Submission-File" data-toc-modified-id="Submission-File-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Submission File</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#loading-Data" data-toc-modified-id="Loading-Data-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Loading Data</a></span><ul class="toc-item"><li><span><a href="#declare-tasks-for-linear-regression" data-toc-modified-id="Declare-tasks-for-linear-regression-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Declare tasks for linear regression</a></span></li></ul></li><li><span><a href="#preprocessing" data-toc-modified-id="Preprocessing-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Preprocessing</a></span><ul class="toc-item"><li><span><a href="#null-value" data-toc-modified-id="Null-Value-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Null Value</a></span></li><li><span><a href="#categorical-values" data-toc-modified-id="Categorical-Values-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Categorical Values</a></span></li></ul></li><li><span><a href="#decision-tree" data-toc-modified-id="Decision-Tree-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Decision Tree</a></span><ul class="toc-item"><li><span><a href="#evaluation-measure" data-toc-modified-id="Evaluation-Measure-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Evaluation Measure</a></span></li></ul></li><li><span><a href="#submission-file" data-toc-modified-id="Submission-File-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Submission File</a></span></li></ul></div>
 
 
 ```python
@@ -155,7 +155,7 @@ ax = sns.heatmap(corr,vmin = -1,vmax = 1,center=0)
 ```
 
 
-![png](../../assets/images/output_16_0.png)
+![heatmap](../../assets/images/house-price-advance-heatmap.png)
 
 
 
