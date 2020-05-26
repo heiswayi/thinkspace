@@ -11,7 +11,7 @@
   }
 
   pre {
-    boder-left: none;
+    boder-left: none !important;
     margin: 0;
     padding: $base-spacing;
     white-space: pre;
