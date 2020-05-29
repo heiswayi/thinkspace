@@ -1,0 +1,146 @@
+I""-<p>Have you ever been in trouble with <code class="highlighter-rouge">ENV</code> when working with <code class="highlighter-rouge">Docker</code>? With me, yah, obviously, I’ve been if don’t want to say <code class="highlighter-rouge">a lot</code></p>
+
+<p>When you work with <code class="highlighter-rouge">Docker</code> you may realize that we have two phrases: building time and runtime.</p>
+<ul>
+  <li>buiding time: when you run <code class="highlighter-rouge">$ docker build ...</code> in your favorite terminal. Docker will build your <code class="highlighter-rouge">Dockerfile</code> into an Docker image.</li>
+  <li>runtime: when you run <code class="highlighter-rouge">$ docker run</code>. Docker will run a container by your built image and you can interact with it as a real computer.</li>
+</ul>
+
+<h2 id="arg-">ARG ?</h2>
+<p>Imagine that you want to build fancy website as below:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// main.go</span>
+<span class="k">package</span> <span class="n">main</span>
+
+<span class="k">func</span> <span class="n">handler</span><span class="p">(</span><span class="n">w</span> <span class="n">http</span><span class="o">.</span><span class="n">ResponseWriter</span><span class="p">,</span> <span class="n">req</span> <span class="o">*</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s">"I'm running on port: %s"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"PORT"</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">http</span><span class="o">.</span><span class="n">HandleFunc</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
+    <span class="n">log</span><span class="o">.</span><span class="n">Fatal</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">ListenAndServe</span><span class="p">(</span><span class="s">":"</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"PORT"</span><span class="p">),</span> <span class="no">nil</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>and our Dockerfile</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Builder</span>
+<span class="k">FROM</span><span class="s"> golang:1.14.2-alpine as builder</span>
+  
+<span class="k">WORKDIR</span><span class="s"> /go/src/</span>
+<span class="k">COPY</span><span class="s"> main.go .</span>
+<span class="k">RUN </span><span class="nv">CGO_ENABLED</span><span class="o">=</span>0 <span class="nv">GOOS</span><span class="o">=</span>linux go build <span class="nt">-a</span> <span class="nt">-installsuffix</span> cgo <span class="nt">-o</span> app .
+ 
+<span class="c"># Release </span>
+<span class="k">FROM</span><span class="s"> alpine:latest as release</span>
+
+<span class="k">ARG</span><span class="s"> PORT</span>
+
+<span class="k">WORKDIR</span><span class="s"> /root/</span>
+<span class="k">COPY</span><span class="s"> --from=builder /go/src/app .</span>
+
+<span class="k">EXPOSE</span><span class="s"> $PORT</span>
+<span class="k">CMD</span><span class="s"> ["./app"]</span>
+</code></pre></div></div>
+
+<p>First of all, we we need our container can talk to outsite world, we need to <code class="highlighter-rouge">EXPOSE</code> a port from it and the port should be define as an <code class="highlighter-rouge">ARG</code> for changing.</p>
+
+<p>After define everything, we can build our image</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker build <span class="nt">--target</span> release <span class="nt">-t</span> blog-examples:release <span class="nt">--build-arg</span> <span class="nv">PORT</span><span class="o">=</span>8080 <span class="nb">.</span>
+<span class="nv">$ </span>docker run blog-examples:release
+</code></pre></div></div>
+
+<p>and verify:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker ps
+CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                    NAMES
+54d32460c436        blog-examples:release   <span class="s2">"./app"</span>                  4 minutes ago       Up 4 minutes        8080/tcp                 affectionate_bhaskara
+</code></pre></div></div>
+<p>Yeah, we successfully expose our container to the world through an variable port instead of hard-coded one.</p>
+
+<p>But, I want to use my $PORT from my computer instead of passing <code class="highlighter-rouge">8080</code>. Just change a little bit on your build command</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker build <span class="nt">--target</span> release <span class="nt">-t</span> blog:examples:release <span class="nt">--build-arg</span> <span class="nv">PORT</span><span class="o">=</span><span class="nv">$PORT</span> <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>But, we also need to add ENV variable to our container as well? We need it when we run <code class="highlighter-rouge">os.Getenv("PORT")</code>, right?</p>
+
+<h2 id="env-">ENV ?</h2>
+
+<p>We’re gonna modify our Dockerfile a little bit.</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ...</span>
+<span class="k">ARG</span><span class="s"> PORT</span>
+
+<span class="k">ENV</span><span class="s"> PORT=$PORT</span>
+
+<span class="c"># ...</span>
+<span class="k">EXPOSE</span><span class="s"> $PORT</span>
+<span class="c"># ...</span>
+</code></pre></div></div>
+
+<p>Build it again</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker build <span class="nt">--target</span> release <span class="nt">--build-arg</span> <span class="nv">PORT</span><span class="o">=</span><span class="nv">$PORT</span> <span class="nt">-t</span> blog-examples:release <span class="nb">.</span>
+<span class="nv">$ </span>docker run <span class="nt">-p</span> <span class="nv">$PORT</span>:<span class="nv">$PORT</span> <span class="nt">-t</span> blog-examples:release
+</code></pre></div></div>
+
+<p>Verify it:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl localhost:<span class="nv">$PORT</span>
+I<span class="s1">'m running on port: 8080% 
+</span></code></pre></div></div>
+
+<h2 id="env-file">–env-file?</h2>
+<p>How about when we have a lot of ENV and we don’t want to add an ARG for each ENV we use, right?</p>
+
+<p>Let’s modify our website a little bit:</p>
+
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">func</span> <span class="n">handler</span><span class="p">(</span><span class="n">w</span> <span class="n">http</span><span class="o">.</span><span class="n">ResponseWriter</span><span class="p">,</span> <span class="n">req</span> <span class="o">*</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s">"I'm running on port: %s, and APP_SECRET=%s"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"PORT"</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">Getenv</span><span class="p">(</span><span class="s">"APP_SECRET"</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Add <code class="highlighter-rouge">.env</code> file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PORT</span><span class="o">=</span>8080
+<span class="nv">APP_SECRET</span><span class="o">=</span>abcdefghijklmnopqrstuvwxyz
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Build and run:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker build <span class="nt">--target</span> release <span class="nt">--build-arg</span> <span class="nv">PORT</span><span class="o">=</span><span class="nv">$PORT</span> blog-examples:release <span class="nb">.</span>
+<span class="nv">$ </span>docker run <span class="nt">-p</span> <span class="nv">$PORT</span>:<span class="nv">$PORT</span> <span class="nt">--env-file</span> .env blog-examples:release
+</code></pre></div></div>
+
+<p>Verify it:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl localhost:<span class="nv">$PORT</span>
+I<span class="s1">'m running on port: 8080, and APP_SECRET=abcdefghijklmnopqrstuvwxyz% 
+</span></code></pre></div></div>
+
+<p>So, we can feed ENV to container by <code class="highlighter-rouge">--env-file</code></p>
+
+<p>And don’t forget to add <code class="highlighter-rouge">.env</code> file to <code class="highlighter-rouge">.gitignore</code>, you don’t want to show sensitive data on any public repository</p>
+
+<h2 id="docker-compose">docker-compose?</h2>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.4'</span>
+
+<span class="na">services</span><span class="pi">:</span>
+    <span class="na">web</span><span class="pi">:</span>
+        <span class="na">build</span><span class="pi">:</span>
+            <span class="na">context</span><span class="pi">:</span> <span class="s">.</span>
+            <span class="na">target</span><span class="pi">:</span> <span class="s">release</span>
+            <span class="na">args</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="s">PORT</span>
+        <span class="na">environment</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">APP_SECRET</span>
+        <span class="na">ports</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">$PORT:$PORT</span>
+</code></pre></div></div>
+
+<p>With <code class="highlighter-rouge">docker-compose</code> we can build properly without <code class="highlighter-rouge">--build-arg</code> or <code class="highlighter-rouge">--env-file</code></p>
+
+<p>Additionally, we can view built docker-compose by</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose config
+</code></pre></div></div>
+:ET

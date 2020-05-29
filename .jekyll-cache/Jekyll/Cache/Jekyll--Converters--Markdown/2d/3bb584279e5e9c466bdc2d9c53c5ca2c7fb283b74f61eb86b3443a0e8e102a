@@ -1,0 +1,42 @@
+I"†<h2 id="who-is-ca">Who is CA?</h2>
+<p><strong>CA</strong> stands for Certificate Authority is a company or organization that acts to validate the identities of entities (such as websites, email addresses, companies, individual person)</p>
+
+<h2 id="what-is-csr">What is CSR</h2>
+<p><strong>CSR</strong> stands for <code class="highlighter-rouge">Certificate Signing Request</code>. If you want to obtain a SSL Certificate from a CA, you must generate a Certificate Signing Request. A CSR consists mainly of a public key of a key pair, and some additional information. Both of these components are inserted into the certiticate when it is signed by CA.</p>
+
+<p>When you generate a CSR from private key, you will be prompted to provide information regarding the certificate. This information is known as a Distinguished Name (DN). An important field is Common Name (CN), which should be exact Fully Qualified Domain Name (<code class="highlighter-rouge">FQDN</code>)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">---</span>
+Country Name <span class="o">(</span>2 letter code<span class="o">)</span> <span class="o">[</span>AU]:US
+State or Province Name <span class="o">(</span>full name<span class="o">)</span> <span class="o">[</span>Some-State]:New York
+Locality Name <span class="o">(</span>eg, city<span class="o">)</span> <span class="o">[]</span>:Brooklyn
+Organization Name <span class="o">(</span>eg, company<span class="o">)</span> <span class="o">[</span>Internet Widgits Pty Ltd]:Example Brooklyn Company
+Organizational Unit Name <span class="o">(</span>eg, section<span class="o">)</span> <span class="o">[]</span>:Technology Division
+Common Name <span class="o">(</span>e.g. server FQDN or YOUR name<span class="o">)</span> <span class="o">[]</span>:examplebrooklyn.com
+Email Address <span class="o">[]</span>:
+</code></pre></div></div>
+
+<p>You can also skip the prompt by parameter <code class="highlighter-rouge">-subj</code> when generate CSR</p>
+
+<h2 id="generate-and-private-key-and-csr">Generate and Private Key and CSR</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-newkey</span> rsa:2048 <span class="nt">-nodes</span> <span class="nt">-keyout</span> domain.key <span class="nt">-out</span> domain.csr
+</code></pre></div></div>
+
+<p>If your CA supports SHA-2, add the <code class="highlighter-rouge">-sha256</code> option to sign CSR with SHA-2</p>
+
+<p>The <code class="highlighter-rouge">-nodes</code> option specifies that they private key should not be encrypted with a pass phrase</p>
+
+<p>If you already have a private key, you can use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl req <span class="nt">-key</span> domain.key <span class="nt">-new</span> <span class="nt">-out</span> domain.csr
+</code></pre></div></div>
+
+<p>If you already have a private key as well as an old certificate</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssl x509 <span class="nt">-in</span> domain.crt <span class="nt">-signkey</span> domain.key <span class="nt">-x509toreq</span> <span class="nt">-out</span> domain.csr
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">-x509toreq</code> option specifies that you are using X509 Certificate to make a CSR</p>
+
+:ET

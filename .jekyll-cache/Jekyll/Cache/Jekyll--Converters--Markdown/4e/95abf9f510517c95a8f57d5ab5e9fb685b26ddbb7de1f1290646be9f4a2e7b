@@ -1,0 +1,66 @@
+I"Ý<p>When you define a Docker image with Dockefile, you have 2 options with <code class="highlighter-rouge">ENTRYPOINT</code> instruction</p>
+<ul>
+  <li>shell form - <code class="highlighter-rouge">ENTRYPOINT node app.js</code></li>
+  <li>exec form - <code class="highlighter-rouge">ENTRYPOINT ["node", "app.js"</code></li>
+</ul>
+
+<p>Have you asked yourself what is different between shell form and exec form above?
+The answer is very simple, the difference is whether the specified command is invoker inside a shell or not.</p>
+
+<h2 id="talk-is-cheap-show-me-the-code">Talk is cheap, show me the code!</h2>
+<p>app.js</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">http</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello there!</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span>
+</code></pre></div></div>
+<p>Dockerfile</p>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> node:12.7.0</span>
+<span class="k">ADD</span><span class="s"> app.js ./app.js</span>
+
+<span class="k">ENTRYPOINT</span><span class="s"> ["node", "app.js"]</span>
+</code></pre></div></div>
+
+<p>Build image</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker build <span class="nt">-t</span> exec-form <span class="nb">.</span>
+</code></pre></div></div>
+
+<p>And run it</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">--rm</span> <span class="nt">-d</span> <span class="nt">--name</span> exec-form exec-form
+</code></pre></div></div>
+
+<p>Check processes inside exec-form container</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-it</span> exec-form ps x
+  PID TTY      STAT   TIME COMMAND
+    1 ?        Ssl    0:00 node app.js
+   12 pts/0    Rs+    0:00 ps x
+</code></pre></div></div>
+
+<p>As you can see, it runs the node process directly (not inside a shell).</p>
+
+<p>Changing the ENTRYPOINT to shell form</p>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- ENTRYPOINT ["node", "app.js"]
+</span><span class="gi">+ ENTRYPOINT node app.js
+</span></code></pre></div></div>
+
+<p>And check its processes again</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker <span class="nb">exec</span> <span class="nt">-it</span> shell-form ps x
+  PID TTY      STAT   TIME  COMMAND
+  1   ?        Ss     0:00  /bin/sh <span class="nt">-c</span> node app.js
+  6   ?        Sl     0:00  node app.js
+  13  pts/0    Rs+    0:00  ps x
+</code></pre></div></div>
+
+<p>In that case, the main process (PID 1) would be the shell process instead of node process. the node process (PID 6) would be started from that shell.</p>
+
+<p>The shell process is unecessary, which is why you should always use the exec form of the <code class="highlighter-rouge">ENTRYPOINT</code> instruction.</p>
+:ET

@@ -1,0 +1,15 @@
+I"j<h1 id="entrypoint">ENTRYPOINT</h1>
+<blockquote>
+  <p>Defines the executable invoked when the container is started</p>
+
+</blockquote>
+
+<h1 id="cmd">CMD</h1>
+<blockquote>
+  <p>specifies the argument that get passed to the <code class="highlighter-rouge">ENTRYPOINT</code></p>
+
+</blockquote>
+
+<p>Although you can use the <code class="highlighter-rouge">CMD</code> instruction to specify the command you want to execute when the image is run,
+the correct way is to do it though the <code class="highlighter-rouge">ENTRYPOINT</code> instruction and to only specify the CMD if you want to define the default arguments.</p>
+:ET

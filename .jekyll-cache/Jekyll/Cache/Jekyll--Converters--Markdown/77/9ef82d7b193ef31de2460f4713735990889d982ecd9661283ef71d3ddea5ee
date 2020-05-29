@@ -1,0 +1,33 @@
+I"Ü<h3 id="lazy-loading">Lazy loading</h3>
+<ul>
+  <li>loads data into the cache only when necessary</li>
+  <li>when application requests data, it first makes the request to the cache, if <code class="highlighter-rouge">cache hit</code>, it is retrieved.</li>
+  <li>if itâ€™s not or expired <code class="highlighter-rouge">cache miss</code>, the the data is retrieved from the data store and then stored in the cache</li>
+</ul>
+
+<h4 id="pros">Pros</h4>
+<ul>
+  <li>Only requested data is cached</li>
+</ul>
+
+<h4 id="cons">Cons</h4>
+<p>cache miss penalty</p>
+
+<h3 id="write-through">Write through</h3>
+<ul>
+  <li>adds data or updates in the cache whenever data is written to the database</li>
+</ul>
+
+<h4 id="pros-1">Pros</h4>
+<ul>
+  <li>the data in the cache is never stale</li>
+</ul>
+
+<h4 id="cons-1">Cons</h4>
+<ul>
+  <li>the data or information that is stored in the cache is never used</li>
+  <li>cost for space</li>
+  <li>overhead due to the duplicate data</li>
+  <li>cache churn</li>
+</ul>
+:ET

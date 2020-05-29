@@ -1,0 +1,18 @@
+I"<h3 id="step-1">Step 1</h3>
+<p>The user selects the provider with whom they wish to sign in to the client app.</p>
+
+<h3 id="step-2">Step 2</h3>
+<p>The user is redirected to the provider’s website (with a URL that includes the <code class="highlighter-rouge">client app id</code>, where they are asked to give permission to the client app.</p>
+
+<h3 id="step-3">Step 3</h3>
+<p>The user signs in from the OAuth service provider and accepts the permissions requested by the third-party application.</p>
+
+<h3 id="step-4">Step 4</h3>
+<p>The user is redirected to the client app with the <code class="highlighter-rouge">request code</code></p>
+
+<h3 id="step-5">Step 5</h3>
+<p>The the background, the client sends the grant code to the provider, who sends back an <code class="highlighter-rouge">authentication token</code></p>
+
+<h3 id="step-6">Step 6</h3>
+<p>The client app uses the <code class="highlighter-rouge">access token</code> to make authorized request to the provider, such as to get user information or wall posts.</p>
+:ET
