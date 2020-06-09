@@ -7,7 +7,7 @@ You’re given a non-empty string made in its entirety from opening and closing 
 * An empty string is stable.
 * If S is stable, then {S} is also stable.
 * If S and T are both stable, then ST (the concatenation of the two) is also stable.
-All of these strings are stable: {}, {}{}, and {{}{}}; But none of these: }{, {{}{, nor {}{.
+All of these strings are stable: `{}, {}{}`, and `{{}{}}`. But none of these: `}{, {{}{`, nor `{}{`.
 The only operation allowed on the string is to replace an opening brace with a closing brace, or vice-versa.
 
 ## Solution
