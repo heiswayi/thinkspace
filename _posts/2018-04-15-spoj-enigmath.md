@@ -4,15 +4,15 @@ mathjax: true
 comments: true
 ---
 
+**Problem Statement** [ENIGMATH - PLAY WITH MATH](http://www.spoj.com/problems/ENIGMATH/)
 
-## Problem Statement
-[ENIGMATH - PLAY WITH MATH](http://www.spoj.com/problems/ENIGMATH/)
+**Heuristic**
 
-## Heuristic
 Ax - By = 0  has two possible cases:
 
 1. a can divide b or if b can divide a and you can figure out the rest.
 2. a or b cannot divide the other so it will be A B - B A = 0, but we still have to find the minimum x & y.
+
 ```cpp
 #include<stdio.h>
 #include<math.h>
