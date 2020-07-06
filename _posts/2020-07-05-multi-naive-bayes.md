@@ -16,6 +16,7 @@ Here,
 # Multinomial Naive Bayes
 You can look up in detail about multinomial distribution and you should. I will only put a short description of how a multinomial naive bayes classifier considers data. 
 ## Multinomial Data
+
 | $$X_1$$  | $$X_2$$  | $$X_3$$  |
 |---|---|---|
 | 1 | 0 | 4 |
