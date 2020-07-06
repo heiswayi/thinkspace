@@ -20,22 +20,28 @@ There is a rather intuitive explanation behind this legendary theroy.
 
 ## Smoke and Fire Experiment
 Our hypothesis is that there will be fire if there is smoke. So, we are asking for $$P(Fire \mid Smoke)$$. To answer that we'll start with an experiment sample. 
+
 ![NB1](/assets/images/2020-07-03-gauss-naive-bayes/NB1.png)
 
 When we collect data about *Fire* and *No Fire* events, the area of the white square represents the total sample space. 
+
 ![NB2.png](/assets/images/2020-07-03-gauss-naive-bayes/NB2.png)
 
 And we see that we area on the left is *Fire*  and on the right is *No Fire* samples. 
+
 ![NB3.png](/assets/images/2020-07-03-gauss-naive-bayes/NB3.png)
 
 Now let's observe in which samples smoke was seen in a fire, and in which sample smoke was seen even though there were no fire. Note that, smoke seen in a fire can be written as $$(Smoke \mid Fire)$$ and not seen in a fire can be written as $$(Smoke \mid No Fire)$$. Red areas represents smoke was seen. These red areas that I have drawn is based on gut feeling. Smoke is common when there's a fire, so red area is bigger compared to the red area when there is no fire. Now, as we know probability of something happening is effectively the ratio of that thing against all other thing. Hence, $$P(Smoke \mid Fire)$$ is equals to red area inside fire divided by total red are in experiment. 
+
 ![NB5.png](/assets/images/2020-07-03-gauss-naive-bayes/NB5.png)
 
 But how the red areas can be calculated mathematically? Well, area is the product of height and width. In our experiment, height is the $$P(Smoke \mid Fire)$$ and width is $$P(Fire)$$. Similarly the red area in *No Fire* can be calculated. 
+
 ![NB6%281%29.png](/assets/images/2020-07-03-gauss-naive-bayes/NB6.png)
+
 So, we finally get this equation on top.
 
-Note: This is just a geometrical explanation of Bayes Theorem. Gaussian Naive Bayes and other naive bayes algorithms differentiate themselves from this by how they calculate $$P(Smoke | Fire)$$.
+Note: This is just a geometrical explanation of Bayes Theorem. Gaussian Naive Bayes and other naive bayes algorithms differentiate themselves from this by how they calculate $$P(Smoke \mid Fire)$$.
 
 # Gaussian Naive Bayes
 This algorithm assumes likelyhoods of features are of gaussian distribution. 
