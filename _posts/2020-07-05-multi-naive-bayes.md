@@ -16,10 +16,10 @@ Here,
 # Multinomial Naive Bayes
 You can look up in detail about multinomial distribution and you should. I will only put a short description of how a multinomial naive bayes classifier considers data. 
 ## Multinomial Data
-|$$X_1$$|$$X_2$$|$$X_3$$|
+| $$X_1$$  | $$X_2$$  | $$X_3$$  |
 |---|---|---|
-| 1| 0| 4|
-| 4| 2| 3|
+| 1 | 0 | 4 |
+| 4 | 2 | 3 |
 
 In the table above containing 2 sample of 3 features, we observe that feature $$X_1$$ has values 1 and 4, and so on. That is the common view of the data. And when other a general model accepts this data, it considers each number as value. For example, $$X_{1,2}=3$$. But in case of reading a multinomial data, $$X_{1,2}$$ says how many of feature $$X_{2}$$ is in sample 1. Meaning $$X_{1,2}$$ is not value of the feature, instead it is the count of the feature. Let's consider a text corpus. Each sentence is made up of different words $$w_i$$ and each of those $$w_i$$ belongs to the vocabulary, $$V$$. If $$V$$ contains 8 words, $$w_1,w_2,...,w_8$$ and if a sentence is: w1 w2 w2 w6 w3 w2 w8, the representation of that sentence will be- 
 
@@ -331,14 +331,9 @@ sklearn's `MultinomialNB`
 sk = MultinomialNB().fit(X_train,y_train)
 sk.score(X_test,y_test)
 ```
-
-
-
-
-    0.9741564967695621
-
-
-
+```
+0.9755922469490309
+```
 our `MultiNB` (⌐■_■)
 
 
@@ -350,7 +345,7 @@ yhat = me.predict(X_test)
 print(accuracy_score(y_test,yhat))
 ```
 ```
-0.9770279971284996
+0.9755922469490309
 CPU times: user 1min 5s, sys: 0 ns, total: 1min 5s
 Wall time: 1min 5s
 ```
