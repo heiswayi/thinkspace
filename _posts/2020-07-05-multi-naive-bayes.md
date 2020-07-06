@@ -3,20 +3,20 @@ title: "Multinomial Naive Bayes from Scratch"
 comments: True
 mathjax: True
 ---
-Multinomial naive bayes is the naive Bayes algorithm for multinomially distributed data. For a brief and intuitive explanation of Bayes theorem, read this kernel of mine: [Gaussian Naive Bayes Classifier from Scratch](https://www.kaggle.com/riyadhrazzaq/gaussian-naive-bayes-classifier). Everything is similar to Gaussian NB except the $P(x_i \mid y)$. The new equation is, 
+Multinomial naive bayes is the naive Bayes algorithm for multinomially distributed data. For a brief and intuitive explanation of Bayes theorem, read this kernel of mine: [Gaussian Naive Bayes Classifier from Scratch](https://www.kaggle.com/riyadhrazzaq/gaussian-naive-bayes-classifier). Everything is similar to Gaussian NB except the $$P(x_i \mid y)$$. The new equation is, 
 $$
 P(x_i \mid y) = \frac{N_{yi} + \alpha}{N_y + \alpha n} \label{eq1}\tag{1}
 $$ 
 Here, 
-* $\alpha$ is the smoothing parameter, 
-* $N_{yi}$ is the count of feature $x_i$ in class y.
-* $N_y$ is the total count of all features in class y
-* $n$ is the total number of features
+* $$\alpha$$ is the smoothing parameter, 
+* $$N_{yi}$$ is the count of feature $$x_i$$ in class y.
+* $$N_y$$ is the total count of all features in class y
+* $$n$$ is the total number of features
 
 # Multinomial Naive Bayes
 You can look up in detail about multinomial distribution and you should. I will only put a short description of how a multinomial naive bayes classifier considers data. 
 ## Multinomial Data
-|   $X_1$|$X_2$|$X_3$|
+|   $$X_1$$|$$X_2$$|$$X_3$$|
 |---|---|---|
 |1|0|4|
 |4|2|3|
@@ -349,7 +349,11 @@ me.fit(X_train, y_train)
 yhat = me.predict(X_test)
 print(accuracy_score(y_test,yhat))
 ```
-
+```
+0.9770279971284996
+CPU times: user 1min 5s, sys: 0 ns, total: 1min 5s
+Wall time: 1min 5s
+```
 It takes a lot of time but does not matter as it is a reference implementation only ヽ(｀Д´)ﾉ
 
 **I wrote the scratch implementation for my learning, if you see any error or typo, please let me know.**
