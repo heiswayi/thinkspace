@@ -38,22 +38,25 @@ After inserting some other random sentences, the dataset is-
 
 By the way, I haven't put them in a class. Randomly taking, $$y$$ = [1,0,1]. Now, comparing with the equation of above,
 
-* $$N_{yi}$$ is the count of feature $$w_i$$ in each unique class of y. For example, for $$y=1$$, \
+* $$N_{yi}$$ is the count of feature $$w_i$$ in each unique class of y. For example, for $$y=1$$, 
 $$N_{y,1}=1, N_{y,6}=3$$
-* $$N_y$$ is the total count of all features in each unique class of y. For example, for $$y=1$$, \
+* $$N_y$$ is the total count of all features in each unique class of y. For example, for $$y=1$$, 
 $$N_y=12$$
 * $$n=8$$ is the total number of features
 * $$\alpha$$ is known as smoothing parameter. It is needed for zero probability problem which is explained in resource [1]
 
 To calculate likelyhoods for a test sentence, all we need is $$P(w_i \mid y)$$ which will be used to calculate $$P(X \mid y)$$ from training data. But $$P(w_i \mid y)$$ is the probability of feature $$w_i$$ appearing under class y once. If our test sentence has any feature $$w_i$$ n times, we will need to include $$P(w_i \mid y)$$ in $$P(X \mid y)$$ n times too. So, final equation for $$P(X_i \mid y)$$ will be-
+
 $$
 P(X_i \mid y) = P(w_1 \mid y)^{X_{i,1}} \times P(w_2 \mid y)^{X_{i,2}} \times ... \times P(w_n \mid y)^{X_{i,n}}
 $$
+
 
 Resources:
 1. https://www.inf.ed.ac.uk/teaching/courses/inf2b/learnnotes/inf2b-learn07-notes-nup.pdf
 2. https://scikit-learn.org/stable/modules/naive_bayes.html#multinomial-naive-bayes
 
+### Some libraries and test data
 
 ```python
 import numpy as np
