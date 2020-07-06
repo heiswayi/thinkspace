@@ -16,35 +16,35 @@ Here,
 # Multinomial Naive Bayes
 You can look up in detail about multinomial distribution and you should. I will only put a short description of how a multinomial naive bayes classifier considers data. 
 ## Multinomial Data
-|   $$X_1$$|$$X_2$$|$$X_3$$|
+|$$X_1$$|$$X_2$$|$$X_3$$|
 |---|---|---|
-|1|0|4|
-|4|2|3|
+| 1| 0| 4|
+| 4| 2| 3|
 
-In the table above containing 2 sample of 3 features, we observe that feature $X_1$ has values 1 and 4, and so on. That is the common view of the data. And when other a general model accepts this data, it considers each number as value. For example, $X_{1,2}=3$. But in case of reading a multinomial data, $X_{1,2}$ says how many of feature $X_{2}$ is in sample 1. Meaning $X_{1,2}$ is not value of the feature, instead it is the count of the feature. Let's consider a text corpus. Each sentence is made up of different words $w_i$ and each of those $w_i$ belongs to the vocabulary, $V$. If $V$ contains 8 words, $w_1,w_2,...,w_8$ and if a sentence is: w1 w2 w2 w6 w3 w2 w8, the representation of that sentence will be- 
+In the table above containing 2 sample of 3 features, we observe that feature $$X_1$$ has values 1 and 4, and so on. That is the common view of the data. And when other a general model accepts this data, it considers each number as value. For example, $$X_{1,2}=3$$. But in case of reading a multinomial data, $$X_{1,2}$$ says how many of feature $$X_{2}$$ is in sample 1. Meaning $$X_{1,2}$$ is not value of the feature, instead it is the count of the feature. Let's consider a text corpus. Each sentence is made up of different words $$w_i$$ and each of those $$w_i$$ belongs to the vocabulary, $$V$$. If $$V$$ contains 8 words, $$w_1,w_2,...,w_8$$ and if a sentence is: w1 w2 w2 w6 w3 w2 w8, the representation of that sentence will be- 
 
-|$w_1$|$w_2$|$w_3$|$w_4$|$w_5$|$w_6$|$w_7$|$w_8$|
+|$$w_1$$|$$w_2$$|$$w_3$$|$$w_4$$|$$w_5$$|$$w_6$$|$$w_7$$|$$w_8$$|
 |---|---|---|---|---|---|---|---|
 | 1|3 |1 | 0| 0|1 | 0|1 |
 
 After inserting some other random sentences, the dataset is-
 
-|$w_1$|$w_2$|$w_3$|$w_4$|$w_5$|$w_6$|$w_7$|$w_8$|
+|$$w_1$$|$$w_2$$|$$w_3$$|$$w_4$$|$$w_5$$|$$w_6$$|$$w_7$$|$$w_8$$|
 |---|---|---|---|---|---|---|---|
 | 1|3 |1 | 0| 0|1 | 0|1 |
 | 1|0 |0 | 0| 1|1 | 1|3 |
 | 0|0 |0 | 0| 0|2 | 1|2 |
 
-By the way, I haven't put them in a class. Randomly taking, $y$ = [1,0,1]. Now, comparing with the equation of above,
+By the way, I haven't put them in a class. Randomly taking, $$y$$ = [1,0,1]. Now, comparing with the equation of above,
 
-* $N_{yi}$ is the count of feature $w_i$ in each unique class of y. For example, for $y=1$, \
-$N_{y,1}=1, N_{y,6}=3$
-* $N_y$ is the total count of all features in each unique class of y. For example, for $y=1$, \
-$N_y=12$
-* $n=8$ is the total number of features
-* $\alpha$ is known as smoothing parameter. It is needed for zero probability problem which is explained in resource [1]
+* $$N_{yi}$$ is the count of feature $$w_i$$ in each unique class of y. For example, for $$y=1$$, \
+$$N_{y,1}=1, N_{y,6}=3$$
+* $$N_y$$ is the total count of all features in each unique class of y. For example, for $$y=1$$, \
+$$N_y=12$$
+* $$n=8$$ is the total number of features
+* $$\alpha$$ is known as smoothing parameter. It is needed for zero probability problem which is explained in resource [1]
 
-To calculate likelyhoods for a test sentence, all we need is $P(w_i \mid y)$ which will be used to calculate $P(X \mid y)$ from training data. But $P(w_i \mid y)$ is the probability of feature $w_i$ appearing under class y once. If our test sentence has any feature $w_i$ n times, we will need to include $P(w_i \mid y)$ in $P(X \mid y)$ n times too. So, final equation for $P(X_i \mid y)$ will be-
+To calculate likelyhoods for a test sentence, all we need is $$P(w_i \mid y)$$ which will be used to calculate $$P(X \mid y)$$ from training data. But $$P(w_i \mid y)$$ is the probability of feature $$w_i$$ appearing under class y once. If our test sentence has any feature $$w_i$$ n times, we will need to include $$P(w_i \mid y)$$ in $$P(X \mid y)$$ n times too. So, final equation for $$P(X_i \mid y)$$ will be-
 $$
 P(X_i \mid y) = P(w_1 \mid y)^{X_{i,1}} \times P(w_2 \mid y)^{X_{i,2}} \times ... \times P(w_n \mid y)^{X_{i,n}}
 $$
