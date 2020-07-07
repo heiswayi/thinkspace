@@ -340,7 +340,6 @@ sk.score(X_test,y_test)
 ```
 our `MultiNB` (⌐■_■)
 
-
 ```python
 %%time
 me = MultiNB()
@@ -348,11 +347,13 @@ me.fit(X_train, y_train)
 yhat = me.predict(X_test)
 print(accuracy_score(y_test,yhat))
 ```
+
 ```
 0.9755922469490309
 CPU times: user 1min 5s, sys: 0 ns, total: 1min 5s
 Wall time: 1min 5s
 ```
+
 It takes a lot of time but does not matter as it is a reference implementation only ヽ(｀Д´)ﾉ
 
 **I wrote the scratch implementation for my learning, if you see any error or typo, please let me know.**

@@ -3,8 +3,12 @@ layout: page
 title: About
 permalink: /about/
 ---
+I am a fresh graduate with a research interest in Natural Language Processing using Statistical Learning. Right now, while looking for job opportunities, I spent my days with machine-learning projects and Kaggle. 
 
-## In short
-I am Md Abdur Razzaq Riyadh. A multi-planetary being, learning data science w/ [ISLR](https://faculty.marshall.usc.edu/gareth-james/ISL/). I intend to write notes on each chapter of that book in this blog, which actually turns out is really hard (the blogging part, not the book itself)!
+By the way, I am eager to work on data science related projects on any domain. You can contact me at- *riyadh.razzaq@gmail.com* 
 
-By the way, I am eager to work on data analysis related projects on any field. You can contact me at- **riyadh.razzaq@protonmail.com**
+[kaggle/riyadhrazzaq](https://kaggle.com/riyadhrazzaq)
+
+[github/riyadhrazzaq](https://github.com/riyadhrazzaq)
+
+[LinkedIn/riyadhrazzaq](https://www.linkedin.com/in/md-abdur-razzaq-riyadh/)
