@@ -1,5 +1,5 @@
 ---
-title: "Metrics for Classification"
+title: "Metrics for Classification from Scratch"
 comments: true
 ---
 
