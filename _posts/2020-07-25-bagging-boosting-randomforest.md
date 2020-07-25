@@ -1,6 +1,7 @@
 ---
 title: "Bagging | Idea and Implementation"
 comments: True
+mathjax: True
 ---
 Bagging, random forest, and boosting are statistical approach to further enhance already available algorithms. They all seem to deal with multiple training of a models on the same dataset. Let's look at the idea behind these.
 
@@ -93,7 +94,7 @@ X, y = make_regression(n_samples=100, n_features=4,
                        random_state=0, shuffle=False)
 X.shape, y.shape
 ```
-```output
+```
 ((100, 4), (100,))
 ```
 
@@ -122,11 +123,13 @@ bag.fit(X,y)
 bag.predict(np.array([[0,0,0,0]]))
 ```
 
-
-
-
-    array([6.99440506e-16])
-
+```
+array([6.99440506e-16])
+```
 
 
 Nice!
+
+**Reference**
+
+1. James, Gareth, et al. An introduction to statistical learning. Vol. 112. New York: springer, 2013.
