@@ -1,10 +1,14 @@
+---
+title: "Bagging | Idea and Implementation"
+comments: True
+---
 Bagging, random forest, and boosting are statistical approach to further enhance already available algorithms. They all seem to deal with multiple training of a models on the same dataset. Let's look at the idea behind these.
 
 # Bagging
 
 Consider a decision tree. When I split a dataset, and fit two distinct decision tree on those two halves, it will give different outputs. Meaning, our models will have high variance. Bagging or Bootstrap Aggragation comes from this problem. It is a general purpose approach for reducing the variance of models.
 
-Theoretically, averaging samples reduces the variance. That's what mean are for, right? So, to solve the problem above, we can just train multiple models, get their predictions, average them, and voila! This is what bagging is. But how can we get multiple dataset though? We use [bootstrap](https://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29) for that. Bootstrap will generate B different training datasets from one single dataset. We will train on $b_{th}$ dataset to get $f_b(x)$. When producing prediction, we will do average of all the $f_b(x)$. For a single sample $x$, the equation stands,
+Theoretically, averaging samples reduces the variance. That's what mean are for, right? So, to solve the problem above, we can just train multiple models, get their predictions, average them, and voila! This is what bagging is. But how can we get multiple dataset though? We use [bootstrap](https://en.wikipedia.org/wiki/Bootstrapping_%28statistics%29) for that. Bootstrap will generate B different training datasets from one single dataset. We will train on $$b_{th}$$ dataset to get $$f_b(x)$$. When producing prediction, we will do average of all the $$f_b(x)$$. For a single sample $x$, the equation stands,
 
 $$
 \hat{f}_{bag}(x) = \frac{1}{B} \sum_{b=1}^{B} f_b(x)
@@ -89,16 +93,11 @@ X, y = make_regression(n_samples=100, n_features=4,
                        random_state=0, shuffle=False)
 X.shape, y.shape
 ```
-
-
-
-
-    ((100, 4), (100,))
-
-
+```output
+((100, 4), (100,))
+```
 
 sklearn's model
-
 
 ```python
 from sklearn.linear_model import LinearRegression
