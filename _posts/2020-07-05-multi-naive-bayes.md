@@ -1,5 +1,5 @@
 ---
-title: "Multinomial Naive Bayes from Scratch"
+title: "Idea and Implementation | Multinomial Naive Bayes"
 comments: True
 mathjax: True
 ---
