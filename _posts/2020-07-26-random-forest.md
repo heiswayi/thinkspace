@@ -1,5 +1,5 @@
 ---
-title: "Idea and Implementation | Random Forest"
+title: "Idea and Implementation / Random Forest"
 mathjax: True
 comments: True
 ---

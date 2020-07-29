@@ -1,5 +1,5 @@
 ---
-title: "Idea and Implementation | Bayes Theorem and Gaussian Naive Bayes"
+title: "Idea and Implementation / Bayes Theorem and Gaussian Naive Bayes"
 comments: True
 mathjax: True
 ---
