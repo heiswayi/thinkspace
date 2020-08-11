@@ -3,8 +3,10 @@ title_left    : "R"
 title_right   : "^2" # default: ""
 description   : "Just Another Data Science Blog"
 keywords      : "blog, machine-learning, data-science, data"
+
 url           : https://riyadhrazzaq.github.io # site url
 baseurl       : "/blog" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
+
 cover         : "" # image uri like logo/cover image for site seo
 google_analytics  : UA-148157325-1
 twitter_username  : "riyadhrazzaq"
