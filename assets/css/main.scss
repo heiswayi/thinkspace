@@ -3,3 +3,26 @@
 ---
 @charset "utf-8";
 @import "main";
+
+.site-header {
+    border-bottom: 1px solid #211818;
+    margin-bottom: .75em;
+    min-height: 80px;
+}
+
+.body {
+    background-color: #0a0a0a;
+}
+
+.h2 {
+    font-size: 1.625rem;
+    color: cadetblue;
+}
+
+.post-item a {
+    color: #fff;
+}
+
+.header.site-header{
+    background-color: #02050c;
+}
