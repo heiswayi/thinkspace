@@ -16,11 +16,11 @@ body {
 
 h2 {
     font-size: 1.625rem;
-    color: cadetblue;
+    color: #494e56;
 }
 
 .post-item a {
-    color: #fff;
+    color: #bfc3cc;
 }
 
 .header.site-header{
@@ -31,4 +31,14 @@ a {
     color: #9eafff;
     text-decoration: none;
     transition: color 150ms ease;
+}
+
+article.page-container{
+    background-color: darkturquoise;
+}
+
+p.lead {
+    color: #9eafff;
+    font-size: 1.1rem;
+    font-weight: 300;
 }
