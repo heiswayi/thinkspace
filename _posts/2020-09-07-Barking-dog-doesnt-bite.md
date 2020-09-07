@@ -5,8 +5,6 @@ description: "A recent study published by Garvin MR, Alvarez C, Miller JI, et al
 keywords: "covid sars-cov-2 pandemic virus bradykinin"
 ---
 
-# Reverse-engineering a virus and 'bradykinin storms'
-
 A paper initially published at [July 7th](https://web.archive.org/web/*/https://elifesciences.org/articles/59177) (as of 2020) reads *"A mechanistic model and therapeutic interventions for COVID-19 involving a RAS-mediated bradykinin storm"* with the only relevant content published alongside being a [very short abstract](https://web.archive.org/web/20200709051108/https://elifesciences.org/articles/59177). 
 
 Later on, most of their relevant findings were published on the paper's [official portal](https://elifesciences.org/articles/59177) editing the brief abstract and replacing it with research findings able to explain key characteristics from SARS-CoV-2, keys features which remained attributed to randomness by most scientists due to how they linked by mechanisms that could not be traced back to a single factor.
