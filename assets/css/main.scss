@@ -19,6 +19,23 @@ h2 {
     color: #494e56;
 }
 
+h2 {
+    color: #494e56;
+}
+
+h1 {
+    color: #494e56;
+}
+h3 {
+    color: #494e56;
+}
+h4 {
+    color: #494e56;
+}
+h5 {
+    color: #494e56;
+}
+
 .post-item a {
     color: #bfc3cc;
 }
@@ -41,4 +58,62 @@ p.lead {
     color: #9eafff;
     font-size: 1.1rem;
     font-weight: 300;
+}
+
+p {
+    margin: 0 0 .75em;
+    color: darkgrey;
+}
+
+blockquote{
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #000000;
+    color: #6b9050;
+    font-family: Fira Code, Consolas, Monaco, monospace;
+    margin-top: 4px;
+    padding: 8px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.highlight{
+    margin: 1.5em 0;
+    padding: 0;
+    box-shadow: 2px 2px 2px rgb(54 255 0 / 38%);
+}
+
+.highlight pre, .highlight pre code {
+    color: rgb(98 158 84);
+}
+
+.highlighter-rouge .highlight, .highlight, .highlight .hll, .highlight pre, .highlight code {
+    background-color: #06060a !important;
+}
+
+th {
+    border-bottom: 1px solid #292121;
+    font-weight: 600;
+    padding: .75em 0;
+    text-align: left;
+}
+
+td {
+    border-bottom: 1px solid #1b1111;
+    padding: .75em 0;
+    text-align: center;
+    color: darkcyan;
+}
+
+code {
+    color: black;
+    background: none;
+    border-radius: 0;
+    border: none;
+    font-family: "Exo 2",Menlo,Consolas,"Inconsolata",monospace;
+    font-size: 1em;
+    margin: 0;
+    padding: 0 5px;
+    background-color: #6fcc90;
 }
