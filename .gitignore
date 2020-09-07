@@ -32,7 +32,7 @@ $RECYCLE.BIN/
 .DS_Store
 .AppleDouble
 .LSOverride
-
+.history/*
 # Thumbnails
 ._*
 
