@@ -1,24 +1,27 @@
 ---
 layout: post
-title: "'Barking Dog Doesn't Bite', why SARS-CoV-2 may be more simple than we thought"
+title: "'Barking Dog Doesn't Bite' - why SARS-CoV-2 may be more simple and deadly than we thought"
 description: "A recent study published by Garvin MR, Alvarez C, Miller JI, et al. higlights why we were not able to identify COVID-19 main characteristics"
 keywords: "covid sars-cov-2 pandemic virus bradykinin"
 ---
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+# Reverse-engineering genetics and 'bradykinin storm' as a theory
 
-### Where does it come from?
+Initially published in [July 7th](https://web.archive.org/web/*/https://elifesciences.org/articles/59177) (as of 2020),  the paper title reads *"A mechanistic model and therapeutic interventions for COVID-19 involving a RAS-mediated bradykinin storm"* with the only relevant content published alongside being a [very short abstract](https://web.archive.org/web/20200709051108/https://elifesciences.org/articles/59177). 
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+Later on, most of their relevant findings were published on the paper's [official portal](https://elifesciences.org/articles/59177) editing the brief abstract and replacing it with research findings able to explain key characteristics from SARS-CoV-2, keys features which remained attributed to randomness by most scientists due to how they linked by mechanisms that could not be traced back to a single factor.
 
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+Using pharmacology and genetics to explain how SARS-CoV-2 works is nothing new, and many respectable papers have tried diverse approaches to this theme, the most notables being:
 
-### Why do we use it?
+ - [Network-based drug repurposing for novel coronavirus 2019-nCoV/SARS-CoV-2 (Paper)](https://www.nature.com/articles/s41421-020-0153-3) - [Metrics](https://plu.mx/plum/a/?doi=10.1038/s41421-020-0153-3) <h5>Zhou, Y., Hou, Y., Shen, J. et al. Network-based drug repurposing for novel coronavirus 2019-nCoV/SARS-CoV-2. Cell Discov 6, 14 (2020). https://doi.org/10.1038/s41421-020-0153-3</h5>
+ - [Pharmacologic Treatments for Coronavirus Disease 2019 (COVID-19)
+(Paper)](https://www.nature.com/articles/s41421-020-0153-3) - [Metrics](https://plu.mx/plum/a/?doi=10.1001/jama.2020.6019)<h5>ZSanders JM, Monogue ML, Jodlowski TZ, Cutrell JB. Pharmacologic Treatments for Coronavirus Disease 2019 (COVID-19): A Review. JAMA. 2020;323(18):1824–1836. doi:10.1001/jama.2020.6019</h5>
+ - [Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target
+(Paper)](https://link.springer.com/article/10.1007/s00134-020-05985-9?fbclid=IwAR05sZuejQgHy6X0PCK2bPBMYaTm3jtnMltRNjaGRnwh-FVtz-QLNcQowfk) - [Metrics](https://plu.mx/plum/a/?doi=10.1007/s00134-020-05985-9)<h5>Zhang, H., Penninger, J.M., Li, Y. et al. Angiotensin-converting enzyme 2 (ACE2) as a SARS-CoV-2 receptor: molecular mechanisms and potential therapeutic target. Intensive Care Med 46, 586–590 (2020). https://doi.org/10.1007/s00134-020-05985-9</h5>
+ - [Candidate drugs against SARS-CoV-2 and COVID-19
+(Paper)](https://www.sciencedirect.com/science/article/pii/S1043661820311671) - [Metrics](https://plu.mx/plum/a/?doi=10.1001/jama.2020.6019)<h5>Dwight L. McKee, Ariane Sternberg, Ulrike Stange, Stefan Laufer, Cord Naujokat, Candidate drugs against SARS-CoV-2 and COVID-19, Pharmacological Research, Volume 157, 2020, 104859, ISSN 1043-6618, https://doi.org/10.1016/j.phrs.2020.104859.
+</h5>
 
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+What they all have in common is the exact same characteristic that makes the 'bradykinin' theory so compelling: their findings can be attributed to the nature of the virus but rather explaining its main mechanism, they focus on the effects produced by the virus when inside the human body and we could circumvent it, failing to identify what these symptoms have in common. 
 
-### Where can I get some?
-
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-
-> This content was copied from http://www.lipsum.com/ as an example of post article.
+Instead of focusing on what they got wrong individually, I think it would be better to feature the properties responsible for leading to a different approach on the theme, why this should be relevant to the whole field of bioinformatics, especially further on when digging deeper on this exact same subject.
