@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "'Barking Dog Doesn't Bite' - why SARS-CoV-2 may be more simple and deadly than we thought"
+title: "'Barking Dog Doesn't Bite'    -    why SARS-CoV-2 may be more simple and deadly than we thought"
 description: "A recent study published by Garvin MR, Alvarez C, Miller JI, et al. higlights why we were not able to identify COVID-19 main characteristics"
 keywords: "covid sars-cov-2 pandemic virus bradykinin"
 ---
@@ -46,3 +46,7 @@ a patient outcome in terms of likelihood of survival](https://journals.physiolog
 Another risk factor that increasingly got attention from the medical community were the kidneys, as one of the body's
 organ most rich in ACE-2 receptors number counts, it seemed like an intuitive analysis: [kidneys are main targets for the virus](https://www.medrxiv.org/content/medrxiv/early/2020/04/10/2020.03.04.20031120.full.pdf) and a [major risk factor](https://www.nejm.org/doi/full/10.1056/NEJMc2011400).
  This is one of the key characteristics that really surprised me on how backward the initial analysis were if you would consider a 'bradykinin storm' scenario. 
+
+ ...(Work in progress)
+
+ References: [1](https://elifesciences.org/articles/59177), [2](https://www.the-scientist.com/news-opinion/is-a-bradykinin-storm-brewing-in-covid-19--67876), [3](https://www.thehindu.com/sci-tech/health/is-covid-19-setting-off-a-bradykinin-storm-in-the-body/article32531836.ece), [4](https://journals.physiology.org/doi/full/10.1152/ajpheart.00215.2020), [5](https://link.springer.com/content/pdf/10.1186/s13054-020-02872-z.pdf)
