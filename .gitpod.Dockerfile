@@ -1,4 +1,4 @@
-FROM jekyll\jekyll:builder
+FROM jekyll/builder
 
 # Install custom tools, runtimes, etc.
 # For example "bastet", a command-line tetris clone:
