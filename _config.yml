@@ -3,7 +3,7 @@ title_left    : "Cyber"
 title_right   : "Security" # default: ""
 description   : "101"
 keywords      : ""
-url           : https://dpgg101.github.io/ # site url
+url           : https://dpgg101.github.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "" # image uri like logo/cover image for site seo
 
