@@ -1,7 +1,7 @@
 # Site settings
 title_left    : "Cyber"
 title_right   : "Security" # default: ""
-description   : "My adventures in Cyber Security"
+description   : ""
 keywords      : ""
 url           : https://dpgg101.github.io/ # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
