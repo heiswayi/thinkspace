@@ -13,7 +13,6 @@ Welcome reader, in this post you will find my adventures with Windows, what are 
 
 Before I begin my journey I must say **do not try this at home** or it will be more appropriate to say **do not try this in production**. If you are a noob like me, do not try this in any kind of production and do not follow it as a tutorial. The environment in which I will test my dangerous pursuit is a Windows Server 2019 with some dummy users in it, the SIEM is running on the latest Ubuntu available at this point of writing the "post".
 
-![SCREENSHOT](https://i.imgur.com/R8tD6S6.png)
 <div style="text-align: center"><img src="/assets/images/1.png" width="216" height="290"></div>
 
 
