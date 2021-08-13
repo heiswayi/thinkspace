@@ -67,6 +67,19 @@ Let's try the exploit on Windows Server 2016. Tada! The vulnerability was succes
 ```
 08/13/2021 04:30:35 AM LogName=Security EventCode=4624 EventType=0 ComputerName=WIN-9QS6VK10B88.koyot.local SourceName=Microsoft Windows security auditing. Type=Information RecordNumber=3618 Keywords=Audit Success TaskCategory=Logon OpCode=Info Message=An account was successfully logged on. Subject: Security ID: S-1-0-0 Account Name: - Account Domain: - Logon ID: 0x0 Logon Information: Logon Type: 3 Restricted Admin Mode: - Virtual Account: No Elevated Token: No Impersonation Level: Impersonation New Logon: Security ID: S-1-5-7 Account Name: ANONYMOUS LOGON Account Domain: NT AUTHORITY Logon ID: 0x22326 Linked Logon ID: 0x0 Network Account Name: - Network Account Domain: - Logon GUID: {00000000-0000-0000-0000-000000000000} Process Information: Process ID: 0x0 Process Name: - Network Information: Workstation Name: Source Network Address: - Source Port: - Detailed Authentication Information: Logon Process: NtLmSsp Authentication Package: NTLM Transited Services: - Package Name (NTLM only): NTLM V1 Key Length: 0 This event is generated when a logon session is created. It is generated on the computer that was accessed. The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe. The logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network). The New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on. The network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases. The impersonation level field indicates the extent to which a process in the logon session can impersonate. The authentication information fields provide detailed information about this specific logon request. - Logon GUID is a unique identifier that can be used to correlate this event with a KDC event. - Transited services indicate which intermediate services have participated in this logon request. - Package name indicates which sub-protocol was used among the NTLM protocols. - Key length indicates the length of the generated session key. This will be 0 if no session key was requested.
 ```
-Looking at this it indeed took and advantage of the Anonymous logon and successfully took on the NtLmSsp process.
+<div style="text-align: center"><img src="/assets/images/anon_logon.png"></div>
+
+Looking at this it indeed took and advantage of the Anonymous logon and successfully took on the NtLmSsp process. With the metasploit module we were able to get a stable shell as a SYSTEM (Administrator user). Which allows us to do whatever we want basically. 
+
+<div style="text-align: center"><img src="/assets/images/msf_sess.png"></div>
+
+The following screenshot is showing the deletion of several events in "Application", "System" and "Security".
+
+<div style="text-align: center"><img src="/assets/images/msf-logcl.png"></div>
+  
+ Do you think that this action was recorded and available in the SIEM? If you said - yes. You are correct. The action is visible in the following screenshot.
+
+<div style="text-align: center"><img src="/assets/images/logclear.png"></div>
+
 
 The purpose of this exercise was to show how easily windows can be exploited if you are not updating or configuring your system in a way that becomes more and more vulnerable. Of course, an event can be generated upon an alleged attack, but remember, the attacks become more and more sophisticated, and zero-days become more noticeable and impactful in our day-to-day life using any operating system. The SIEM is a powerful tool in the hands of a skilled person, and most of the attacks could be caught in no time and mitigated.
