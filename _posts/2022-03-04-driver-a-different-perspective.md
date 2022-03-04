@@ -37,7 +37,7 @@ Activate a number of flags to speed up the scan at cost of some detection.
 This is equivalent to: --noeventlog --nofirewall --noprofiles --nowebdirscan --nologscan --noevtx --nohotfixes --nomft --lookback 3 --lookback-modules filescan
 ```
 Thor-lite has other options as well, that can be viewed with the `--help` flag, which will output the available options.
-<div style="text-align: center"><img src=/assets/images/post2_thor-options.png"></div>
+<div style="text-align: center"><img src=/assets/images/post2_thor-option.png"></div>
   
 The instrument is good to practice on noticing indicators of compromise and yes, you will have to adjust the options for scans to suit your needs.
  
