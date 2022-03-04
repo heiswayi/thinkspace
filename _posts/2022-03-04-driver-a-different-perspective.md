@@ -26,13 +26,39 @@ What is IOC you might ask. IOC is the abbreviature of Indicators of Compromise, 
 
 <div style="text-align: center"><img src="/assets/images/post2_puzzle.png"></div>
 
-The tool that I'm going to use to scan for any potential IOCs that I intentionally left on the target system is [Thor Lite](https://www.nextron-systems.com/thor-lite/i). Thor Lite is a scanner for simple indicators of compromise. It uses YARA based rules. More information about YARA can be found in here - https://github.com/plusvic/yara
+The tool that I'm going to use to scan for any potential IOCs that I intentionally left on the target system is [Thor Lite](https://www.nextron-systems.com/thor-lite/i). THOR is a portable scanner for attacker tools and activity on suspicious or compromised server systems. It covers a big set of basic checks and in deep analysis of the local event log, registry and file system. It uses YARA based rules. More information about YARA can be found in here - https://github.com/plusvic/yara
+Full comparison between Loki, Thor-Lite and the paid version Thor can be found on Nextron Systems website - https://www.nextron-systems.com/thor-lite/
 
-Output of the scan can be in a text format or in a HTML one. Of course as I'm engineer and I like to see colors will be using the HTML version of the IOC Thor-Lite scan.
+
+The used syntax that I used for running the instrument is the following, which was using the quick scan mode - `./thor-lite.exe --quick `
+Quick mode consists of:
+```
+Activate a number of flags to speed up the scan at cost of some detection.
+This is equivalent to: --noeventlog --nofirewall --noprofiles --nowebdirscan --nologscan --noevtx --nohotfixes --nomft --lookback 3 --lookback-modules filescan
+```
+Thor-lite has other options as well, that can be viewed with the `--help` flag, which will output the available options.
+<div style="text-align: center"><img src=/assets/images/post2_thor-options.png"></div>
+  
+The instrument is good to practice on noticing indicators of compromise and yes, you will have to adjust the options for scans to suit your needs.
+ 
+Key features are:
+  - Scans for hack tools and attacker activity (with multiple detection mechanisms)
+  - Portable – no installation required
+  - Runs on Windows, Linux and macOS platforms without any prerequisites
+  - Adaptable to the specific tools and activity of new APT cases
+  - Scoring System – providing a way to detect previously unknown software
+.. and other, you can find the other ones in the official manual for Thor - https://thor-manual.nextron-systems.com/en/latest/usage/what-is-thor.html
+ 
+Note from the author: Probably if I had used the default scan the results below will be more extensive and will not focus on winPEAS, but the downside is that it will take several hours for the scan to finish. 
+
+Thor contains a good range of OS modules that it supports, few of them are File System Scan, Registry Scan, Named Pipes Check, Logged In Check and more. A full list of the modes can be found here - https://thor-manual.nextron-systems.com/en/latest/usage/scan-modes.html 
+Saying it in a simple manner, scan modes consists of checks based on usual behavior, or used methodologies and/or vectors to exploit a system/user, to gain a persistence on a system and so on.
+  
+Output of the scan can be in a text format or in a HTML one. Of course as I'm an engineer and I like to see colors will be using the HTML version of the IOC Thor-Lite scan.
 
 <div style="text-align: center"><img src="/assets/images/post2_IOC.png"></div>
 
-Result wise it only found logs related to winPEAS that is part of the [PEASS-ng - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/PEASS-ng). And it didn't find the msfvenom payload that I dropped while I was logged in as the user tony, also the .scf file wasn't been found. But, let's focus on the logs related to winPEAS as it's still somewhat of an information and indicator that could be related to gathering more information about the system used by the malicious actor.
+Result wise it only found logs related to [winPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/winPEAS) that is part of the [PEASS-ng - Privilege Escalation Awesome Scripts SUITE](https://github.com/carlospolop/PEASS-ng). And it didn't find the msfvenom payload that I dropped while I was logged in as the user tony, also the .scf file wasn't been found. But, let's focus on the logs related to winPEAS as it's still somewhat of an information and indicator that could be related to gathering more information about the system used by the malicious actor.
 
 <div style="text-align: center"><img src="/assets/images/post2_thor-1.png"></div>
 <div style="text-align: center"><img src="/assets/images/post2_thor-2.png"></div>
