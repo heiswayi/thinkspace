@@ -40,7 +40,9 @@ So there's an inbuilt mechanism that detects if the text you've passed is NSFW, 
 
 # The Good
 ### What's so great about this anyway?
-We live in magical times! While generative art has been here for a long time, never before has been a tool to create mind blowing art been so easily available. And Free.
+We live in magical times! While generative art has been here for a long time, never before has been a tool to create mind blowing art been so easily available. And Free. We've had other tools like SD in the past couple of years, and they had two primary problems. 
+- The models are expensive to train, and even harder to make sense of. You need a team of data scientists, machine learning engineers to work together, which requires extrordinary amounts of time and resources.
+- If a company decides to invest these resources, model weights and training techniques are not released publicly, but hidden behind expensive APIs. 
 
 # The Bad
 ### Umm.. Shit. Remember Deepfakes?
