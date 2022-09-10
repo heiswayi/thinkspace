@@ -8,7 +8,7 @@ keywords: "dummy content"
 
 I've always wanted to be an architect. Architects for me had superpowers. Imagine putting your thoughts, ideas and dreams onto paper, and watch them unfold from nothing. I carried forward this fascination to graphic design, where I spent hours painstakingly going through pixel by pixel, until a design was ready to be put on paper. I finally settled with data visualization, where I tried to make sense of seemingly random bits of data, to finally exhibit these insights in front of a captive audiance. Until now. 
 
-I recently came across Stable diffusion, a ground breaking machine learning model developed and released by StabilityAI. It is a latent diffusion text to image model trained on images from the LAION-5B database. There are a TOn of exciting things about the model itself, and more about the circumstances around making it open sourse, competition, and the ethics perspective. 
+I recently came across Stable diffusion, a ground breaking machine learning model developed and released by StabilityAI. It is a latent diffusion text to image model trained on images from the LAION-5B database. There are a TON of exciting things about the model itself, and more about the circumstances around making it open sourse, competition, and the ethics perspective. 
 
 But before I talk about all of this, I just got it setup on my M2 Macbook Air, and want to take it for a spin! Here goes.. \
 
@@ -18,23 +18,23 @@ But before I talk about all of this, I just got it setup on my M2 Macbook Air, a
 So there's an inbuilt mechanism that detects if the text you've passed is NSFW, after which it returns this image. I was pretty surprised when a couple of my harmless prompts like '' and '' got flagged, but I was able to reword them and get past this filter. \
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0003.png" width="30%" height="30%" /> </p> \
-*A sofa in the shape of an avacado.* \
+**A sofa in the shape of an avacado.** \
  I also got Dall-E access recently, so I thought I'd try pitching SD against DALL-E on some of their famous examples. Somehow, Dall-E images were a lot more *refined*? \
 <p align="center"> <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0005.png" width="30%" height="30%" /> </p> \
-*A fox drinking coffee in a cafe.* \
+**A fox drinking coffee in a cafe.** \
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0006.png" width="30%" height="30%" /> </p> \
-*Samurai hamster with a sword fighting in front of a castle.* \
+**Samurai hamster with a sword fighting in front of a castle.** \
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0007.png" width="30%" height="30%" /> </p> \
-*Neon lights on a robot face.* \
+**Neon lights on a robot face.** \
  <p align="center">
  <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0010.png" width="30%" height="30%" /> </p> \
-** *Spongebob fighting godzilla.* ** \
+**Spongebob fighting godzilla.** \
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0015.png" width="30%" height="30%" /> </p> \
-*Ray Bradbury.* \
+*8Ray Bradbury.** \
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0016.png" width="30%" height="30%" /> </p> \
-*Farenheit 451.* 
+**Farenheit 451.**
 
