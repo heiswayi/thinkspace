@@ -3,6 +3,7 @@ layout: post
 title: "Stable Diffusion, Genesis."
 comments: true
 description: "Stable Diffusion, Genesis - Getting started with generative art"
+keywords: "Generative art", "Stable diffusion", "M2 Macbook Air", "Machine Learning", "Law", "Ethics", "Deepfake"
 ---
 
 I've always wanted to be an architect. Architects for me had superpowers. Imagine putting your thoughts, ideas and dreams onto paper, and watch them unfold from nothing. I carried forward this fascination to graphic design, where I spent hours painstakingly going through pixel by pixel, until a design was ready to be put on paper. I finally settled with data visualization, where I tried to make sense of seemingly random bits of data, to finally exhibit these insights in front of a captive audiance. Until now. 
@@ -14,7 +15,7 @@ But before I talk about all of this, I just got it setup on my M2 Macbook Air, a
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0000.png" width="30%" height="30%" /> </p> \
 **Shit. Rick Rolled.** \
-So there's an inbuilt mechanism that detects if the text you've passed is NSFW, after which it returns this image. I was pretty surprised when a couple of my harmless prompts like '' and '' got flagged, but I was able to reword them and get past this filter. \
+So there's an inbuilt mechanism that detects if the text you've passed is NSFW, after which it returns this image. I was pretty surprised when a couple of my harmless prompts like 'firemen burning books' (Yes I'm in a Ray Bradbury phase right now) got flagged, but I was able to reword them and get past this filter. \
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0003.png" width="30%" height="30%" /> </p> \
 **A sofa in the shape of an avacado.** \
