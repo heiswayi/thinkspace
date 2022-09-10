@@ -38,9 +38,14 @@ So there's an inbuilt mechanism that detects if the text you've passed is NSFW, 
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0016.png" width="30%" height="30%" /> </p> \
 **Farenheit 451.**
 
-## The Good
-What's so great about this anyway?
-## The Bad
-Umm.. Shit. 
-## The Ugly
-We're in uncharted territory now.
+# The Good
+### What's so great about this anyway?
+We live in magical times! While generative art has been here for a long time, never before has been a tool to create mind blowing art been so easily available. And Free.
+
+# The Bad
+### Umm.. Shit. Remember Deepfakes?
+Did we just give bad actors the power to create unlimited realistic imagery, which coupled with models which create pages of realistic text on demand can create havoc on an unprecedented level.
+
+# The Ugly
+### We're in uncharted territory now.
+Where does the law stand on this? Nowhere. 
