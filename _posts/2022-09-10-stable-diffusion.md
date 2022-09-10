@@ -14,7 +14,7 @@ But before I talk about all of this, I just got it setup on my M2 Macbook Air, a
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0000.png" width="30%" height="30%" /> </p> \
-*Shit. Rick Rolled.* \
+**Shit. Rick Rolled.** \
 So there's an inbuilt mechanism that detects if the text you've passed is NSFW, after which it returns this image. I was pretty surprised when a couple of my harmless prompts like '' and '' got flagged, but I was able to reword them and get past this filter. \
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0003.png" width="30%" height="30%" /> </p> \
@@ -33,8 +33,14 @@ So there's an inbuilt mechanism that detects if the text you've passed is NSFW, 
 **Spongebob fighting godzilla.** \
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0015.png" width="30%" height="30%" /> </p> \
-*8Ray Bradbury.** \
+**Ray Bradbury.** \
 <p align="center">
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0016.png" width="30%" height="30%" /> </p> \
 **Farenheit 451.**
 
+## The Good
+What's so great about this anyway?
+## The Bad
+Umm.. Shit. 
+## The Ugly
+We're in uncharted territory now.
