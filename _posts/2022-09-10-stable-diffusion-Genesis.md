@@ -3,7 +3,6 @@ layout: post
 title: "Stable Diffusion, Genesis."
 comments: true
 description: "Stable Diffusion, Genesis - Getting started with generative art"
-keywords: "Generative art", "Stable diffusion", "M2 Macbook Air", "Machine Learning", "Law", "Ethics", "Deepfake"
 ---
 
 I've always wanted to be an architect. Architects for me had superpowers. Imagine putting your thoughts, ideas and dreams onto paper, and watch them unfold from nothing. I carried forward this fascination to graphic design, where I spent hours painstakingly going through pixel by pixel, until a design was ready to be put on paper. I finally settled with data visualization, where I tried to make sense of seemingly random bits of data, to finally exhibit these insights in front of a captive audiance. Until now. 
