@@ -13,8 +13,10 @@ I recently came across Stable diffusion, a ground breaking machine learning mode
 But before I talk about all of this, I just got it setup on my M2 Macbook Air, and want to take it for a spin! Here goes.. \
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0000.png" width="30%" height="30%" />
 *Shit. Rick Rolled.* \
+So there's an inbuilt mechanism that detects if the text you've passed is NSFW, after which it returns this image. I was pretty surprised when a couple of my harmless prompts like '' and '' got flagged, but I was able to reword them and get past this filter. \
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0003.png" width="30%" height="30%" />
 *A sofa in the shape of an avacado.* \
+ I also got Dall-E access recently, so I thought I'd try pitching SD against DALL-E on some of their famous examples. Somehow, Dall-E images were a lot more *refined*? \
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0005.png" width="30%" height="30%" />
 *A fox drinking coffee in a cafe.* \
 <img src="https://raw.githubusercontent.com/sakshamio/thinkspace/gh-pages/assets/images/grid-0006.png" width="30%" height="30%" />
