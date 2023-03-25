@@ -1,0 +1,59 @@
+I"�<h1 id="tls">TLS</h1>
+
+<h2 id="what--is-it">What  is it?</h2>
+
+<p><strong>Transport Layer Security (TLS)</strong> - a client / server protocol used to communicate securely across a network by using cryptographic protocols. It prevents eavesdropping or message tampering.</p>
+
+<h2 id="how-does-it-work">How does it work?</h2>
+
+<p>Majority of a TLS connection is related with a TLS handshake. After the TCP connection is established and before any data is sent, the TLS handshake is made.</p>
+
+<h3 id="what-is-a-cipher-suite">What is a cipher suite?</h3>
+
+<p>It is a string representation of all things that will be done during a handshake, I.e. <strong>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256</strong></p>
+<ul>
+  <li>TLS - protocol being used</li>
+  <li>ECDHE - key exchange method (in this example elliptic curve Diffie-Hellman)</li>
+  <li>RSA - authentication mechanism</li>
+  <li>AES  - symmetric encryption algorithm</li>
+  <li>128 - key size for cipher</li>
+  <li>GCM - mode of operation</li>
+  <li>SHA256 - hash function that will be used if it’s needed</li>
+</ul>
+
+<h3 id="tls-12-handshake">TLS 1.2 handshake</h3>
+
+<p><img src="/assets/images/TLS_handshake_diagram.png" alt="TLS handshake diagram" /></p>
+
+<ol>
+  <li>Client Hello - It starts a TLS handshake and contains:
+    <ul>
+      <li>max supported TLS version</li>
+      <li>list of Cipher Suites that client supports</li>
+      <li>client random, which is large prime number, that makes sure that some attacks are not going to work</li>
+    </ul>
+  </li>
+  <li>Server Hello - It says what will be used in further steps of TLS handshake, meaning
+    <ul>
+      <li>chosen TLS version</li>
+      <li>chosen cipher suite (if there is no matching Cipher Suite found, then it sends an error)</li>
+      <li>server random (similar to client random, it is a server’s own large prime number)</li>
+    </ul>
+  </li>
+  <li>Certificate - It sends an SSL/TLS certificate, that authenticates the server.</li>
+  <li>Server Key Exchange - This is an optional message, sends when additional data is required for key exchange method (I.e. Diffie-Hellman)</li>
+  <li>Server Hello Done - a message that says that server sent everything, that is required for establishing TLS connection</li>
+  <li>Client Key Exchange - It contains client’s data for key exchange operation</li>
+  <li>Change cipher spec message - It says to the server that next message will be encrypted because they’ve got what they need to encrypt that message.</li>
+  <li>Finish - This message is encrypted and allows each party to make sure that the handshake is completed successfully.</li>
+  <li>Change cipher spec - A message sent by a server that also communicate that next message will be encrypted</li>
+  <li>Finish - encrypted message sent by a server to be verified by a client</li>
+</ol>
+
+<h1 id="sources">Sources</h1>
+<ul>
+  <li>https://www.youtube.com/watch?v=0TLDTodL7Lc</li>
+  <li>https://developer.mozilla.org/en-US/docs/Glossary/TLS</li>
+  <li>https://en.wikipedia.org//wiki/Cipher_suite</li>
+</ul>
+:ET

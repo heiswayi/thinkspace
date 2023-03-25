@@ -1,0 +1,43 @@
+I"|<h1 id="what-is-it">What is it?</h1>
+
+<p>Google Analytics is a tool that shows its customer how visitors use their website. Although it does not cost any money, it is <strong>NOT</strong> free and open-source software.</p>
+
+<p>Google Analytics may help its customer with:</p>
+<ul>
+  <li>measuring their website performance</li>
+  <li>marketing</li>
+  <li>analyzing demography of visitors</li>
+  <li>optimizing website pages</li>
+</ul>
+
+<h1 id="how-does-it-work">How does it work?</h1>
+
+<p>After signing up and pasting a few lines of JavaScript code into the customer’s website, GA is going to start tracking visitors. This code looks for a _ga cookie (more information below) or if there is no _ga cookie, it creates this, Client ID is sent to Google Analytics servers and then Google shares statistics with Google Analytics’ customer about theirs website.</p>
+
+<h2 id="_ga-cookie">_ga cookie</h2>
+
+<p>This cookie stores your <strong>Client ID</strong>. It stores unique information about user’s browser and device.</p>
+
+<p>Example:
+<strong>GA1.2.12349876.1500644855</strong></p>
+
+<ul>
+  <li>GA - Google Analytics</li>
+  <li>1 - version of the cookie format that’s being used. It is fixed</li>
+  <li>2 - points a domain where the cookie is set. It represents a number of dots between subdomains and root domains (i.e. example.com = 1, www.example.com = 2)</li>
+  <li>12349876 - randomly generated number used for identifying users</li>
+  <li>1500644855 - timestamp of when a user first visited a site</li>
+</ul>
+
+<h1 id="alternatives">Alternatives</h1>
+
+<p>I mentioned that Google Analytics is not free and open-source. For more information about FOSS alternatives, I recommend <a href="https://opensource.com/article/18/1/top-5-open-source-analytics-tools">this</a> article.</p>
+
+<h1 id="sources">Sources</h1>
+<ul>
+  <li>https://www.bounteous.com/insights/2019/12/23/how-google-analytics-uses-cookies-identify-users</li>
+  <li>https://www.monsterinsights.com/how-does-google-analytics-work-beginners-guide/</li>
+  <li>https://www.youtube.com/watch?v=NaAyrKrA0os</li>
+  <li>https://www.digitalthirdcoast.com/blog/how-does-google-analytics-actually-work</li>
+</ul>
+:ET
