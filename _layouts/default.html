@@ -3,14 +3,14 @@ layout: compress
 published: true
 ---
 <!DOCTYPE html>
-<html>
+<html lang="en">
   {% include head.html %}
   <body>
+    {% include header.html %}
     <main class="wrapper">
-      {% include header.html %}
       {{ content }}
-      {% include footer.html %}
     </main>
+    {% include footer.html %}
     {% include foot.html %}
   </body>
 </html>

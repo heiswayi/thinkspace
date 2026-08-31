@@ -1,46 +1,56 @@
 # Site settings
-title_left    : "Think"
-title_right   : "space" # default: ""
-description   : "Minimalist Jekyll theme for technical writing blog."
-keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url           : https://heiswayi.github.io/thinkspace # site url
+title_left    : "dwaine"
+title_right   : "" # default: ""
+description   : "Professional & hobby blog — software engineering, home lab experiments, and things I build and break along the way."
+keywords      : "software engineering, homelab, docker, raspberry pi, home automation, self-hosting"
+url           : https://www.gallimore.dev # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
-cover         : "" # image uri like logo/cover image for site seo
+cover         : "/assets/images/author.jpeg" # image uri like logo/cover image for site seo
 
-google_analytics  : UA-XXXXX-XX
-twitter_username  : ""
 comments_enabled  : false # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : ""
 postshare_enabled : false
 
 # Build settings
-permalink   : /:year/:title/
-markdown    : kramdown
-highlighter : rouge
+permalink     : /:year/:title/
+markdown      : kramdown
+highlighter   : rouge
+paginate      : 10
+paginate_path : "/page/:num/"
 
 source      : ./
 destination : ./_site
 
-# Sass configuration
-sass:
-  sass_dir  : assets/scss
-  style     : compressed # expanded
-
 # Author settings
 author:
-  name     : "John Doe"
+  name     : "Dwaine Gallimore"
+
+# Social links (used in the footer)
+social:
+  github        : "dwainegallimore"
+  linkedin      : "" # e.g. "dwainegallimore" -> https://www.linkedin.com/in/dwainegallimore
+  stackoverflow : "18683699/dwaine-gallimore"
+  twitter       : "" # e.g. "handle" -> https://twitter.com/handle
 
 plugins:
   - jekyll-sitemap
-  - bourbon
   - jekyll-paginate
+
+# blog categories used to badge posts as work vs hobby content
+categories_shown:
+  - professional
+  - homelab
 
 # navbar pages
 navbar:
-  - slug : about
-    title: About
   - slug : blog
     title: Blog
+  - slug : projects
+    title: Projects
+  - slug : homelab
+    title: Homelab
+  - slug : about
+    title: About
 
 exclude:
   - "gulp"
@@ -60,4 +70,3 @@ exclude:
   - "changelog.md"
   - "script"
   - "vendor"
-  - "thinkspace.gemspec"

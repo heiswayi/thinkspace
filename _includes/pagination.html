@@ -1,6 +1,6 @@
 {% if paginator.total_pages > 1 %}
-<nav class="pagination" role="pagination">
-  <ul>
+<nav class="pagination-nav container" style="max-width: 768px;" role="pagination">
+  <ul class="d-flex list-unstyled justify-content-between font-monospace">
     {% assign url = site.baseurl | append: "/" %}
     {% if paginator.previous_page %}
       {% if paginator.previous_page > 1 %}

@@ -1,5 +1,32 @@
 <section class="intro">
-  <div class="container">
-    <p class="lead">Hi, I'm John Doe. I do stuffs with computer and sometimes write about it here. I'm from Penang, MY and I ship code at <a href="#">Microsoft</a>.</p>
+  <div class="container" style="max-width: 768px;">
+    <div class="profile-card p-2 rounded border">
+      <div class="row g-0 align-items-center">
+        <div class="col-sm-3">
+          <img src="{{ '/assets/images/author.jpeg' | prepend: site.baseurl | prepend: site.url }}" class="img-fluid rounded" alt="{{ site.author.name }}">
+        </div>
+        <div class="col-sm-9 p-2 font-monospace">
+          <h3 class="mb-1">{{ site.author.name }}</h3>
+          <span class="profile-tag">IT Support Engineer &middot; Homelab Tinkerer</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-copy py-3">
+      <p class="lead">
+        Hi, I'm Dwaine. By day I'm an IT Support Engineer working through the usual mix of
+        <span class="badge badge-category professional">professional</span> problems — the kind that show up in
+        tickets, code review, and production incidents. By evening and weekend I'm usually in the
+        <span class="badge badge-category homelab">homelab</span>, running self-hosted services, wiring up
+        home automation, and taking apart hardware I probably didn't need to buy.
+      </p>
+      <p>
+        This site is where I write both of those up: engineering notes and lessons from work, alongside
+        the rack, the Raspberry Pis, the network experiments, and whatever's currently half-working on my
+        desk. Have a look at <a href="{{ '/projects' | prepend: site.baseurl | prepend: site.url }}">Projects</a>
+        for things I've built, or the <a href="{{ '/homelab' | prepend: site.baseurl | prepend: site.url }}">Homelab</a>
+        page for what's currently running at home — or just scroll down for the latest posts.
+      </p>
+    </div>
   </div>
 </section>

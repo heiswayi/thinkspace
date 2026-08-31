@@ -1,5 +1,12 @@
 <footer class="site-footer">
-  <div class="container">
-    <small class="block">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }} &middot; &lt;/&gt; Powered by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://github.com/heiswayi/thinkspace">Thinkspace theme</a></small>
+  <div class="container py-4 my-3 d-flex flex-wrap justify-content-between align-items-center" style="max-width: 768px;">
+    <small>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }} &middot; built with <a href="https://jekyllrb.com/">Jekyll</a></small>
+    <span class="social-links">
+      {% if site.social.github != "" %}<a href="https://github.com/{{ site.social.github }}" aria-label="GitHub"><i class="bi bi-github"></i></a>{% endif %}
+      {% if site.social.linkedin != "" %}<a href="https://www.linkedin.com/in/{{ site.social.linkedin }}" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>{% endif %}
+      {% if site.social.stackoverflow != "" %}<a href="https://stackoverflow.com/users/{{ site.social.stackoverflow }}" aria-label="Stack Overflow"><i class="bi bi-stack-overflow"></i></a>{% endif %}
+      {% if site.social.twitter != "" %}<a href="https://twitter.com/{{ site.social.twitter }}" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>{% endif %}
+      <a href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" aria-label="RSS feed"><i class="bi bi-rss"></i></a>
+    </span>
   </div>
 </footer>

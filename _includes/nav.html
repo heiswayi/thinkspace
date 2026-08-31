@@ -1,10 +1,30 @@
-
-<nav class="nav">
-  <div class="container">
-    <h1 class="logo"><a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title_left }}<span>{{ site.title_right }}</span></a></h1>
-    <ul class="navbar">
-      <li><a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About me</a></li>
-      <li><a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" target="_blank">RSS</a></li>
-    </ul>
+<nav class="navbar navbar-expand-sm site-navbar fixed-top">
+  <div class="container" style="max-width: 768px;">
+    <a class="navbar-brand brand" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+      <i class="bi bi-code-slash"></i> .code&#123;{{ site.title_left }}{{ site.title_right }}&#125;
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-sm-0">
+        <li class="nav-item">
+          <a class="nav-link{% if page.title == 'Home' %} active{% endif %}" href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">.blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link{% if page.title == 'Projects' %} active{% endif %}" href="{{ '/projects' | prepend: site.baseurl | prepend: site.url }}">.projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link{% if page.title == 'Homelab' %} active{% endif %}" href="{{ '/homelab' | prepend: site.baseurl | prepend: site.url }}">.homelab</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link{% if page.title == 'About' %} active{% endif %}" href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">.aboutMe</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" target="_blank" rel="noopener">.rss</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

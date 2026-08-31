@@ -1,13 +1,31 @@
-# Thinkspace
+# gallimore.dev
 
-> Thinkspace is just another minimalist Jekyll theme which designed for technical writing blog.
+Personal site and blog for professional IT Support Engineer write-ups and home lab / hobby experiments, published at [www.gallimore.dev](https://www.gallimore.dev) via GitHub Pages.
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) ![GENERATOR](https://img.shields.io/badge/made_with-jekyll-blue.svg) ![VERSION](https://img.shields.io/badge/current_version-2.5-green.svg) ![TRAVIS-CI](https://travis-ci.org/heiswayi/thinkspace.svg?branch=master)
+Built with [Jekyll](https://jekyllrb.com/), plain CSS, and [Bootstrap](https://getbootstrap.com/) (via CDN — no Sass build step).
 
-- **Demo:** https://heiswayi.github.io/thinkspace/
+## Local development
 
-![SCREENSHOT](https://i.imgur.com/1YS078k.png)
+```
+bundle install
+bundle exec jekyll serve
+```
 
-## License
+Then open http://localhost:4000.
 
-[MIT](LICENSE.md)
+## Writing a post
+
+Add a Markdown file to `_posts/` named `YYYY-MM-DD-title.md` with front matter, e.g.:
+
+```
+---
+layout: post
+title: "Post title"
+description: "One-line summary for SEO/social previews"
+categories: [homelab]   # or [professional]
+---
+
+Post content here.
+```
+
+`categories` drives the small badge shown next to the post on the home page and post header — use `professional` or `homelab` to signal which hat was on.

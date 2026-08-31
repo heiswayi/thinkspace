@@ -1,0 +1,166 @@
+/* ---------------------------------------------------------------
+   gallimore.dev — styling merged over from the devboi prototype:
+   bisque navbar, monospace "code brand", card-based profile block.
+   Plain CSS on top of Bootstrap 5 (no Sass build step, so nothing
+   here can break Jekyll's build the way the old bourbon import did).
+   --------------------------------------------------------------- */
+
+:root {
+  --accent: bisque;
+  --accent-dark: #d9a066;
+  --ink: #212529;
+  --muted: #6c757d;
+}
+
+body {
+  min-height: 100vh;
+  padding-top: 4.5rem;
+  background-color: #fff;
+  color: var(--ink);
+}
+
+.font-monospace,
+.brand,
+.category-title {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* Navigation */
+.site-navbar {
+  background-color: var(--accent);
+}
+
+.site-navbar .brand {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-navbar .nav-link {
+  color: var(--ink);
+}
+
+.site-navbar .nav-link.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Profile / intro card */
+.profile-card {
+  background: linear-gradient(135deg, var(--accent) 0%, #fff 120%);
+  border: 1px solid #e6d3b8;
+}
+
+.profile-card img {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.profile-tag {
+  display: inline-block;
+  background-color: #495057;
+  color: #fff;
+  padding: 0.15rem 0.6rem;
+  border-radius: 0.25rem;
+  font-size: 0.85rem;
+}
+
+/* Post list */
+.category-title {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.25rem;
+}
+
+.post-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+}
+
+.post-item .date-label {
+  color: var(--muted);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  width: 4.5rem;
+}
+
+.post-link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.post-link:hover {
+  text-decoration: underline;
+}
+
+.badge-category {
+  text-transform: lowercase;
+  font-weight: 500;
+}
+
+.badge-category.professional {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.badge-category.homelab {
+  background-color: var(--accent-dark);
+  color: var(--ink);
+}
+
+/* Single post */
+.post-header {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.post-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.post-content pre {
+  background-color: #f6f6f6;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+}
+
+.post-content code {
+  background-color: #f6f6f6;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Pagination */
+.pagination-nav {
+  margin: 2.5rem 0;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #eee;
+  color: var(--muted);
+}
+
+.site-footer .social-links a {
+  color: var(--muted);
+  margin-left: 0.9rem;
+  font-size: 1.1rem;
+}
+
+.site-footer .social-links a:hover {
+  color: var(--ink);
+}

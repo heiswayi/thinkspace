@@ -2,9 +2,12 @@
 layout: default
 ---
 
-<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post container py-3" style="max-width: 768px;" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} &middot; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} &middot; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+      {% for category in page.categories %} <span class="badge badge-category {{ category }}">{{ category }}</span>{% endfor %}
+    </p>
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
   </header>
   <div class="post-content" itemprop="articleBody">

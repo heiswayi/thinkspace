@@ -6,7 +6,10 @@ title: Home
 {% include intro.html %}
 
 <section class="post-list">
-  <div class="container">
+  <div class="container py-3" style="max-width: 768px;">
+    {% if site.posts.size == 0 %}
+      <p class="text-muted font-monospace mt-4">Nothing published yet — first post coming soon.</p>
+    {% endif %}
     {% for post in site.posts %}
       {% unless post.next %}
         <h2 class="category-title">{{ post.date | date: '%Y' }}</h2>
@@ -19,9 +22,13 @@ title: Home
       {% endunless %}
       <article class="post-item">
         <span class="post-meta date-label">{{ post.date | date: "%b %d" }}</span>
-        <div class="article-title"><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></div>
+        <div class="article-title">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+          {% for category in post.categories %} <span class="badge badge-category {{ category }}">{{ category }}</span>{% endfor %}
+        </div>
       </article>
     {% endfor %}
   </div>
-
 </section>
+
+{% include pagination.html %}
